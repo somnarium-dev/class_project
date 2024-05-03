@@ -4,6 +4,10 @@
 // Inherit the parent event
 event_inherited();
 
+//Custom Methods and State Machine.
+event_user(0);
+event_user(1);
+
 //Controls
 generate_standard_inputs();
 
@@ -16,3 +20,6 @@ player_sprites =
 	open: spr_Croc_Open_Mouth,
 	eat: spr_Croc_Eat
 }
+
+//Initialize
+state = player_state.stand;

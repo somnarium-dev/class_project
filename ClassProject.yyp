@@ -40,6 +40,7 @@
     {"id":{"name":"obj_Parent_Lvlobject","path":"objects/obj_Parent_Lvlobject/obj_Parent_Lvlobject.yy",},},
     {"id":{"name":"obj_Parent_Player","path":"objects/obj_Parent_Player/obj_Parent_Player.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"Enums","path":"scripts/Enums/Enums.yy",},},
     {"id":{"name":"InputConstructors","path":"scripts/InputConstructors/InputConstructors.yy",},},
     {"id":{"name":"InputManager","path":"scripts/InputManager/InputManager.yy",},},
     {"id":{"name":"Script1","path":"scripts/Script1/Script1.yy",},},

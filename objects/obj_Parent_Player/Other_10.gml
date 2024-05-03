@@ -19,3 +19,5 @@ readPlayerInput = function()
 		input_direction = point_direction(0,0, input_lr, input_ud);
 	}
 }
+
+

@@ -21,6 +21,7 @@
   ],
   "ResourceOrderSettings":[
     {"name":"obj_Parent_Lvlobject","order":1,"path":"objects/obj_Parent_Lvlobject/obj_Parent_Lvlobject.yy",},
+    {"name":"Enums","order":2,"path":"scripts/Enums/Enums.yy",},
     {"name":"InputManager","order":1,"path":"scripts/InputManager/InputManager.yy",},
     {"name":"spr_Croc_Eat","order":2,"path":"sprites/spr_Croc_Eat/spr_Croc_Eat.yy",},
     {"name":"spr_Croc_Open_Mouth","order":1,"path":"sprites/spr_Croc_Open_Mouth/spr_Croc_Open_Mouth.yy",},
