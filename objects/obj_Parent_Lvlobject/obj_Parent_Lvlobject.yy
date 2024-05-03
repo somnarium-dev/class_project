@@ -8,8 +8,8 @@
   "name":"obj_Parent_Lvlobject",
   "overriddenProperties":[],
   "parent":{
-    "name":"Parents",
-    "path":"folders/Objects/Parents.yy",
+    "name":"- Parents",
+    "path":"folders/Objects/- Parents.yy",
   },
   "parentObjectId":null,
   "persistent":false,
