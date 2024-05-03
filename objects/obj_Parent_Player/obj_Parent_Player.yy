@@ -12,8 +12,8 @@
   "name":"obj_Parent_Player",
   "overriddenProperties":[],
   "parent":{
-    "name":"Parents",
-    "path":"folders/Objects/Parents.yy",
+    "name":"- Parents",
+    "path":"folders/Objects/- Parents.yy",
   },
   "parentObjectId":{
     "name":"obj_Parent_Lvlobject",
