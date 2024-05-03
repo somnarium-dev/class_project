@@ -1,6 +1,6 @@
 {
   "$GMSprite":"",
-  "%Name":"spr_Croc_Eating",
+  "%Name":"spr_Croc_Eat",
   "bboxMode":0,
   "bbox_bottom":62,
   "bbox_left":14,
@@ -36,7 +36,7 @@
   "layers":[
     {"$GMImageLayer":"","%Name":"202a6cd8-5885-405a-ab66-e4ee6b0c78bb","blendMode":0,"displayName":"default","isLocked":false,"name":"202a6cd8-5885-405a-ab66-e4ee6b0c78bb","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
-  "name":"spr_Croc_Eating",
+  "name":"spr_Croc_Eat",
   "nineSlice":null,
   "origin":0,
   "parent":{
@@ -48,7 +48,7 @@
   "resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"",
-    "%Name":"spr_Croc_Eating",
+    "%Name":"spr_Croc_Eat",
     "autoRecord":true,
     "backdropHeight":768,
     "backdropImageOpacity":0.5,
@@ -72,7 +72,7 @@
       "resourceType":"KeyframeStore<MomentsEventKeyframe>",
       "resourceVersion":"2.0",
     },
-    "name":"spr_Croc_Eating",
+    "name":"spr_Croc_Eat",
     "playback":1,
     "playbackSpeed":12.0,
     "playbackSpeedType":0,
@@ -84,52 +84,52 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"1d7216e4-3d5a-4008-b645-a260a83825be","path":"sprites/spr_Croc_Eating/spr_Croc_Eating.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"1d7216e4-3d5a-4008-b645-a260a83825be","path":"sprites/spr_Croc_Eat/spr_Croc_Eat.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"b92eb660-434a-4289-96a1-b98734ac5aac","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"a432d17c-c8dc-4454-8af2-5e4746073de2","path":"sprites/spr_Croc_Eating/spr_Croc_Eating.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"a432d17c-c8dc-4454-8af2-5e4746073de2","path":"sprites/spr_Croc_Eat/spr_Croc_Eat.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"bb5ede34-6feb-4682-bf9d-7c47e40a0c8c","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"28f0e568-e77a-4165-a1f1-c88bfc3f075d","path":"sprites/spr_Croc_Eating/spr_Croc_Eating.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"28f0e568-e77a-4165-a1f1-c88bfc3f075d","path":"sprites/spr_Croc_Eat/spr_Croc_Eat.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"7d202666-5514-4bb7-934c-0fe84d686b29","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"c04a0e68-a32f-4b44-ae39-62747a2653c2","path":"sprites/spr_Croc_Eating/spr_Croc_Eating.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"c04a0e68-a32f-4b44-ae39-62747a2653c2","path":"sprites/spr_Croc_Eat/spr_Croc_Eat.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"04f01816-0fdc-4ac3-820b-3cc068c57053","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"a12bbf41-ccea-45e5-915a-61d664675eca","path":"sprites/spr_Croc_Eating/spr_Croc_Eating.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"a12bbf41-ccea-45e5-915a-61d664675eca","path":"sprites/spr_Croc_Eat/spr_Croc_Eat.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"5dcca078-a794-4cb4-94d0-b0d4c8995073","IsCreationKey":false,"Key":4.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"69eb306b-d9df-4d53-8f65-80d1bce91b45","path":"sprites/spr_Croc_Eating/spr_Croc_Eating.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"69eb306b-d9df-4d53-8f65-80d1bce91b45","path":"sprites/spr_Croc_Eat/spr_Croc_Eat.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"66752f48-5d74-4075-9c4d-1661187c2485","IsCreationKey":false,"Key":5.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"8d458f6b-28b0-4ecb-9922-8f1398dd0c78","path":"sprites/spr_Croc_Eating/spr_Croc_Eating.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"8d458f6b-28b0-4ecb-9922-8f1398dd0c78","path":"sprites/spr_Croc_Eat/spr_Croc_Eat.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"1d6c2121-113a-4339-822f-397f34f2244b","IsCreationKey":false,"Key":6.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"6bc19418-e41c-4e26-af97-5b1a08f6f155","path":"sprites/spr_Croc_Eating/spr_Croc_Eating.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"6bc19418-e41c-4e26-af97-5b1a08f6f155","path":"sprites/spr_Croc_Eat/spr_Croc_Eat.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"3073c0d3-c20f-4e88-a302-2da2d29a921d","IsCreationKey":false,"Key":7.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"3a6181e0-c4b7-4f50-bb7b-b619a6731dd6","path":"sprites/spr_Croc_Eating/spr_Croc_Eating.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"3a6181e0-c4b7-4f50-bb7b-b619a6731dd6","path":"sprites/spr_Croc_Eat/spr_Croc_Eat.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"cc0b9501-24b9-4bbb-84b5-273f766ffd4f","IsCreationKey":false,"Key":8.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"77c33c15-c111-4283-ba72-fb3409d78e9d","path":"sprites/spr_Croc_Eating/spr_Croc_Eating.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"77c33c15-c111-4283-ba72-fb3409d78e9d","path":"sprites/spr_Croc_Eat/spr_Croc_Eat.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"f50034a3-f793-4fbd-b8ce-dc5c53d7cd3a","IsCreationKey":false,"Key":9.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"b7fc704b-9763-4a44-9e1c-e53e71e270cb","path":"sprites/spr_Croc_Eating/spr_Croc_Eating.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"b7fc704b-9763-4a44-9e1c-e53e71e270cb","path":"sprites/spr_Croc_Eat/spr_Croc_Eat.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"c2c5edb7-8f0d-46cc-974f-04a8d832033b","IsCreationKey":false,"Key":10.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"8b10a896-c3bf-4766-b43a-55a103bad28c","path":"sprites/spr_Croc_Eating/spr_Croc_Eating.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"8b10a896-c3bf-4766-b43a-55a103bad28c","path":"sprites/spr_Croc_Eat/spr_Croc_Eat.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"e60b4934-c3f0-4222-abbe-6113580dae94","IsCreationKey":false,"Key":11.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"aef31753-488e-4e35-9558-a7a7bc572821","path":"sprites/spr_Croc_Eating/spr_Croc_Eating.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"aef31753-488e-4e35-9558-a7a7bc572821","path":"sprites/spr_Croc_Eat/spr_Croc_Eat.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"2137b009-4b92-4b63-a0d3-0d8a2dfdc4c2","IsCreationKey":false,"Key":12.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"0124bbff-1858-42cb-8ed3-5b9f95fe8aff","path":"sprites/spr_Croc_Eating/spr_Croc_Eating.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"0124bbff-1858-42cb-8ed3-5b9f95fe8aff","path":"sprites/spr_Croc_Eat/spr_Croc_Eat.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"e41f7bcc-29d2-4dd5-86f8-80e544e67ba4","IsCreationKey":false,"Key":13.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"29d4c739-5b42-495c-96fc-f30dbd9aae3f","path":"sprites/spr_Croc_Eating/spr_Croc_Eating.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"29d4c739-5b42-495c-96fc-f30dbd9aae3f","path":"sprites/spr_Croc_Eat/spr_Croc_Eat.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"acbcd348-0f1f-400c-b61b-8e2f8ef4bf50","IsCreationKey":false,"Key":14.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"48974531-b226-4d3f-ab65-3ed935fe0413","path":"sprites/spr_Croc_Eating/spr_Croc_Eating.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"48974531-b226-4d3f-ab65-3ed935fe0413","path":"sprites/spr_Croc_Eat/spr_Croc_Eat.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"2523d5a9-4b29-46df-8a87-2e68d087d12f","IsCreationKey":false,"Key":15.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
