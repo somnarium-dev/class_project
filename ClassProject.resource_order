@@ -16,5 +16,17 @@
     {"name":"Tile Sets","order":2,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
   ],
-  "ResourceOrderSettings":[],
+  "ResourceOrderSettings":[
+    {"name":"spr_Croc_Eating","order":2,"path":"sprites/spr_Croc_Eating/spr_Croc_Eating.yy",},
+    {"name":"spr_Croc_Open_Mouth","order":1,"path":"sprites/spr_Croc_Open_Mouth/spr_Croc_Open_Mouth.yy",},
+    {"name":"spr_Debris_Twig","order":7,"path":"sprites/spr_Debris_Twig/spr_Debris_Twig.yy",},
+    {"name":"spr_Fish_Big","order":8,"path":"sprites/spr_Fish_Big/spr_Fish_Big.yy",},
+    {"name":"spr_Fish_Small","order":9,"path":"sprites/spr_Fish_Small/spr_Fish_Small.yy",},
+    {"name":"spr_Log_Long","order":5,"path":"sprites/spr_Log_Long/spr_Log_Long.yy",},
+    {"name":"spr_Log_Small","order":6,"path":"sprites/spr_Log_Small/spr_Log_Small.yy",},
+    {"name":"spr_Rock_Big","order":3,"path":"sprites/spr_Rock_Big/spr_Rock_Big.yy",},
+    {"name":"spr_Rock_Small","order":4,"path":"sprites/spr_Rock_Small/spr_Rock_Small.yy",},
+    {"name":"spr_Water_Tile","order":11,"path":"sprites/spr_Water_Tile/spr_Water_Tile.yy",},
+    {"name":"Sprite11","order":10,"path":"sprites/Sprite11/Sprite11.yy",},
+  ],
 }
