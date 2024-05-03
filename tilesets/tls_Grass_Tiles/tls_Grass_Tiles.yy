@@ -20,8 +20,8 @@
   "resourceType":"GMTileSet",
   "resourceVersion":"2.0",
   "spriteId":{
-    "name":"Sprite11",
-    "path":"sprites/Sprite11/Sprite11.yy",
+    "name":"spr_Grass_Tiles",
+    "path":"sprites/spr_Grass_Tiles/spr_Grass_Tiles.yy",
   },
   "spriteNoExport":false,
   "textureGroupId":{
