@@ -1,13 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"obj_temp_collision_parent",
+  "%Name":"obj_Parent_Collision",
   "eventList":[],
   "managed":true,
-  "name":"obj_temp_collision_parent",
+  "name":"obj_Parent_Collision",
   "overriddenProperties":[],
   "parent":{
-    "name":"Luna",
-    "path":"folders/Objects/Luna.yy",
+    "name":"- Parents",
+    "path":"folders/Objects/- Parents.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -105,7 +105,7 @@ handleHorizontalPixelAccumulation = function()
 	//if it's not possible to move in the queued direction,
 	//clear the variables to prevent issues
 	var h_sign = sign(horizontal_pixels_queued);
-	var next_position_blocked = place_meeting(x+h_sign, y, obj_temp_collision_parent);
+	var next_position_blocked = place_meeting(x+h_sign, y, obj_Parent_Collision);
 	if (next_position_blocked)
 	{
 		horizontal_pixels_accumulated = 0;
@@ -128,7 +128,7 @@ handleVerticalPixelAccumulation = function()
 	//if it's not possible to move in the queued direction,
 	//clear the variables to prevent issues
 	var y_sign = sign(vertical_pixels_queued);
-	var next_position_blocked = place_meeting(x, y-y_sign, obj_temp_collision_parent);
+	var next_position_blocked = place_meeting(x, y-y_sign, obj_Parent_Collision);
 	if (next_position_blocked)
 	{
 		vertical_pixels_accumulated = 0;
@@ -144,7 +144,7 @@ handleHorizontalMovement = function()
 	
 	repeat(repetitions)
 	{
-		var next_position_blocked = place_meeting(x+adjustment, y, obj_temp_collision_parent);
+		var next_position_blocked = place_meeting(x+adjustment, y, obj_Parent_Collision);
 		
 		if (next_position_blocked)
 		{
@@ -168,7 +168,7 @@ handleVerticalMovement = function()
 	
 	repeat(repetitions)
 	{
-		var next_position_blocked = place_meeting(x, y-adjustment, obj_temp_collision_parent);
+		var next_position_blocked = place_meeting(x, y-adjustment, obj_Parent_Collision);
 		
 		if (next_position_blocked)
 		{
