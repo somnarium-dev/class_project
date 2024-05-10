@@ -176,6 +176,12 @@ function generate_standard_inputs()
 	start
 			.add_keyboard_key(vk_enter)
 			.add_gamepad_button(gp_start);
+			
+	accelerate = input_manager.create_input()
+	accelerate
+			.add_keyboard_key(ord("W"))
+			.add_gamepad_button(gp_shoulderrb);
+
 
 	input_manager.fully_press_all();
 }

@@ -1,3 +1,10 @@
+/*
+Improve movement - implement momentum, turning
+Collision detection
+Sprite facing
+Mouth opening + speed change
+Eating
+*/
 /// @description Insert description here
 // You can write your code in this editor
 
@@ -9,9 +16,21 @@ event_user(0);
 event_user(1);
 
 //Controls
+input_direction = 0;
+
 generate_standard_inputs();
 
 readPlayerInput();
+
+//Movement and Collision
+current_top_speed = global.player_1.max_speed;
+current_speed = 0;
+
+horizontal_pixels_accumulated = 0;
+vertical_pixels_accumulated = 0;
+
+horizontal_pixels_queued = 0;
+vertical_pixels_queued = 0;
 
 //Define player sprites
 player_sprites = 

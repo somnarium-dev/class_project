@@ -2,8 +2,7 @@ state_machine = [];
 
 state_machine[player_state.stand] = function()
 {
-	x += input_lr;
-	y += input_ud;
+	handlePlayerMovementAndCollision();
 }
 
 state_machine[player_state.swim] = function()
