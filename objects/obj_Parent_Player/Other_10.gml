@@ -33,7 +33,10 @@ handlePlayerMovementAndCollision = function()
 	handleAcceleration();
 	
 	handleHorizontalPixelAccumulation();
-	handleHorizontalMovement(pixels_queued);
+	handleVerticalPixelAccumulation();
+	
+	handleHorizontalMovement();
+	handleVerticalMovement();
 	
 }
 
@@ -90,6 +93,9 @@ handleAcceleration = function()
 ///@func handleHorizontalPixelAccumulation()
 handleHorizontalPixelAccumulation = function()
 {
+	//derive horizontal speed
+	var h_speed = lengthdir_x(current_speed,input_direction);
+	
 	//accumulate and queue pixels
 	horizontal_pixels_accumulated += h_speed;
 	var integer_pixels = horizontal_pixels_accumulated div 1;
@@ -99,29 +105,51 @@ handleHorizontalPixelAccumulation = function()
 	//if it's not possible to move in the queued direction,
 	//clear the variables to prevent issues
 	var h_sign = sign(horizontal_pixels_queued);
-	var next_position_blocked = place_meeting(x+h_sign, y, obj_parent_collision);
+	var next_position_blocked = place_meeting(x+h_sign, y, obj_temp_collision_parent);
 	if (next_position_blocked)
 	{
-		h_speed = 0;
 		horizontal_pixels_accumulated = 0;
 		horizontal_pixels_queued = 0;
 	}
 }
 
-///@func handleHorizontalMovement(_pixels)
-handleHorizontalMovement = function(_pixels)
+///@func handleVerticalPixelAccumulation()
+handleVerticalPixelAccumulation = function()
 {
-	var repetitions = abs(_pixels);
-	var adjustment = sign(_pixels);
+	//derive vertical speed
+	var v_speed = lengthdir_y(current_speed,input_direction);
+	
+	//accumulate and queue pixels
+	vertical_pixels_accumulated += v_speed;
+	var integer_pixels = vertical_pixels_accumulated div 1;
+	vertical_pixels_accumulated -= integer_pixels;
+	vertical_pixels_queued += integer_pixels;
+	
+	//if it's not possible to move in the queued direction,
+	//clear the variables to prevent issues
+	var y_sign = sign(vertical_pixels_queued);
+	var next_position_blocked = place_meeting(x, y-y_sign, obj_temp_collision_parent);
+	if (next_position_blocked)
+	{
+		vertical_pixels_accumulated = 0;
+		vertical_pixels_queued = 0;
+	}
+}
+
+///@func handleHorizontalMovement()
+handleHorizontalMovement = function()
+{
+	var repetitions = abs(horizontal_pixels_queued);
+	var adjustment = sign(horizontal_pixels_queued);
 	
 	repeat(repetitions)
 	{
-		var next_position_blocked = place_meeting(x+adjustment, y, obj_parent_collision);
+		var next_position_blocked = place_meeting(x+adjustment, y, obj_temp_collision_parent);
 		
 		if (next_position_blocked)
 		{
-			h_speed = 0;
 			horizontal_pixels_queued = 0;
+			horizontal_pixels_accumulated = 0;
 			break;
 		}
 		
@@ -132,3 +160,25 @@ handleHorizontalMovement = function(_pixels)
 }
 
 
+///@func handleVerticalMovement()
+handleVerticalMovement = function()
+{
+	var repetitions = abs(vertical_pixels_queued);
+	var adjustment = sign(vertical_pixels_queued);
+	
+	repeat(repetitions)
+	{
+		var next_position_blocked = place_meeting(x, y-adjustment, obj_temp_collision_parent);
+		
+		if (next_position_blocked)
+		{
+			vertical_pixels_queued = 0;
+			vertical_pixels_accumulated = 0;
+			break;
+		}
+		
+		y += adjustment;
+		
+		vertical_pixels_queued -= adjustment;
+	}
+}

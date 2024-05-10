@@ -26,6 +26,12 @@ readPlayerInput();
 current_top_speed = global.player_1.max_speed;
 current_speed = 0;
 
+horizontal_pixels_accumulated = 0;
+vertical_pixels_accumulated = 0;
+
+horizontal_pixels_queued = 0;
+vertical_pixels_queued = 0;
+
 //Define player sprites
 player_sprites = 
 {
