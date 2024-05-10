@@ -20,6 +20,7 @@
     {"name":"Sounds","order":3,"path":"folders/Sounds.yy",},
     {"name":"Sprites","order":1,"path":"folders/Sprites.yy",},
     {"name":"Backgrounds","order":12,"path":"folders/Sprites/Backgrounds.yy",},
+    {"name":"Lightsen","order":13,"path":"folders/Sprites/Lightsen.yy",},
     {"name":"Tile Sets","order":2,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
   ],
@@ -47,5 +48,6 @@
     {"name":"spr_Log_Small","order":6,"path":"sprites/spr_Log_Small/spr_Log_Small.yy",},
     {"name":"spr_Rock_Big","order":3,"path":"sprites/spr_Rock_Big/spr_Rock_Big.yy",},
     {"name":"spr_Rock_Small","order":4,"path":"sprites/spr_Rock_Small/spr_Rock_Small.yy",},
+    {"name":"tls_Grass_Tile_16","order":1,"path":"tilesets/tls_Grass_Tile_16/tls_Grass_Tile_16.yy",},
   ],
 }
