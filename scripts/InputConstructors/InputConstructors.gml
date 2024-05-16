@@ -182,6 +182,12 @@ function generate_standard_inputs()
 			.add_keyboard_key(vk_up)
 			.add_gamepad_button(gp_padu)
 			.add_gamepad_left_stick(INPUT_AXIS.up);
+			
+	reverse = input_manager.create_input()
+	reverse
+			.add_keyboard_key(vk_down)
+			.add_gamepad_button(gp_padd)
+			.add_gamepad_left_stick(INPUT_AXIS.down);
 
 
 	input_manager.fully_press_all();

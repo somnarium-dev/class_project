@@ -14,9 +14,13 @@ readPlayerInput = function()
 	input_accelerate_held = accelerate.check();
 	input_accelerate_released = accelerate.check_released();
 	
+	input_reverse_pressed = reverse.check_pressed();
+	input_reverse_held = reverse.check();
+	input_reverse_released = reverse.check_released();
+	
 	input_lr = right.check_pressed() - left.check_pressed();
 	
-	if (input_lr != 0)
+	if (current_speed != 0)
 	{
 		input_direction -= (90 * input_lr);
 		if (input_direction < 0) {input_direction += 360;}
