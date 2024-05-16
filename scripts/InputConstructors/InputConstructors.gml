@@ -167,8 +167,8 @@ function generate_standard_inputs()
 			.add_keyboard_key(vk_escape)
 			.add_gamepad_button(gp_face2);
 			
-	eat = input_manager.create_input()
-	eat
+	open = input_manager.create_input()
+	open
 			.add_keyboard_key(vk_space)
 			.add_gamepad_button(gp_face1);
 			

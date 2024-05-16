@@ -6,9 +6,9 @@ readPlayerInput = function()
 	
 	input_manager.run();
 	
-	input_eat_pressed = eat.check_pressed();
-	input_eat_held = eat.check();
-	input_eat_released = eat.check_released();
+	input_open_pressed = open.check_pressed();
+	input_open_held = open.check();
+	input_open_released = open.check_released();
 	
 	input_accelerate_pressed = accelerate.check_pressed();
 	input_accelerate_held = accelerate.check();
@@ -57,8 +57,8 @@ handlePlayerMovementAndCollision = function()
 ///@func determineTopSpeed()
 determineTopSpeed = function()
 {
-	if (state == player_state.eat)
-	{current_top_speed = global.player_1.max_eat_speed;}
+	if (state == player_state.open)
+	{current_top_speed = global.player_1.max_open_speed;}
 	else
 	{current_top_speed = global.player_1.max_speed;}
 }
@@ -195,4 +195,12 @@ handleVerticalMovement = function()
 		
 		vertical_pixels_queued -= adjustment;
 	}
+}
+
+//Handle Sprites
+///@func handleSprite()
+handleSprite = function()
+{
+	if (state == player_state.open) {sprite_index = spr_Croc_Open_Mouth;}
+	else {sprite_index = spr_Croc_Idle;}
 }
