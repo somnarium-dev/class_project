@@ -1,9 +1,15 @@
 /*
 Improve movement - implement momentum, turning
 Collision detection
-Sprite facing
 Mouth opening + speed change
 Eating
+
+Movement Mechanics:
+Keep momentum
+Instant turning
+Move slower for now, speed up with mouth
+Locked to cardinal directions
+Have to move to turn - able to reverse
 */
 /// @description Insert description here
 // You can write your code in this editor

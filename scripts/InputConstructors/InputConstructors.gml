@@ -179,8 +179,9 @@ function generate_standard_inputs()
 			
 	accelerate = input_manager.create_input()
 	accelerate
-			.add_keyboard_key(ord("W"))
-			.add_gamepad_button(gp_shoulderrb);
+			.add_keyboard_key(vk_up)
+			.add_gamepad_button(gp_padu)
+			.add_gamepad_left_stick(INPUT_AXIS.up);
 
 
 	input_manager.fully_press_all();

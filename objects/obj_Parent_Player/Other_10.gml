@@ -14,14 +14,24 @@ readPlayerInput = function()
 	input_accelerate_held = accelerate.check();
 	input_accelerate_released = accelerate.check_released();
 	
-	input_lr = right.check() - left.check();
-	input_ud = down.check() - up.check();
+	input_lr = right.check_pressed() - left.check_pressed();
 	
-	if (input_lr != 0 || input_ud != 0)
+	if (input_lr != 0)
+	{
+		input_direction -= (90 * input_lr);
+		if (input_direction < 0) {input_direction += 360;}
+		if (input_direction > 360) {input_direction -= 360;}
+	}
+//	input_ud = down.check() - up.check();
+	
+/*	if (input_lr != 0 || input_ud != 0)
 	{
 		previous_input_direction = input_direction;
 		input_direction = point_direction(0,0, input_lr, input_ud);
 	}
+*/
+	
+	
 }
 
 ///MOVEMENT AND DECELERATION
