@@ -14,6 +14,7 @@ function initialize()
 		point_total: 0,
 	}
 	
-	room_goto(gator_test);
+	
+	room_goto(fish_test);
 	
 }

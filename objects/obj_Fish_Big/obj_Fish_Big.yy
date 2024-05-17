@@ -34,6 +34,9 @@
     "name":"spr_Fish_Big",
     "path":"sprites/spr_Fish_Big/spr_Fish_Big.yy",
   },
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"spr_Mask_Collision_Basic",
+    "path":"sprites/spr_Mask_Collision_Basic/spr_Mask_Collision_Basic.yy",
+  },
   "visible":true,
 }

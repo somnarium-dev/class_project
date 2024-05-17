@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"helpful_functions",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"helpful_functions",
+  "parent":{
+    "name":"Lightsen",
+    "path":"folders/Scripts/Lightsen.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
