@@ -92,6 +92,8 @@
     {"id":{"name":"spr_Fish_Small","path":"sprites/spr_Fish_Small/spr_Fish_Small.yy",},},
     {"id":{"name":"spr_Grass_Tile_16","path":"sprites/spr_Grass_Tile_16/spr_Grass_Tile_16.yy",},},
     {"id":{"name":"spr_Grass_Tiles","path":"sprites/spr_Grass_Tiles/spr_Grass_Tiles.yy",},},
+    {"id":{"name":"spr_Level_Editor_Fish_Big","path":"sprites/spr_Level_Editor_Fish_Big/spr_Level_Editor_Fish_Big.yy",},},
+    {"id":{"name":"spr_Level_Editor_Fish_Small","path":"sprites/spr_Level_Editor_Fish_Small/spr_Level_Editor_Fish_Small.yy",},},
     {"id":{"name":"spr_Log_Long","path":"sprites/spr_Log_Long/spr_Log_Long.yy",},},
     {"id":{"name":"spr_Log_Small","path":"sprites/spr_Log_Small/spr_Log_Small.yy",},},
     {"id":{"name":"spr_Mask_Collision_Basic","path":"sprites/spr_Mask_Collision_Basic/spr_Mask_Collision_Basic.yy",},},

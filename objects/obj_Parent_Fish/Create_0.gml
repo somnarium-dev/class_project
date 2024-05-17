@@ -1,5 +1,7 @@
 /// @description variables and stats
 
+depth = -1000000;
+
 // Inherit the parent event
 event_inherited();
 
@@ -23,6 +25,7 @@ current_top_speed = max_swim_speed;
 
 //internal properties
 direction = initial_direction;
+random_turn_available = true;
 
 // impassable check
 impassable = false;

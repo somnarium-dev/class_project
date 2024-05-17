@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_Fish_Big",
-    "path":"sprites/spr_Fish_Big/spr_Fish_Big.yy",
+    "name":"spr_Level_Editor_Fish_Big",
+    "path":"sprites/spr_Level_Editor_Fish_Big/spr_Level_Editor_Fish_Big.yy",
   },
   "spriteMaskId":{
     "name":"spr_Mask_Collision_Basic",

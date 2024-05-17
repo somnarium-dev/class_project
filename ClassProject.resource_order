@@ -63,6 +63,8 @@
     {"name":"spr_Fish_Big","order":8,"path":"sprites/spr_Fish_Big/spr_Fish_Big.yy",},
     {"name":"spr_Fish_Small","order":9,"path":"sprites/spr_Fish_Small/spr_Fish_Small.yy",},
     {"name":"spr_Grass_Tiles","order":10,"path":"sprites/spr_Grass_Tiles/spr_Grass_Tiles.yy",},
+    {"name":"spr_Level_Editor_Fish_Big","order":2,"path":"sprites/spr_Level_Editor_Fish_Big/spr_Level_Editor_Fish_Big.yy",},
+    {"name":"spr_Level_Editor_Fish_Small","order":3,"path":"sprites/spr_Level_Editor_Fish_Small/spr_Level_Editor_Fish_Small.yy",},
     {"name":"spr_Log_Long","order":5,"path":"sprites/spr_Log_Long/spr_Log_Long.yy",},
     {"name":"spr_Log_Small","order":6,"path":"sprites/spr_Log_Small/spr_Log_Small.yy",},
     {"name":"spr_Rock_Big","order":3,"path":"sprites/spr_Rock_Big/spr_Rock_Big.yy",},

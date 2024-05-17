@@ -1,5 +1,5 @@
 if (other.state == player_state.open)
 {
-	global.increase_score();
+	global.increaseScore();
 	instance_destroy(self);
 }
