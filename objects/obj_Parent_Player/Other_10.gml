@@ -22,9 +22,17 @@ readPlayerInput = function()
 	
 	if (current_speed != 0)
 	{
+		var current_direction = input_direction;
+		
 		input_direction -= (90 * input_lr);
 		if (input_direction < 0) {input_direction += 360;}
 		if (input_direction > 360) {input_direction -= 360;}
+		
+		if (input_direction != current_direction)
+		{
+			horizontal_pixels_accumulated = 0;
+			vertical_pixels_accumulated = 0;
+		}
 	}
 //	input_ud = down.check() - up.check();
 	
@@ -139,14 +147,18 @@ handleVerticalPixelAccumulation = function()
 	vertical_pixels_accumulated -= integer_pixels;
 	vertical_pixels_queued += integer_pixels;
 	
+	show_debug_message($"Vertical Pixels Queued: {vertical_pixels_queued}");
+	
 	//if it's not possible to move in the queued direction,
 	//clear the variables to prevent issues
 	var y_sign = sign(vertical_pixels_queued);
-	var next_position_blocked = place_meeting(x, y-y_sign, obj_Parent_Collision);
+	var next_position_blocked = place_meeting(x, y+y_sign, obj_Parent_Collision);
 	if (next_position_blocked)
 	{
 		vertical_pixels_accumulated = 0;
 		vertical_pixels_queued = 0;
+		
+		show_debug_message("BLERP");
 	}
 }
 
@@ -182,7 +194,7 @@ handleVerticalMovement = function()
 	
 	repeat(repetitions)
 	{
-		var next_position_blocked = place_meeting(x, y-adjustment, obj_Parent_Collision);
+		var next_position_blocked = place_meeting(x, y+adjustment, obj_Parent_Collision);
 		
 		if (next_position_blocked)
 		{
@@ -201,6 +213,6 @@ handleVerticalMovement = function()
 ///@func handleSprite()
 handleSprite = function()
 {
-	if (state == player_state.open) {sprite_index = spr_Croc_Open_Mouth;}
-	else {sprite_index = spr_Croc_Idle;}
+	if (state == player_state.open) {current_sprite = spr_Croc_Open_Mouth;}
+	else {current_sprite = spr_Croc_Idle;}
 }

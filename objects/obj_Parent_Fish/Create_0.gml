@@ -1,7 +1,5 @@
 /// @description variables and stats
 
-depth = -1000000;
-
 // Inherit the parent event
 event_inherited();
 

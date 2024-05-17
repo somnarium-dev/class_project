@@ -1,5 +1,8 @@
 function initialize()
 {	
+	//Meta
+	global.game_tile_size = 32;
+	
 	//Define player defaults
 	global.player_1 = 
 	{	
@@ -13,7 +16,5 @@ function initialize()
 		point_total: 0,
 	}
 	
-	
 	room_goto(fish_test);
-	
 }

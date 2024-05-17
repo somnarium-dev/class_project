@@ -6,8 +6,6 @@ Movement Mechanics:
 speed up with mouth
 Have to move to turn - able to reverse
 */
-/// @description Insert description here
-// You can write your code in this editor
 
 // Inherit the parent event
 event_inherited();
@@ -29,14 +27,16 @@ vertical_pixels_queued = 0;
 //Define player sprites
 player_sprites = 
 {
-	idle: spr_Croc_Idle,
-	open: spr_Croc_Open_Mouth,
-	eat: spr_Croc_Eat
+	idle: sprite_idle,
+	open: sprite_open,
+	eat: sprite_eat
 }
+
+current_sprite = player_sprites.idle;
 
 //Initialize
 state = player_state.stand;
-image_speed=0;
+image_speed = 0;
 
 //Controls
 input_direction = 0;

@@ -44,6 +44,7 @@
     {"$GMObjectProperty":"v1","%Name":"random_turn_range","filters":[],"listItems":[],"multiselect":false,"name":"random_turn_range","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"2","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"random_turn_cooldown","filters":[],"listItems":[],"multiselect":false,"name":"random_turn_cooldown","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"32","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"fish_sprite","filters":[],"listItems":[],"multiselect":false,"name":"fish_sprite","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"spr_Fish_Big","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"point_value","filters":[],"listItems":[],"multiselect":false,"name":"point_value","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

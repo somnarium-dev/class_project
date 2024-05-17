@@ -1,12 +1,12 @@
 {
   "$GMScript":"",
-  "%Name":"Lightsen_Enums",
+  "%Name":"HelpfulFunctions",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"Lightsen_Enums",
+  "name":"HelpfulFunctions",
   "parent":{
-    "name":"Lightsen",
-    "path":"folders/Scripts/Lightsen.yy",
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
