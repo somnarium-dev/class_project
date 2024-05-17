@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"Lightsen_Enums",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Lightsen_Enums",
+  "parent":{
+    "name":"Lightsen",
+    "path":"folders/Scripts/Lightsen.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

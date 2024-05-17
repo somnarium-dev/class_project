@@ -4,7 +4,9 @@
   "eventList":[],
   "managed":true,
   "name":"obj_Fish_Small",
-  "overriddenProperties":[],
+  "overriddenProperties":[
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_Parent_Fish","path":"objects/obj_Parent_Fish/obj_Parent_Fish.yy",},"propertyId":{"name":"fish_sprite","path":"objects/obj_Parent_Fish/obj_Parent_Fish.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"spr_Fish_Small",},
+  ],
   "parent":{
     "name":"Fish",
     "path":"folders/Objects/Fish.yy",
@@ -31,9 +33,12 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_Fish_Small",
-    "path":"sprites/spr_Fish_Small/spr_Fish_Small.yy",
+    "name":"spr_Level_Editor_Fish_Small",
+    "path":"sprites/spr_Level_Editor_Fish_Small/spr_Level_Editor_Fish_Small.yy",
   },
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"spr_Mask_Collision_Basic",
+    "path":"sprites/spr_Mask_Collision_Basic/spr_Mask_Collision_Basic.yy",
+  },
   "visible":true,
 }

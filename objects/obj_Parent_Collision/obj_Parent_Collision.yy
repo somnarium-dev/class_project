@@ -27,7 +27,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_Mask_Collision_Basic",
+    "path":"sprites/spr_Mask_Collision_Basic/spr_Mask_Collision_Basic.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
