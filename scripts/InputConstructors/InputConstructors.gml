@@ -167,8 +167,8 @@ function generate_standard_inputs()
 			.add_keyboard_key(vk_escape)
 			.add_gamepad_button(gp_face2);
 			
-	eat = input_manager.create_input()
-	eat
+	open = input_manager.create_input()
+	open
 			.add_keyboard_key(vk_space)
 			.add_gamepad_button(gp_face1);
 			
@@ -179,8 +179,15 @@ function generate_standard_inputs()
 			
 	accelerate = input_manager.create_input()
 	accelerate
-			.add_keyboard_key(ord("W"))
-			.add_gamepad_button(gp_shoulderrb);
+			.add_keyboard_key(vk_up)
+			.add_gamepad_button(gp_padu)
+			.add_gamepad_left_stick(INPUT_AXIS.up);
+			
+	reverse = input_manager.create_input()
+	reverse
+			.add_keyboard_key(vk_down)
+			.add_gamepad_button(gp_padd)
+			.add_gamepad_left_stick(INPUT_AXIS.down);
 
 
 	input_manager.fully_press_all();

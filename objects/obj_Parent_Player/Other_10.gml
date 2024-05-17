@@ -6,22 +6,36 @@ readPlayerInput = function()
 	
 	input_manager.run();
 	
-	input_eat_pressed = eat.check_pressed();
-	input_eat_held = eat.check();
-	input_eat_released = eat.check_released();
+	input_open_pressed = open.check_pressed();
+	input_open_held = open.check();
+	input_open_released = open.check_released();
 	
 	input_accelerate_pressed = accelerate.check_pressed();
 	input_accelerate_held = accelerate.check();
 	input_accelerate_released = accelerate.check_released();
 	
-	input_lr = right.check() - left.check();
-	input_ud = down.check() - up.check();
+	input_reverse_pressed = reverse.check_pressed();
+	input_reverse_held = reverse.check();
+	input_reverse_released = reverse.check_released();
 	
-	if (input_lr != 0 || input_ud != 0)
+	input_lr = right.check_pressed() - left.check_pressed();
+	
+	if (current_speed != 0)
+	{
+		input_direction -= (90 * input_lr);
+		if (input_direction < 0) {input_direction += 360;}
+		if (input_direction > 360) {input_direction -= 360;}
+	}
+//	input_ud = down.check() - up.check();
+	
+/*	if (input_lr != 0 || input_ud != 0)
 	{
 		previous_input_direction = input_direction;
 		input_direction = point_direction(0,0, input_lr, input_ud);
 	}
+*/
+	
+	
 }
 
 ///MOVEMENT AND DECELERATION
@@ -43,8 +57,8 @@ handlePlayerMovementAndCollision = function()
 ///@func determineTopSpeed()
 determineTopSpeed = function()
 {
-	if (state == player_state.eat)
-	{current_top_speed = global.player_1.max_eat_speed;}
+	if (state == player_state.open)
+	{current_top_speed = global.player_1.max_open_speed;}
 	else
 	{current_top_speed = global.player_1.max_speed;}
 }
@@ -181,4 +195,12 @@ handleVerticalMovement = function()
 		
 		vertical_pixels_queued -= adjustment;
 	}
+}
+
+//Handle Sprites
+///@func handleSprite()
+handleSprite = function()
+{
+	if (state == player_state.open) {sprite_index = spr_Croc_Open_Mouth;}
+	else {sprite_index = spr_Croc_Idle;}
 }
