@@ -11,7 +11,7 @@ draw_sprite_ext
 	y + 16,
 	image_xscale,
 	image_yscale,
-	input_direction,
+	direction,
 	image_blend,
 	image_alpha
 );
@@ -19,3 +19,4 @@ draw_sprite_ext
 
 // Enable the section below to print the object's state to the screen.
 //draw_text(x + 16, y - 16, global.state_string.player[state]);
+draw_text(x + 16, y - 16, $"{current_speed}");

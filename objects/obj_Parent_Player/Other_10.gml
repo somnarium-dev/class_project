@@ -20,30 +20,10 @@ readPlayerInput = function()
 	
 	input_lr = right.check_pressed() - left.check_pressed();
 	
-	if (current_speed != 0)
-	{
-		var current_direction = input_direction;
-		
-		input_direction -= (90 * input_lr);
-		if (input_direction < 0) {input_direction += 360;}
-		if (input_direction > 360) {input_direction -= 360;}
-		
-		if (input_direction != current_direction)
-		{
-			horizontal_pixels_accumulated = 0;
-			vertical_pixels_accumulated = 0;
-		}
+	if (input_lr != 0)
+	{	
+		requested_turn = clamp(requested_turn + input_lr, -1, 1);
 	}
-//	input_ud = down.check() - up.check();
-	
-/*	if (input_lr != 0 || input_ud != 0)
-	{
-		previous_input_direction = input_direction;
-		input_direction = point_direction(0,0, input_lr, input_ud);
-	}
-*/
-	
-	
 }
 
 ///MOVEMENT AND DECELERATION
@@ -59,7 +39,6 @@ handlePlayerMovementAndCollision = function()
 	
 	handleHorizontalMovement();
 	handleVerticalMovement();
-	
 }
 
 ///@func determineTopSpeed()
@@ -116,7 +95,7 @@ handleAcceleration = function()
 handleHorizontalPixelAccumulation = function()
 {
 	//derive horizontal speed
-	var h_speed = lengthdir_x(current_speed,input_direction);
+	var h_speed = lengthdir_x(current_speed, direction);
 	
 	//accumulate and queue pixels
 	horizontal_pixels_accumulated += h_speed;
@@ -124,7 +103,7 @@ handleHorizontalPixelAccumulation = function()
 	horizontal_pixels_accumulated -= integer_pixels;
 	horizontal_pixels_queued += integer_pixels;
 	
-	//if it's not possible to move in the queued direction,
+	/*//if it's not possible to move in the queued direction,
 	//clear the variables to prevent issues
 	var h_sign = sign(horizontal_pixels_queued);
 	var next_position_blocked = place_meeting(x+h_sign, y, obj_Parent_Collision);
@@ -132,14 +111,14 @@ handleHorizontalPixelAccumulation = function()
 	{
 		horizontal_pixels_accumulated = 0;
 		horizontal_pixels_queued = 0;
-	}
+	}*/
 }
 
 ///@func handleVerticalPixelAccumulation()
 handleVerticalPixelAccumulation = function()
 {
 	//derive vertical speed
-	var v_speed = lengthdir_y(current_speed,input_direction);
+	var v_speed = lengthdir_y(current_speed, direction);
 	
 	//accumulate and queue pixels
 	vertical_pixels_accumulated += v_speed;
@@ -147,9 +126,7 @@ handleVerticalPixelAccumulation = function()
 	vertical_pixels_accumulated -= integer_pixels;
 	vertical_pixels_queued += integer_pixels;
 	
-	show_debug_message($"Vertical Pixels Queued: {vertical_pixels_queued}");
-	
-	//if it's not possible to move in the queued direction,
+	/*//if it's not possible to move in the queued direction,
 	//clear the variables to prevent issues
 	var y_sign = sign(vertical_pixels_queued);
 	var next_position_blocked = place_meeting(x, y+y_sign, obj_Parent_Collision);
@@ -157,9 +134,7 @@ handleVerticalPixelAccumulation = function()
 	{
 		vertical_pixels_accumulated = 0;
 		vertical_pixels_queued = 0;
-		
-		show_debug_message("BLERP");
-	}
+	}*/
 }
 
 ///@func handleHorizontalMovement()
@@ -170,12 +145,26 @@ handleHorizontalMovement = function()
 	
 	repeat(repetitions)
 	{
+		if (requested_turn != 0)
+		&& (alignedWithGrid())
+		&& (x != last_turn_cell._x)
+		{
+			var requested_direction = direction - (90 * requested_turn);
+			updatePlayerDirection(requested_direction);
+			requested_turn = 0;
+			updateLastTurnCell();
+			horizontal_pixels_accumulated = 0;
+			horizontal_pixels_queued = 0;
+			break;
+		}
+		
 		var next_position_blocked = place_meeting(x+adjustment, y, obj_Parent_Collision);
 		
 		if (next_position_blocked)
 		{
-			horizontal_pixels_queued = 0;
 			horizontal_pixels_accumulated = 0;
+			horizontal_pixels_queued = 0;
+			current_speed = 0;
 			break;
 		}
 		
@@ -194,12 +183,26 @@ handleVerticalMovement = function()
 	
 	repeat(repetitions)
 	{
+		if (requested_turn != 0)
+		&& (alignedWithGrid())
+		&& (y != last_turn_cell._y)
+		{
+			var requested_direction = direction - (90 * requested_turn);
+			updatePlayerDirection(requested_direction);
+			requested_turn = 0;
+			updateLastTurnCell();
+			vertical_pixels_accumulated = 0;
+			vertical_pixels_queued = 0;
+			break;
+		}
+		
 		var next_position_blocked = place_meeting(x, y+adjustment, obj_Parent_Collision);
 		
 		if (next_position_blocked)
 		{
-			vertical_pixels_queued = 0;
 			vertical_pixels_accumulated = 0;
+			vertical_pixels_queued = 0;
+			current_speed = 0;
 			break;
 		}
 		
@@ -215,4 +218,22 @@ handleSprite = function()
 {
 	if (state == player_state.open) {current_sprite = spr_Croc_Open_Mouth;}
 	else {current_sprite = spr_Croc_Idle;}
+}
+
+//Handle Direction
+///@func updatePlayerDirection(proposed_new_direction)
+updatePlayerDirection = function(proposed_new_direction)
+{
+	var new_direction = proposed_new_direction;
+	
+	if (new_direction < 0) { new_direction += 360; }
+	if (new_direction > 360) { new_direction -= 360; }
+	
+	direction = new_direction;
+}
+
+///@func updateLastTurnCell()
+updateLastTurnCell = function()
+{
+	if (alignedWithGrid()) {last_turn_cell = {_x:x, _y:y};}
 }
