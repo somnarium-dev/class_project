@@ -14,8 +14,8 @@
   "out_tilehborder":0,
   "out_tilevborder":0,
   "parent":{
-    "name":"Lightsen",
-    "path":"folders/Sprites/Lightsen.yy",
+    "name":"Tile Sets",
+    "path":"folders/Tile Sets.yy",
   },
   "resourceType":"GMTileSet",
   "resourceVersion":"2.0",

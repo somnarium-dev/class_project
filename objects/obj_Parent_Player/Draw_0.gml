@@ -1,11 +1,14 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Draw.
+
+draw_self();
+
+
 draw_sprite_ext
 (
-	sprite_index,
+	current_sprite,
 	image_index,
-	x,
-	y,
+	x + 16,
+	y + 16,
 	image_xscale,
 	image_yscale,
 	input_direction,
@@ -13,4 +16,6 @@ draw_sprite_ext
 	image_alpha
 );
 
-draw_text(x+16,y-16,global.state_string.player[state]);
+
+// Enable the section below to print the object's state to the screen.
+//draw_text(x + 16, y - 16, global.state_string.player[state]);
