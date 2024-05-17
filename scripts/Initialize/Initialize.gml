@@ -15,6 +15,10 @@ function initialize()
 		lives_remaining: 0,
 		point_total: 0,
 	}
+
+	LightsenInitialize();
+	LunaInitialize();
+	MiguelInitialize();
 	
 	room_goto(fish_test);
 }

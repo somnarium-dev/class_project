@@ -40,6 +40,8 @@ image_speed = 0;
 
 //Controls
 input_direction = 0;
+requested_turn = 0;
+last_turn_cell = {_x:-1, _y:-1};
 
 generate_standard_inputs();
 

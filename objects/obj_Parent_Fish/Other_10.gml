@@ -241,7 +241,6 @@ aiFishTurnAtRandom = function()
 		if (can_turn_right) {array_push(possible_directions, 1);}
 		
 		var available_options = array_length(possible_directions);
-		show_debug_message($"Random Turn Options: {available_options}");
 		
 		//Select a random unblocked direction to turn, if there are any.
 		if (available_options > 0)
