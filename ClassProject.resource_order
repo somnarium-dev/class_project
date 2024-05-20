@@ -72,6 +72,8 @@
     {"name":"spr_Level_Editor_Gator","order":3,"path":"sprites/spr_Level_Editor_Gator/spr_Level_Editor_Gator.yy",},
     {"name":"spr_Log_Long","order":5,"path":"sprites/spr_Log_Long/spr_Log_Long.yy",},
     {"name":"spr_Log_Small","order":6,"path":"sprites/spr_Log_Small/spr_Log_Small.yy",},
+    {"name":"spr_Placeholder_Level_HUD","order":2,"path":"sprites/spr_Placeholder_Level_HUD/spr_Placeholder_Level_HUD.yy",},
+    {"name":"spr_Placeholder_Timer_HUD","order":1,"path":"sprites/spr_Placeholder_Timer_HUD/spr_Placeholder_Timer_HUD.yy",},
     {"name":"spr_Rock_Big","order":3,"path":"sprites/spr_Rock_Big/spr_Rock_Big.yy",},
     {"name":"spr_Rock_Small","order":4,"path":"sprites/spr_Rock_Small/spr_Rock_Small.yy",},
   ],
