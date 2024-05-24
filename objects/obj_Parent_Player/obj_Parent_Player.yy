@@ -42,8 +42,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_Level_Editor_Gator",
-    "path":"sprites/spr_Level_Editor_Gator/spr_Level_Editor_Gator.yy",
+    "name":"spr_Level_Editor_Croc",
+    "path":"sprites/spr_Level_Editor_Croc/spr_Level_Editor_Croc.yy",
   },
   "spriteMaskId":null,
   "visible":true,
