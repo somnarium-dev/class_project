@@ -12,6 +12,7 @@ function initialize()
 		decel_rate: 0.05,
 		max_speed: 2.5,
 		max_open_speed: 5,
+		max_reverse_speed: 1,
 		lives_remaining: 0,
 		point_total: 0,
 	}

@@ -3,7 +3,6 @@ Collision detection
 Mouth opening + speed change
 
 Movement Mechanics:
-speed up with mouth
 Have to move to turn - able to reverse
 */
 

@@ -27,7 +27,7 @@ state_machine[player_state.open] = function()
 	checkIfSwimming();
 }
 
-state_machine[player_state.eat] = function()
+state_machine[player_state.reverse] = function()
 {
 	
 }
