@@ -5,7 +5,8 @@ global.state_string.player =
 	"stand",
 	"swim",
 	"open",
-	"eat"
+	"eat",
+	"reverse"
 ]
 
 global.state_string.fish =
@@ -20,7 +21,8 @@ enum player_state
 	stand,
 	swim,
 	open,
-	eat
+	eat,
+	reverse
 }
 
 enum fish_state
