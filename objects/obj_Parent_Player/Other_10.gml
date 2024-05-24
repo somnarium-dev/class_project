@@ -44,25 +44,40 @@ handlePlayerMovementAndCollision = function()
 ///@func determineTopSpeed()
 determineTopSpeed = function()
 {
-	if (state == player_state.open)
-	{current_top_speed = global.player_1.max_open_speed;}
-	else
-	{current_top_speed = global.player_1.max_speed;}
+	switch (state)
+	{
+		case player_state.open:
+			current_top_speed = global.player_1.max_open_speed;
+			break;
+			
+		case player_state.reverse:
+			current_top_speed = global.player_1.max_reverse_speed;
+			break;
+			
+		default:
+			current_top_speed = global.player_1.max_speed;
+			break;
+	}
 }
 
 ///@func handleAcceleration()
 handleAcceleration = function()
 {
+	var accelerate_sign = input_accelerate_held - input_reverse_held;
+	var absolute_top_speed = abs(current_top_speed);
+	
 	//Acceler8
 	if (current_speed < current_top_speed)
 	{
-		var adjustment = (input_accelerate_held * global.player_1.accel_rate);
+		var adjustment = (accelerate_sign * global.player_1.accel_rate);
 		var new_speed = current_speed + adjustment;
+		var new_absolute_speed = abs(new_speed);
+		
 		
 		//Cap to top speed
-		if (new_speed > current_top_speed)
+		if (new_absolute_speed > absolute_top_speed)
 		{
-			new_speed = current_top_speed;
+			new_speed = accelerate_sign * current_top_speed;
 		}
 		
 		//Update current_speed
@@ -72,15 +87,18 @@ handleAcceleration = function()
 	//Deceler8
 	if (current_speed != 0)
 	{
+		var current_absolute_speed = abs(current_speed);
+		
 		//if player makes no directional input
 		//or player speed exceeds maximum
-		if (!input_accelerate_held)
-		|| (current_speed > current_top_speed)
+		if (accelerate_sign == 0)
+		|| (current_absolute_speed > absolute_top_speed)
 		{
 			//if player can decelerate without passing 0
-			if (current_speed > global.player_1.decel_rate)
+			if (current_absolute_speed > global.player_1.decel_rate)
 			{
-				new_speed = current_speed - global.player_1.decel_rate; //current speed reduced by adjustment amount
+				var deceleration_adjustment = (sign(current_speed) * global.player_1.decel_rate);
+				new_speed = current_speed - deceleration_adjustment; //current speed reduced by adjustment amount
 			}
 			else
 			{
@@ -102,16 +120,6 @@ handleHorizontalPixelAccumulation = function()
 	var integer_pixels = horizontal_pixels_accumulated div 1;
 	horizontal_pixels_accumulated -= integer_pixels;
 	horizontal_pixels_queued += integer_pixels;
-	
-	/*//if it's not possible to move in the queued direction,
-	//clear the variables to prevent issues
-	var h_sign = sign(horizontal_pixels_queued);
-	var next_position_blocked = place_meeting(x+h_sign, y, obj_Parent_Collision);
-	if (next_position_blocked)
-	{
-		horizontal_pixels_accumulated = 0;
-		horizontal_pixels_queued = 0;
-	}*/
 }
 
 ///@func handleVerticalPixelAccumulation()
@@ -125,16 +133,6 @@ handleVerticalPixelAccumulation = function()
 	var integer_pixels = vertical_pixels_accumulated div 1;
 	vertical_pixels_accumulated -= integer_pixels;
 	vertical_pixels_queued += integer_pixels;
-	
-	/*//if it's not possible to move in the queued direction,
-	//clear the variables to prevent issues
-	var y_sign = sign(vertical_pixels_queued);
-	var next_position_blocked = place_meeting(x, y+y_sign, obj_Parent_Collision);
-	if (next_position_blocked)
-	{
-		vertical_pixels_accumulated = 0;
-		vertical_pixels_queued = 0;
-	}*/
 }
 
 ///@func handleHorizontalMovement()

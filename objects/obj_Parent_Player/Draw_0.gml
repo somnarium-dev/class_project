@@ -18,4 +18,4 @@ draw_sprite_ext
 
 
 // Enable the section below to print the object's state to the screen.
-//draw_text(x + 16, y - 16, global.state_string.player[state]);
+draw_text(x + 16, y - 16, global.state_string.player[state]);
