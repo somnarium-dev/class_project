@@ -65,6 +65,7 @@
     {"id":{"name":"obj_Barrier_Rock_Big","path":"objects/obj_Barrier_Rock_Big/obj_Barrier_Rock_Big.yy",},},
     {"id":{"name":"obj_Barrier_Rock_Small","path":"objects/obj_Barrier_Rock_Small/obj_Barrier_Rock_Small.yy",},},
     {"id":{"name":"obj_Debris_Twig","path":"objects/obj_Debris_Twig/obj_Debris_Twig.yy",},},
+    {"id":{"name":"obj_Debug","path":"objects/obj_Debug/obj_Debug.yy",},},
     {"id":{"name":"obj_Fish_Big","path":"objects/obj_Fish_Big/obj_Fish_Big.yy",},},
     {"id":{"name":"obj_Fish_Small","path":"objects/obj_Fish_Small/obj_Fish_Small.yy",},},
     {"id":{"name":"obj_Game_HUD","path":"objects/obj_Game_HUD/obj_Game_HUD.yy",},},
