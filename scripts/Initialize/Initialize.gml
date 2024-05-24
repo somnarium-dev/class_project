@@ -4,6 +4,7 @@ function initialize()
 	global.game_tile_size = 32;
 	
 	global.current_player_instance = noone;
+	global.all_current_fish = [];
 	
 	//Define player defaults
 	global.player_1 = 
