@@ -3,6 +3,8 @@ function initialize()
 	//Meta
 	global.game_tile_size = 32;
 	
+	global.current_player_instance = noone;
+	
 	//Define player defaults
 	global.player_1 = 
 	{	
@@ -16,7 +18,14 @@ function initialize()
 		lives_remaining: 0,
 		point_total: 0,
 	}
+	
+	//Create persistent game objects
+	global.debug_manager = instance_create_layer(0,0,"System",obj_Debug);
 
+	//Debug.
+	global.debug_data_enabled = false;
+
+	//Load in-development scripts.
 	LightsenInitialize();
 	LunaInitialize();
 	MiguelInitialize();

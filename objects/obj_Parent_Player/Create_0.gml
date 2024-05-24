@@ -37,6 +37,8 @@ current_sprite = player_sprites.idle;
 state = player_state.stand;
 image_speed = 0;
 
+global.current_player_instance = id;
+
 //Controls
 input_direction = 0;
 requested_turn = 0;

@@ -80,7 +80,7 @@
     {"id":{"name":"obj_Player_1","path":"objects/obj_Player_1/obj_Player_1.yy",},},
     {"id":{"name":"croc_test","path":"rooms/croc_test/croc_test.yy",},},
     {"id":{"name":"fish_test","path":"rooms/fish_test/fish_test.yy",},},
-    {"id":{"name":"Initializer","path":"rooms/Initializer/Initializer.yy",},},
+    {"id":{"name":"initializer","path":"rooms/initializer/initializer.yy",},},
     {"id":{"name":"Enums","path":"scripts/Enums/Enums.yy",},},
     {"id":{"name":"HelpfulFunctions","path":"scripts/HelpfulFunctions/HelpfulFunctions.yy",},},
     {"id":{"name":"Initialize","path":"scripts/Initialize/Initialize.yy",},},
@@ -113,7 +113,7 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"Initializer","path":"rooms/Initializer/Initializer.yy",},},
+    {"roomId":{"name":"initializer","path":"rooms/initializer/initializer.yy",},},
     {"roomId":{"name":"fish_test","path":"rooms/fish_test/fish_test.yy",},},
     {"roomId":{"name":"croc_test","path":"rooms/croc_test/croc_test.yy",},},
   ],

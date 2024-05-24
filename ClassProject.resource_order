@@ -56,7 +56,7 @@
     {"name":"obj_Parent_Rock","order":3,"path":"objects/obj_Parent_Rock/obj_Parent_Rock.yy",},
     {"name":"croc_test","order":3,"path":"rooms/croc_test/croc_test.yy",},
     {"name":"fish_test","order":2,"path":"rooms/fish_test/fish_test.yy",},
-    {"name":"Initializer","order":1,"path":"rooms/Initializer/Initializer.yy",},
+    {"name":"initializer","order":1,"path":"rooms/initializer/initializer.yy",},
     {"name":"Enums","order":2,"path":"scripts/Enums/Enums.yy",},
     {"name":"HelpfulFunctions","order":4,"path":"scripts/HelpfulFunctions/HelpfulFunctions.yy",},
     {"name":"InputManager","order":1,"path":"scripts/InputManager/InputManager.yy",},
