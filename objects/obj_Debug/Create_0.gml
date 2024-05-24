@@ -1,1 +1,2 @@
-draw_text(32, 32, "Debug Menu")
+//Load custom methods.
+event_user(0);
