@@ -6,6 +6,7 @@ event_inherited();
 //Simulated Inputs
 ai_input_lr = 0;
 ai_input_ud = 0;
+ai_input_panic_boost = 0;
 
 ai_input_accelerate = 0;
 
