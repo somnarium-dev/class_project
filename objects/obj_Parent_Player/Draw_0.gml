@@ -1,11 +1,7 @@
 /// @description Draw.
-
-draw_self();
-
-
 draw_sprite_ext
 (
-	current_sprite,
+	sprite_index,
 	image_index,
 	x + 16,
 	y + 16,

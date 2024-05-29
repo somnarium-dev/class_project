@@ -34,7 +34,7 @@ state_machine[player_state.reverse] = function()
 
 state_machine[player_state.eat] = function()
 {
-	//handleSprite();
+	handleSprite();
 	handlePlayerMovementAndCollision();
 	
 	checkNextStateAfterEat();
@@ -64,9 +64,6 @@ checkNextStateAfterOpen = function()
 	{ 
 		state = player_state.eat;
 		start_eating = false;
-		current_sprite = spr_Croc_Eat;
-		image_index = 0;
-		image_speed = 1;
 	}	
 	else if (current_speed < 0) { state = player_state.reverse; }
 	else if (!input_open_held)

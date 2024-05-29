@@ -223,17 +223,17 @@ handleSprite = function()
 	switch (state)
 	{
 		case player_state.open:
-			current_sprite = spr_Croc_Open_Mouth;
+			sprite_index = player_sprites.open;
 			image_speed = 0;
 			break;
 	 
 		case player_state.eat:
-//			current_sprite = spr_Croc_Eat;
-//			image_speed = 1;
+			sprite_index = player_sprites.eat;
+			image_speed = 1;
 			break;
 		
 		default:
-			current_sprite = spr_Croc_Idle;
+			sprite_index = player_sprites.idle;
 			image_speed = 0;
 			break;
 	}
