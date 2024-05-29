@@ -53,6 +53,11 @@ determineTopSpeed = function()
 		case player_state.reverse:
 			current_top_speed = global.player_1.max_reverse_speed;
 			break;
+		
+		//Do not allow acceleration when eating
+		case player_state.eat:
+			current_top_speed = 0;
+			break;
 			
 		default:
 			current_top_speed = global.player_1.max_speed;
@@ -210,12 +215,28 @@ handleVerticalMovement = function()
 	}
 }
 
+
 //Handle Sprites
 ///@func handleSprite()
 handleSprite = function()
 {
-	if (state == player_state.open) {current_sprite = spr_Croc_Open_Mouth;}
-	else {current_sprite = spr_Croc_Idle;}
+	switch (state)
+	{
+		case player_state.open:
+			current_sprite = spr_Croc_Open_Mouth;
+			image_speed = 0;
+			break;
+	 
+		case player_state.eat:
+//			current_sprite = spr_Croc_Eat;
+//			image_speed = 1;
+			break;
+		
+		default:
+			current_sprite = spr_Croc_Idle;
+			image_speed = 0;
+			break;
+	}
 }
 
 //Handle Direction

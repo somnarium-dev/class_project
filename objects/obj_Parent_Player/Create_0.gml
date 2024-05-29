@@ -33,6 +33,10 @@ player_sprites =
 
 current_sprite = player_sprites.idle;
 
+//State control flags
+start_eating = false;
+finished_eating = false;
+
 //Initialize
 state = player_state.stand;
 image_speed = 0;
