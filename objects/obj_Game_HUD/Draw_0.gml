@@ -7,3 +7,7 @@ var y_offset = y+10;
 draw_sprite_stretched(spr_Placeholder_Points_HUD,-1, x_offset, y_offset, 64, 64);
 draw_sprite_stretched(spr_Placeholder_Timer_HUD, -1, room_width-74, y_offset, 64, 64);
 draw_sprite(spr_Placeholder_Level_HUD, -1, x_offset, room_height-42);
+
+draw_set_color(c_red);
+draw_text(room_width-52, y_offset+20, ceil(string(timer/room_speed)));
+draw_set_color(c_white);
