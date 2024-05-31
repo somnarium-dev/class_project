@@ -19,8 +19,8 @@
     "path":"folders/Objects/- Parents.yy",
   },
   "parentObjectId":{
-    "name":"obj_Parent_Lvlobject",
-    "path":"objects/obj_Parent_Lvlobject/obj_Parent_Lvlobject.yy",
+    "name":"obj_Parent_Level_Object",
+    "path":"objects/obj_Parent_Level_Object/obj_Parent_Level_Object.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -39,6 +39,7 @@
     {"$GMObjectProperty":"v1","%Name":"sprite_idle","filters":[],"listItems":[],"multiselect":false,"name":"sprite_idle","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"spr_Croc_Idle","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"sprite_open","filters":[],"listItems":[],"multiselect":false,"name":"sprite_open","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"spr_Croc_Open_Mouth","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"sprite_eat","filters":[],"listItems":[],"multiselect":false,"name":"sprite_eat","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"spr_Croc_Eat","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"player_index","filters":[],"listItems":[],"multiselect":false,"name":"player_index","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
@@ -47,6 +48,9 @@
     "name":"spr_Level_Editor_Croc",
     "path":"sprites/spr_Level_Editor_Croc/spr_Level_Editor_Croc.yy",
   },
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"spr_Level_Editor_Croc",
+    "path":"sprites/spr_Level_Editor_Croc/spr_Level_Editor_Croc.yy",
+  },
   "visible":true,
 }

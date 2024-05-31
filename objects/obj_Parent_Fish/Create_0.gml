@@ -24,8 +24,7 @@ current_top_speed = max_swim_speed;
 
 //set danger range
 if (danger_range < 0)
-{ individual_danger_range = global.Fish.danger_range; }
-danger_range = individual_danger_range;
+{ danger_range = global.fish_default.danger_range; }
 
 //internal properties
 direction = initial_direction;

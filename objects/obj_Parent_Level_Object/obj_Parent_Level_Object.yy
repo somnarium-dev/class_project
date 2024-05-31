@@ -1,11 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"obj_Parent_Lvlobject",
+  "%Name":"obj_Parent_Level_Object",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_Parent_Lvlobject",
+  "name":"obj_Parent_Level_Object",
   "overriddenProperties":[],
   "parent":{
     "name":"- Parents",

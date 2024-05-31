@@ -164,7 +164,7 @@ handleHorizontalMovement = function()
 		var next_position_blocked = place_meeting(x+adjustment, y, obj_Parent_Collision);
 		
 		if (next_position_blocked)
-		{
+		{		
 			horizontal_pixels_accumulated = 0;
 			horizontal_pixels_queued = 0;
 			current_speed = 0;

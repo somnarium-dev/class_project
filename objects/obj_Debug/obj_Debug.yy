@@ -11,8 +11,8 @@
   "name":"obj_Debug",
   "overriddenProperties":[],
   "parent":{
-    "name":"- Lightsen",
-    "path":"folders/Objects/- Lightsen.yy",
+    "name":"- System",
+    "path":"folders/Objects/- System.yy",
   },
   "parentObjectId":null,
   "persistent":true,

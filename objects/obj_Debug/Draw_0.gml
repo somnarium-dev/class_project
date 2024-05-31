@@ -15,4 +15,4 @@ displayStateOfAllFish();
 displayBehaviorOfAllFish();
 
 //Show Fish panic trigger range around Croc.
-displayCrocodileDangerRange();
+displayCrocodileDangerRanges();

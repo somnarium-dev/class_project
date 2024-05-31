@@ -3,13 +3,15 @@
 ///@func displayCrocodileCurrentSpeed()
 displayCrocodileCurrentSpeed = function()
 {
-	if (global.current_player_instance != noone)
-	&& (instance_exists(global.current_player_instance))
+	if (global.player_1.current_id != noone)
+	&& (instance_exists(global.player_1.current_id))
 	{
+		var target_id = global.player_1.current_id;
+		
 		//Offset by 16 on x and y to improve data display.
-		var this_x = global.current_player_instance.x + 16;
-		var this_y = global.current_player_instance.y - 32;
-		var this_current_speed = global.current_player_instance.current_speed;
+		var this_x = target_id.x + 16;
+		var this_y = target_id.y - 32;
+		var this_current_speed = target_id.current_speed;
 	
 		draw_text(this_x, this_y, $"{this_current_speed}");
 	}
@@ -18,32 +20,61 @@ displayCrocodileCurrentSpeed = function()
 ///@func displayCrocodileCurrentState()
 displayCrocodileCurrentState = function()
 {
-	if (global.current_player_instance != noone)
-	&& (instance_exists(global.current_player_instance))
+	if (global.player_1.current_id != noone)
+	&& (instance_exists(global.player_1.current_id))
 	{
+		var target_id = global.player_1.current_id;
+		
 		//Offset by 16 on x and y to improve data display.
-		var this_x = global.current_player_instance.x + 16;
-		var this_y = global.current_player_instance.y - 16;
-		var this_current_state = global.current_player_instance.state;
+		var this_x = target_id.x + 16;
+		var this_y = target_id.y - 16;
+		var this_current_state = target_id.state;
 		var this_current_state_string = global.state_string.player[this_current_state];
 	
 		draw_text_color(this_x, this_y, $"{this_current_state_string}", c_blue, c_blue, c_blue, c_blue, 1);
 	}
 } 
 
-///@func displayCrocodileDangerRange()
-displayCrocodileDangerRange = function()
+///@func displayCrocodileDangerRanges()
+displayCrocodileDangerRanges = function()
 {
-		//If there are no fish, we're done.
+	//If there are no fish, we're done.
 	if (!instance_exists(obj_Parent_Fish))
 	{ exit; }
 	
-	if (global.current_player_instance != noone)
-	&& (instance_exists(global.current_player_instance))
+	if (global.player_1.current_id != noone)
+	&& (instance_exists(global.player_1.current_id))
 	{
-		var danger_range = global.Fish.danger_range;
-		var danger_range_offset = 16;
-		draw_circle_color(global.current_player_instance.x + danger_range_offset, global.current_player_instance.y + danger_range_offset, danger_range, c_red, c_red, true)
+		var target_id = global.player_1.current_id;
+		
+		var danger_ranges = [];
+		
+		var number_of_fish = array_length(global.all_current_fish);
+		
+		var draw_offset = 16;
+		
+		var draw_x = target_id.x + draw_offset;
+		var draw_y = target_id.y + draw_offset;
+		
+		for (var i = 0; i < number_of_fish; i++)
+		{
+			var this_danger_range = global.all_current_fish[i].danger_range;
+			
+			var is_unique_range = !array_contains(danger_ranges, this_danger_range);
+			
+			if (is_unique_range)
+			{
+				draw_circle_color
+				(
+					draw_x,
+					draw_y,
+					this_danger_range,
+					c_red,
+					c_red,
+					true
+				);
+			}
+		}
 	}
 }
 

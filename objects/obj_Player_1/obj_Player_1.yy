@@ -34,6 +34,9 @@
     "name":"spr_Level_Editor_Croc",
     "path":"sprites/spr_Level_Editor_Croc/spr_Level_Editor_Croc.yy",
   },
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"spr_Level_Editor_Croc",
+    "path":"sprites/spr_Level_Editor_Croc/spr_Level_Editor_Croc.yy",
+  },
   "visible":true,
 }
