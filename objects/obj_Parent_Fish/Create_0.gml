@@ -6,6 +6,7 @@ event_inherited();
 //Simulated Inputs
 ai_input_lr = 0;
 ai_input_ud = 0;
+ai_input_panic_boost = 0;
 
 ai_input_accelerate = 0;
 
@@ -20,6 +21,11 @@ current_speed = 0;
 
 //stats
 current_top_speed = max_swim_speed;
+
+//set danger range
+if (danger_range < 0)
+{ individual_danger_range = global.Fish.danger_range; }
+danger_range = individual_danger_range;
 
 //internal properties
 direction = initial_direction;

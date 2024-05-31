@@ -2,4 +2,10 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function LightsenInitialize(){
 
+	//Define Fish defaults
+	global.Fish = 
+	{	
+		danger_range: 64,
+	}
+
 }

@@ -13,6 +13,13 @@ global.state_string.fish =
 [	
 	"still",
 	"swim",
+]
+
+global.behavior_string={};
+
+global.behavior_string.fish =
+[	
+	"roaming",
 	"panic"
 ]
 
@@ -28,11 +35,11 @@ enum player_state
 enum fish_state
 {	
 	still,
-	swim,
-	panic
+	swim
 }
 
 enum fish_behavior
 {
-	roaming
+	roaming,
+	panic
 }
