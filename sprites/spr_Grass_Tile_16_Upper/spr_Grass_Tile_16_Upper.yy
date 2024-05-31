@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"- Lightsen",
-    "path":"folders/Sprites/- Lightsen.yy",
+    "name":"Tile Sets",
+    "path":"folders/Sprites/Tile Sets.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

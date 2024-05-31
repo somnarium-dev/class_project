@@ -1,4 +1,5 @@
 /// @description Draw.
+
 draw_sprite_ext
 (
 	sprite_index,
@@ -11,7 +12,3 @@ draw_sprite_ext
 	image_blend,
 	image_alpha
 );
-
-
-// Enable the section below to print the object's state to the screen.
-draw_text(x + 16, y - 16, global.state_string.player[state]);

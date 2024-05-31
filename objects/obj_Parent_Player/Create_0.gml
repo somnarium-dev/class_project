@@ -41,7 +41,12 @@ finished_eating = false;
 state = player_state.stand;
 image_speed = 0;
 
-global.current_player_instance = id;
+switch (player_index)
+{
+	case 1:
+		global.player_1.current_id = id;
+		break;
+}
 
 //Controls
 input_direction = 0;
