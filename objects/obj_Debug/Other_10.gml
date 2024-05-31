@@ -13,27 +13,39 @@ displayCrocodileCurrentSpeed = function()
 	
 		draw_text(this_x, this_y, $"{this_current_speed}");
 	}
-}
-
-// needs fixed below 
+} 
 
 ///@func displayCrocodileCurrentState()
-/*displayCrocodileCurrentState = function()
+displayCrocodileCurrentState = function()
 {
 	if (global.current_player_instance != noone)
 	&& (instance_exists(global.current_player_instance))
 	{
 		//Offset by 16 on x and y to improve data display.
 		var this_x = global.current_player_instance.x + 16;
-		var this_y = global.current_player_instance.y - 32;
-		var this_current_state = global.player_1.state;
+		var this_y = global.current_player_instance.y - 16;
+		var this_current_state = global.current_player_instance.state;
 		var this_current_state_string = global.state_string.player[this_current_state];
 	
-		draw_text_color(this_x, this_y, $"{this_current_state}", c_blue, c_blue, c_blue, c_blue, 1);
+		draw_text_color(this_x, this_y, $"{this_current_state_string}", c_blue, c_blue, c_blue, c_blue, 1);
 	}
-} */
+} 
 
-//draw_text(x + 16, y - 16, global.state_string.player[state]);
+///@func displayCrocodileDangerRange()
+displayCrocodileDangerRange = function()
+{
+		//If there are no fish, we're done.
+	if (!instance_exists(obj_Parent_Fish))
+	{ exit; }
+	
+	if (global.current_player_instance != noone)
+	&& (instance_exists(global.current_player_instance))
+	{
+		var danger_range = global.Fish.danger_range;
+		var danger_range_offset = 16;
+		draw_circle_color(global.current_player_instance.x + danger_range_offset, global.current_player_instance.y + danger_range_offset, danger_range, c_red, c_red, true)
+	}
+}
 
 ///@func updateArrayOfAllFish()
 updateArrayOfAllFish = function()
