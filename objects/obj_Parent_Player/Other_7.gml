@@ -1,0 +1,1 @@
+if (sprite_index == player_sprites.eat) { finished_eating = true; }

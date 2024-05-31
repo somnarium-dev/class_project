@@ -31,7 +31,11 @@ player_sprites =
 	eat: sprite_eat
 }
 
-current_sprite = player_sprites.idle;
+sprite_index = player_sprites.idle;
+
+//State control flags
+start_eating = false;
+finished_eating = false;
 
 //Initialize
 state = player_state.stand;
