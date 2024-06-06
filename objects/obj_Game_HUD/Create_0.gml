@@ -12,9 +12,10 @@ standard_margin = 10;
 standard_x_offset = standard_margin;
 standard_y_offset = standard_margin;
 
-points_x = x + standard_x_offset;
-points_y = y + standard_y_offset;
+// points display properties
+updatePointsIndicatorPosition();
 
+// timer display properties
 timer_x = room_width - sprite_get_width(spr_timer) - standard_x_offset;
 timer_y = y + standard_y_offset;
 
@@ -24,8 +25,8 @@ timer_string_height = 0;
 timer_value_x = timer_x + (sprite_get_width(spr_timer) / 2) - timer_string_width;
 timer_value_y = timer_y + (sprite_get_height(spr_timer) / 2) - timer_string_height;
 
-level_x = x + standard_x_offset;
-level_y = room_height - sprite_get_height(spr_level_indicator) - standard_y_offset;
+// level value display properties
+setLevelIndicatorPositionAndScale();
 
 //Internal functionality.
 global.time_remaining = room_time_limit;

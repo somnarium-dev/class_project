@@ -1,1 +1,2 @@
 updateTimeRemaining();
+updatePointsIndicatorPosition();

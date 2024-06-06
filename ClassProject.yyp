@@ -60,6 +60,8 @@
   },
   "name":"ClassProject",
   "resources":[
+    {"id":{"name":"Default_Font","path":"fonts/Default_Font/Default_Font.yy",},},
+    {"id":{"name":"Standard_Font","path":"fonts/Standard_Font/Standard_Font.yy",},},
     {"id":{"name":"obj_Barrier_Log_Long","path":"objects/obj_Barrier_Log_Long/obj_Barrier_Log_Long.yy",},},
     {"id":{"name":"obj_Barrier_Log_Small","path":"objects/obj_Barrier_Log_Small/obj_Barrier_Log_Small.yy",},},
     {"id":{"name":"obj_Barrier_Rock_Big","path":"objects/obj_Barrier_Rock_Big/obj_Barrier_Rock_Big.yy",},},
