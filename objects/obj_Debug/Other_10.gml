@@ -1,5 +1,34 @@
 ///@desc Custom Methods
 
+///@func takeDebugInput()
+takeDebugInput = function()
+{
+	//Listen for debug commands when the control key is held down.
+	if (keyboard_check(vk_control))
+	{
+		//[G]: Toggle display of debug data.
+		if (keyboard_check_pressed(ord("G")))
+		{ global.debug_data_enabled = !global.debug_data_enabled; }
+	
+		//[OTHER KEY]: Other thing.
+		//Stuff.
+	
+		//[F]: Respawn both fish.	
+		if (keyboard_check_pressed(ord("F")))
+		{
+			instance_create_layer(512, 288, "Instances", obj_Fish_Big);
+			instance_create_layer(192, 192, "Instances", obj_Fish_Small);
+		}
+		
+		//[T]: Empty Timer instantly.
+		if (keyboard_check_pressed(ord("T")))
+		{ 
+			if (global.level_manager.state == 1) //level in progress
+			{ global.time_remaining = 0; } 
+		}
+	}
+}
+
 ///@func displayCrocodileCurrentSpeed()
 displayCrocodileCurrentSpeed = function()
 {
