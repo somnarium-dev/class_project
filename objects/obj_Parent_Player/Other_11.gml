@@ -40,6 +40,14 @@ state_machine[player_state.eat] = function()
 	checkNextStateAfterEat();
 }
 
+state_machine[player_state.stun] = function()
+{
+	handleSprite();
+	handlePlayerMovementAndCollision();
+	
+	checkNextStateAfterStun();
+}
+
 //Transition functions
 ///@func checkNextStateAfterStanding()
 checkNextStateAfterStanding = function()
@@ -60,11 +68,16 @@ checkNextStateAfterSwimming = function()
 ///@func checkNextStateAfterOpen()
 checkNextStateAfterOpen = function()
 {
-	if (start_eating)
+	if (eat_state_requested)
 	{ 
 		state = player_state.eat;
-		start_eating = false;
-	}	
+		eat_state_requested = false;
+	}
+	else if (stun_state_requested)
+	{
+		state = player_state.stun;
+		stun_state_requested = false;
+	}
 	else if (current_speed < 0) { state = player_state.reverse; }
 	else if (!input_open_held)
 	{
@@ -83,9 +96,19 @@ checkNextStateAfterReverse = function()
 ///@func checkNextStateAfterEat()
 checkNextStateAfterEat = function()
 {
-	if (finished_eating)
+	if (eat_state_completed)
 	{
 		state = player_state.stand;
-		finished_eating = false;
+		eat_state_completed = false;
+	}
+}
+
+///@func checkNextStateAfterStun()
+checkNextStateAfterStun = function()
+{
+	if (stun_state_completed)
+	{
+		state = player_state.stand;
+		stun_state_completed = false;
 	}
 }
