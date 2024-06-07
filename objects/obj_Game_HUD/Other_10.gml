@@ -24,19 +24,23 @@ updateTimerDisplayProperties = function()
 {
 	draw_set_font(Standard_Font);
 	
-	timer_string_width = string_width(string_time_remaining);
-	timer_string_height = string_height(string_time_remaining);
-
-	//Center the display position of the timer's current value within the timer sprite.
-	timer_value_x = timer_x;
-	timer_value_x += (sprite_get_width(spr_timer) / 2); // Get half of the timer sprite's width.
-	timer_value_x -= (timer_string_width) / 2; // Move back by half of the width of the value string.
-	timer_value_x = floor(timer_value_x); // Only draw to integer positions.
+	var timer_string =
+	{
+		full_width: string_width(string_time_remaining),
+		full_height: string_height(string_time_remaining),
+		scaled_width: 0,
+		scaled_height: 0
+	}
 	
-	timer_value_y = timer_y;
-	timer_value_y += (sprite_get_height(spr_timer) / 2); // Get half of the timer sprite's height.
-	timer_value_y -= (timer_string_height) / 2; // Move upward by half of the height of the value string.
-	timer_value_y = floor(timer_value_y); // Only draw to integer positions.
+	var sprite_width_less_margins = timer_sprite_width - (print_margin_timer * 2);
+	
+	timer_text_scale = scaleDownToFitValue(sprite_width_less_margins, timer_string.full_width);
+	
+	timer_string.scaled_width = timer_string.full_width * timer_text_scale;
+	timer_string.scaled_height = timer_string.full_height * timer_text_scale;
+	
+	timer_value_x = centerWithinSpace(timer_x, timer_sprite_width, timer_string.scaled_width);
+	timer_value_y = centerWithinSpace(timer_y, timer_sprite_height, timer_string.scaled_height);
 	
 	draw_set_font(Default_Font);
 }
@@ -45,43 +49,26 @@ updateTimerDisplayProperties = function()
 setLevelIndicatorPositionAndScale = function()
 {
 	draw_set_font(Standard_Font);
-	// the box for displaying the level indicator has a width x
-	// the width of the level display in pixels is y
-	// z = x/y
-	// if y exceeds x, multiply y by z
-	
-	/*
-	x = 100
-	y = 120
-	z = ?
-	
-	y * z = x
-	*/
+
 	string_level_value = string_concat("Level ", global.current_level);
 	
-	var level_sprite_width = sprite_get_width(spr_level_indicator);
-	var level_sprite_height = sprite_get_height(spr_level_indicator);
+	var level_string =
+	{
+		full_width: string_width(string_level_value),
+		full_height: string_height(string_level_value),
+		scaled_width: 0,
+		scaled_height: 0
+	}
 	
-	var level_display_width = string_width(string_level_value);
-	var level_display_height = string_height(string_level_value);
+	var sprite_width_less_margins = level_sprite_width - (print_margin_level * 2);
 	
-	var display_width = level_sprite_width - (print_margin * 2);
+	level_text_scale = scaleDownToFitValue(sprite_width_less_margins, level_string.full_width);
 	
-	var new_text_scale = floor((display_width / level_display_width) * 100) / 100;
+	level_string.scaled_width = level_string.full_width * level_text_scale;
+	level_string.scaled_height = level_string.full_height * level_text_scale;
 	
-	level_text_scale = min(1, new_text_scale);
-	
-	level_x = x + standard_x_offset;
-	level_y = room_height - sprite_get_height(spr_level_indicator) - standard_y_offset;
-
-	level_value_x = level_x + level_sprite_width / 2;
-	level_value_y = level_y + level_sprite_height / 2;
-	
-	level_value_x -= (level_display_width * level_text_scale) / 2;
-	level_value_y -= (level_display_height * level_text_scale) / 2;
-	
-	level_value_x = floor(level_value_x);
-	level_value_y = floor(level_value_y);
+	level_value_x = centerWithinSpace(level_x, level_sprite_width, level_string.scaled_width);
+	level_value_y = centerWithinSpace(level_y, level_sprite_height, level_string.scaled_height);
 	
 	draw_set_font(Default_Font);
 }
@@ -91,16 +78,34 @@ updatePointsIndicatorPosition = function()
 {
 	draw_set_font(Standard_Font);
 	
-	points_x = x + standard_x_offset;
-	points_y = y + standard_y_offset;
+	var point_total = string(global.player_1.point_total);
 	
-	points_string = string(global.player_1.point_total);
+	var points_string =
+	{
+		full_width: string_width(point_total),
+		full_height: string_height(point_total),
+		scaled_width: 0,
+		scaled_height: 0
+	}
 	
-	points_string_width = string_width(points_string);
-	points_string_height = string_height(points_string);
-
-	points_value_x = points_x + (sprite_get_width(spr_points)/2) - (points_string_width / 2);
-	points_value_y = points_y + (sprite_get_height(spr_points)/2) - (points_string_height / 2);
+	// The font scaling is only handled on the horizontal axis.
+	// Because of this, a single digit will hit the top and bottom of the sprite even with a margin.
+	// To fix this, scaling would need to account for width and height, and take the lesser of the two.
+	// This will require a bit of overhaul, and should be handled as a low priority task.
+	
+	// - Bianka 2024.06.07
+	var sprite_width_less_margins = points_sprite_width - (print_margin_timer * 2);
+	
+	// Interim Fix / Kludge: Flat scale down of 20%.
+	sprite_width_less_margins *= .8;
+	
+	points_text_scale = scaleDownToFitValue(sprite_width_less_margins, points_string.full_width);
+	
+	points_string.scaled_width = points_string.full_width * points_text_scale;
+	points_string.scaled_height = points_string.full_height * points_text_scale;
+	
+	points_value_x = centerWithinSpace(points_x, points_sprite_width, points_string.scaled_width);
+	points_value_y = centerWithinSpace(points_y, points_sprite_height, points_string.scaled_height);
 	
 	draw_set_font(Default_Font);
 }
@@ -108,24 +113,21 @@ updatePointsIndicatorPosition = function()
 ///@func drawGameHUD()
 drawGameHUD = function()
 {
-	draw_sprite(spr_points, 0, points_x, points_y);
-	draw_sprite(spr_timer, 0, timer_x, timer_y);
-	draw_sprite(spr_level_indicator, 0, level_x, level_y);
+	// Draw sprites.
+	draw_sprite(sprite_points, 0, points_x, points_y); // Points.
+	draw_sprite(sprite_timer, 0, timer_x, timer_y); // Timer.
+	draw_sprite(sprite_level, 0, level_x, level_y); // Level.
 
-	// text drawing settings
+	// Adjust draw settings.
 	draw_set_font(Standard_Font);
 	draw_set_color(c_black);
 
-	// draw timer value
-	draw_text(timer_value_x, timer_value_y, string_time_remaining);
+	// Draw values.
+	draw_text_transformed(points_value_x, points_value_y, global.player_1.point_total, points_text_scale, points_text_scale, 0); // Points.
+	draw_text_transformed(timer_value_x, timer_value_y, string_time_remaining, timer_text_scale, timer_text_scale, 0); // Timer.
+	draw_text_transformed(level_value_x, level_value_y, string_level_value, level_text_scale, level_text_scale, 0); // Level.
 	
-	// draw points value
-	draw_text(points_value_x, points_value_y, global.player_1.point_total);
-	
-	// draw level value
-	draw_text_transformed(level_value_x, level_value_y, string_level_value, level_text_scale, level_text_scale, 0);
-	
-	// reset text drawing settings to defaults
+	// Reset text drawing settings to defaults.
 	draw_set_font(Default_Font);
 	draw_set_color(c_white);
 }

@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"- Lightsen",
-    "path":"folders/Sprites/- Lightsen.yy",
+    "name":"Frog",
+    "path":"folders/Sprites/Interactable/Consumable/Frog.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

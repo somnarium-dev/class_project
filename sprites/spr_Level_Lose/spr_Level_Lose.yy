@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"- Lightsen",
-    "path":"folders/Sprites/- Lightsen.yy",
+    "name":"Screen Space Effects",
+    "path":"folders/Sprites/Effects/Screen Space Effects.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
