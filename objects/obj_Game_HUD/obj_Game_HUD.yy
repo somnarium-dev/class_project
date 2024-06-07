@@ -30,6 +30,9 @@
   "physicsStartAwake":true,
   "properties":[
     {"$GMObjectProperty":"v1","%Name":"room_time_limit","filters":[],"listItems":[],"multiselect":false,"name":"room_time_limit","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"-1","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"level_text_scale","filters":[],"listItems":[],"multiselect":false,"name":"level_text_scale","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"score_text_scale","filters":[],"listItems":[],"multiselect":false,"name":"score_text_scale","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"print_margin","filters":[],"listItems":[],"multiselect":false,"name":"print_margin","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"4","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
