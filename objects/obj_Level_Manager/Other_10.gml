@@ -41,15 +41,8 @@ checkLevelCompletion = function()
 		}
 	}
 
-	if (level_is_complete)
-	{
-		state = 2;
-	}
-	
-	else if (level_is_failed) 
-	{
-		state = 3;
-	}
+	if (level_is_complete) { state = level_state.complete; }
+	else if (level_is_failed) { state = level_state.failed; }
 }
 
 ///@func handleLevelCompletion()
@@ -65,7 +58,7 @@ handleLevelCompletion = function()
 	//room_goto(next_level); not yet implemented.
 	room_goto(room);
 	
-	state = 0;
+	state = level_state.loading;
 }
 
 ///@func handleLevelFailure()

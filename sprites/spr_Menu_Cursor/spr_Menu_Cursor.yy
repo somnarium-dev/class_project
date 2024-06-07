@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"- Lightsen",
-    "path":"folders/Sprites/- Lightsen.yy",
+    "name":"HUD",
+    "path":"folders/Sprites/HUD.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

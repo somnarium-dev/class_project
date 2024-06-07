@@ -7,6 +7,8 @@ function initialize()
 	global.all_current_fish = [];
 	
 	//Game definitions.
+	global.current_level = 1;
+	
 	global.standard_time_limit_in_seconds = 60;
 	global.standard_time_limit = global.game_fps * global.standard_time_limit_in_seconds; //One minute.
 	global.time_remaining = 0;
@@ -15,6 +17,9 @@ function initialize()
 	{	
 		danger_range: 64,
 	}
+	
+	//Load game data.
+	loadAllLevelData();
 	
 	//Define player defaults
 	global.player_1 = 
@@ -31,6 +36,7 @@ function initialize()
 	}
 	
 	//Create persistent game objects
+	global.level_manager = instance_create_layer(0, 0, "System", obj_Level_Manager);
 	global.debug_manager = instance_create_layer(0, 0, "System", obj_Debug);
 
 	//Debug.

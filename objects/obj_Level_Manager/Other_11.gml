@@ -2,31 +2,27 @@
 
 state_machine = [];
 
-// loading
-state_machine[0] = function()
+// Loading
+state_machine[level_state.loading] = function()
 {
 	loadLevelData();
 	createHUD();
 	
-	state = 1;
+	state = level_state.in_progress;
 }
-// level in progress
-state_machine[1] = function()
-{
-	checkLevelCompletion();
-}
-// level complete
-state_machine[2] = function()
-{
-	handleLevelCompletion();
-}
-// level failed
-state_machine[3] = function()
-{
-	handleLevelFailure();
-}
-// level paused
-state_machine[4] = function()
-{
-	
-}
+
+// Level In Progress
+state_machine[level_state.in_progress] = function()
+{ checkLevelCompletion(); }
+
+// Level Complete
+state_machine[level_state.complete] = function()
+{ handleLevelCompletion(); }
+
+// Level Failed
+state_machine[level_state.failed] = function()
+{ handleLevelFailure(); }
+
+// Level Paused
+state_machine[level_state.paused] = function()
+{ /*Do Nothing*/ }

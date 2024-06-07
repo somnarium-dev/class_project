@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"- Lightsen",
-    "path":"folders/Sprites/- Lightsen.yy",
+    "name":"Points Awarded",
+    "path":"folders/Sprites/Effects/Points Awarded.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
