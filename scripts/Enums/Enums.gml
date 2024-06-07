@@ -6,13 +6,15 @@ global.state_string.player =
 	"swim",
 	"open",
 	"eat",
-	"reverse"
+	"reverse",
+	"stun"
 ]
 
 global.state_string.fish =
 [	
 	"still",
 	"swim",
+	"eaten"
 ]
 
 global.behavior_string={};
@@ -23,23 +25,39 @@ global.behavior_string.fish =
 	"panic"
 ]
 
+global.state_string.twig =
+[
+	"still",
+	"move",
+	"eaten"
+]
+
 enum player_state
 {	
 	stand,
 	swim,
 	open,
 	eat,
-	reverse
+	reverse,
+	stun
 }
 
 enum fish_state
 {	
 	still,
-	swim
+	swim,
+	eaten
 }
 
 enum fish_behavior
 {
 	roaming,
 	panic
+}
+
+enum twig_state
+{
+	still,
+	move,
+	eaten
 }

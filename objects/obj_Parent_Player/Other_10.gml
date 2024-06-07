@@ -59,6 +59,16 @@ determineTopSpeed = function()
 			current_top_speed = 0;
 			break;
 			
+		//Stun player if eat a twig
+		case player_state.stun:
+			current_top_speed = 0;
+			current_speed = 0;
+			horizontal_pixels_accumulated = 0;
+			vertical_pixels_accumulated = 0;
+			horizontal_pixels_queued = 0;
+			vertical_pixels_queued = 0;
+			break;
+			
 		default:
 			current_top_speed = global.player_1.max_speed;
 			break;
@@ -228,6 +238,11 @@ handleSprite = function()
 			break;
 	 
 		case player_state.eat:
+			sprite_index = player_sprites.eat;
+			image_speed = 1;
+			break;
+			
+		case player_state.stun:
 			sprite_index = player_sprites.eat;
 			image_speed = 1;
 			break;

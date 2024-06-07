@@ -1,4 +1,7 @@
 /// @description Draw.
+var draw_color = c_white;
+
+if (state == player_state.stun) { draw_color = c_red; }
 
 draw_sprite_ext
 (
@@ -9,6 +12,6 @@ draw_sprite_ext
 	image_xscale,
 	image_yscale,
 	direction,
-	image_blend,
+	draw_color,
 	image_alpha
 );
