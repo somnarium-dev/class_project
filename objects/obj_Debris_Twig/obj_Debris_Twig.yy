@@ -4,7 +4,11 @@
   "eventList":[],
   "managed":true,
   "name":"obj_Debris_Twig",
-  "overriddenProperties":[],
+  "overriddenProperties":[
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_Parent_Debris","path":"objects/obj_Parent_Debris/obj_Parent_Debris.yy",},"propertyId":{"name":"sprite_still","path":"objects/obj_Parent_Debris/obj_Parent_Debris.yy",},"resource":{"name":"spr_Debris_Twig","path":"sprites/spr_Debris_Twig/spr_Debris_Twig.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"spr_Debris_Twig",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_Parent_Debris","path":"objects/obj_Parent_Debris/obj_Parent_Debris.yy",},"propertyId":{"name":"sprite_move","path":"objects/obj_Parent_Debris/obj_Parent_Debris.yy",},"resource":{"name":"spr_Debris_Twig","path":"sprites/spr_Debris_Twig/spr_Debris_Twig.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"spr_Debris_Twig",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_Parent_Debris","path":"objects/obj_Parent_Debris/obj_Parent_Debris.yy",},"propertyId":{"name":"sprite_eaten","path":"objects/obj_Parent_Debris/obj_Parent_Debris.yy",},"resource":{"name":"spr_Debris_Twig","path":"sprites/spr_Debris_Twig/spr_Debris_Twig.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"spr_Debris_Twig",},
+  ],
   "parent":{
     "name":"Debris",
     "path":"folders/Objects/Debris.yy",
