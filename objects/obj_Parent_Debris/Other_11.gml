@@ -34,7 +34,7 @@ checkNextStateAfterStill = function()
 }
 
 ///@func checkNextStateAfterMove()
-checkNextStateAfterMove() = function()
+checkNextStateAfterMove = function()
 {
 	if (current_speed == 0) { state = twig_state.still; }
 	else if (eaten_state_requested) 
