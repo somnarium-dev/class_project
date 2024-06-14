@@ -37,7 +37,7 @@ function initialize()
 	
 	//Create persistent game objects
 	global.level_manager = instance_create_layer(0, 0, "System", obj_Level_Manager);
-	global.debug_manager = instance_create_layer(0, 0, "System", obj_Debug);
+	global.debug_manager = instance_create_layer(0, 0, "System", obj_Debug_Manager);
 
 	//Debug.
 	global.debug_data_enabled = false;

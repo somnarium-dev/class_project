@@ -35,8 +35,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"- Lightsen",
-    "path":"folders/Sprites/- Lightsen.yy",
+    "name":"Player Character",
+    "path":"folders/Sprites/Player Character.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
