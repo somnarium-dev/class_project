@@ -26,6 +26,14 @@ takeDebugInput = function()
 			if (global.level_manager.state == 1) //level in progress
 			{ global.time_remaining = 0; } 
 		}
+		
+		//[P]: Add 1 point to the points total.
+		if (keyboard_check_pressed(ord("P")))
+		{ 
+			if (global.level_manager.state == 1) //level in progress
+			{ increaseScore(1) } 
+		}
+		
 	}
 }
 

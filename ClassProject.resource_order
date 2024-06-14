@@ -72,6 +72,7 @@
     {"name":"spr_Croc_Idle","order":1,"path":"sprites/spr_Croc_Idle/spr_Croc_Idle.yy",},
     {"name":"spr_Croc_Open_Mouth","order":1,"path":"sprites/spr_Croc_Open_Mouth/spr_Croc_Open_Mouth.yy",},
     {"name":"spr_Debris_Twig","order":7,"path":"sprites/spr_Debris_Twig/spr_Debris_Twig.yy",},
+    {"name":"spr_Dragonfly","order":1,"path":"sprites/spr_Dragonfly/spr_Dragonfly.yy",},
     {"name":"spr_Fish_Catfish","order":2,"path":"sprites/spr_Fish_Catfish/spr_Fish_Catfish.yy",},
     {"name":"spr_Fish_Small","order":1,"path":"sprites/spr_Fish_Small/spr_Fish_Small.yy",},
     {"name":"spr_Frog_Land_2","order":1,"path":"sprites/spr_Frog_Land_2/spr_Frog_Land_2.yy",},
