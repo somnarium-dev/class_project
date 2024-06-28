@@ -18,7 +18,7 @@ takeDebugInput = function()
 		{
 			instance_create_layer(512, 288, "Instances", obj_Fish_Big);
 			instance_create_layer(192, 192, "Instances", obj_Fish_Small);
-			//instance_create_layer(480, 96, "Instances", obj_Frog);
+			instance_create_layer(480, 96, "Instances", obj_Frog);
 		}
 		
 		//[T]: Empty Timer instantly.
@@ -34,6 +34,10 @@ takeDebugInput = function()
 			if (global.level_manager.state == 1) //level in progress
 			{ increaseScore(1) } 
 		}
+		
+		//[TAB]: Restart the game.
+		if (keyboard_check_pressed(vk_tab))
+		{ game_restart(); }
 		
 	}
 }
@@ -87,7 +91,7 @@ displayCrocodileDangerRanges = function()
 		
 		var danger_ranges = [];
 		
-		var number_of_fish = array_length(global.all_current_fish);
+		var number_of_fish = array_length(global.all_current_consumables);
 		
 		var draw_offset = 16;
 		
@@ -96,7 +100,7 @@ displayCrocodileDangerRanges = function()
 		
 		for (var i = 0; i < number_of_fish; i++)
 		{
-			var this_danger_range = global.all_current_fish[i].danger_range;
+			var this_danger_range = global.all_current_consumables[i].danger_range;
 			
 			var is_unique_range = !array_contains(danger_ranges, this_danger_range);
 			
@@ -116,60 +120,60 @@ displayCrocodileDangerRanges = function()
 	}
 }
 
-///@func updateArrayOfAllFish()
-updateArrayOfAllFish = function()
+///@func updateArrayOfAllConsumables()
+updateArrayOfAllConsumables = function()
 {
-	//First, empty the all_current_fish array.
-	global.all_current_fish = [];
+	//First, empty the all_current_consumables array.
+	global.all_current_consumables = [];
 	
 	//If there are no fish, we're done.
-	if (!instance_exists(obj_Parent_Fish))
+	if (!instance_exists(obj_Parent_Consumable))
 	{ exit; }
 	
-	//Get the total number of obj_parent_fish.
-	var current_number_of_fish = instance_number(obj_Parent_Fish);
-	for (var i = 0; i < current_number_of_fish; i++;)
+	//Get the total number of obj_parent_consumable.
+	var current_number_of_consumables = instance_number(obj_Parent_Consumable);
+	for (var i = 0; i < current_number_of_consumables; i++;)
 	{
-		//Then, get the id of each of those fish, and store it to the array.
-	    global.all_current_fish[i] = instance_find(obj_Parent_Fish,i);
+		//Then, get the id of each of those consumables, and store it to the array.
+	    global.all_current_consumables[i] = instance_find(obj_Parent_Consumable,i);
 	}
 }
 
-///@func displayStateOfAllFish()
-displayStateOfAllFish = function()
+///@func displayStateOfAllConsumables()
+displayStateOfAllConsumables = function()
 {
-	//Count the total number of fish in the global array.
-	var total_fish = array_length(global.all_current_fish);
+	//Count the total number of consumables in the global array.
+	var total_consumables = array_length(global.all_current_consumables);
 	
-	//Now, for every fish, draw the current state of the fish.
+	//Now, for every consumable, draw the current state of the consumable.
 	//Offset the draw by 16 on x and y to improve data display.
-	for (var i = 0; i < total_fish; i++;)
+	for (var i = 0; i < total_consumables; i++;)
 	{
 		//Offset by 16 on x and y to improve data display.
-		var this_x = global.all_current_fish[i].x + 16;
-		var this_y = global.all_current_fish[i].y - 16;
-		var this_current_state = global.all_current_fish[i].state;
-		var this_current_state_string = global.state_string.fish[this_current_state];
+		var this_x = global.all_current_consumables[i].x + 16;
+		var this_y = global.all_current_consumables[i].y - 16;
+		var this_current_state = global.all_current_consumables[i].state;
+		var this_current_state_string = global.state_string.consumable[this_current_state];
 	
 		draw_text(this_x, this_y, $"{this_current_state_string}");
 	}
 }
 
-///@func displayBehaviorOfAllFish()
-displayBehaviorOfAllFish = function()
+///@func dispolayBehaviorOfAllConsumables()
+dispolayBehaviorOfAllConsumables = function()
 {
-	//Count the total number of fish in the global array.
-	var total_fish = array_length(global.all_current_fish);
+	//Count the total number of consumables in the global array.
+	var total_consumables = array_length(global.all_current_consumables);
 	
-	//Now, for every fish, draw the current ai of the fish.
+	//Now, for every consumable, draw the current behavior of the consumable.
 	//Offset the draw by 16 on x and y to improve data display.
-	for (var i = 0; i < total_fish; i++;)
+	for (var i = 0; i < total_consumables; i++;)
 	{
 		//Offset by 16 on x and y to improve data display.
-		var this_x = global.all_current_fish[i].x - 16;
-		var this_y = global.all_current_fish[i].y + 16;
-		var this_current_behavior = global.all_current_fish[i].behavior;
-		var this_current_behavior_string = global.behavior_string.fish[this_current_behavior];
+		var this_x = global.all_current_consumables[i].x - 16;
+		var this_y = global.all_current_consumables[i].y + 16;
+		var this_current_behavior = global.all_current_consumables[i].behavior;
+		var this_current_behavior_string = global.behavior_string.consumable[this_current_behavior];
 	
 		draw_text_color(this_x, this_y, $"{this_current_behavior_string}", c_blue, c_blue, c_blue, c_blue, 1);
 	}

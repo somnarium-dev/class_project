@@ -4,7 +4,7 @@ function initialize()
 	global.game_fps = 60;
 	global.game_tile_size = 32;
 
-	global.all_current_fish = [];
+	global.all_current_consumables = [];
 	
 	//Game definitions.
 	global.current_level = 1;
@@ -16,6 +16,11 @@ function initialize()
 	global.fish_default = 
 	{	
 		danger_range: 64,
+	}
+	
+	global.frog_default = 
+	{	
+		danger_range: 96,
 	}
 	
 	//Load game data.

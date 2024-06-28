@@ -1,23 +1,18 @@
-/// @description state code
-state_machine = [];
+/// @description State Machine.
+event_inherited();
 
-state_machine[frog_state.swim] = function()
+state_machine[consumable_state.swim] = function()
 {	
 	handleSprite();
-	
-	readFrogInput();
-	
-	handleFrogMovementAndCollision();
-	
+	readVirtualInput();
+	handleMovementAndCollision();
 }
 
-state_machine[frog_state.still] = function()
+state_machine[consumable_state.still] = function()
 {
 	handleSprite();
-	
-	readFrogInput();
-	
-	handleFrogMovementAndCollision();
+	readVirtualInput();
+	handleMovementAndCollision();
 }
 
 //=======================================================================================================

@@ -8,11 +8,11 @@ displayCrocodileCurrentSpeed();
 displayCrocodileCurrentState();
 
 //Display state of all currently existing fish in white.
-updateArrayOfAllFish();
-displayStateOfAllFish();
+updateArrayOfAllConsumables();
+displayStateOfAllConsumables();
 
 //Display behavior of all currently existing fish in blue.
-displayBehaviorOfAllFish();
+dispolayBehaviorOfAllConsumables();
 
 //Show Fish panic trigger range around Croc.
 displayCrocodileDangerRanges();

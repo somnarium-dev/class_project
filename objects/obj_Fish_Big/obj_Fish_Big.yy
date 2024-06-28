@@ -6,8 +6,8 @@
   "name":"obj_Fish_Big",
   "overriddenProperties":[],
   "parent":{
-    "name":"Fish",
-    "path":"folders/Objects/Fish.yy",
+    "name":"Consumables",
+    "path":"folders/Objects/Interactables/Consumables.yy",
   },
   "parentObjectId":{
     "name":"obj_Parent_Fish",

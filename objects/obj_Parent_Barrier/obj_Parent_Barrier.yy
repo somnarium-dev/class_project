@@ -28,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_Mask_Collision_Basic_Frog",
-    "path":"sprites/spr_Mask_Collision_Basic_Frog/spr_Mask_Collision_Basic_Frog.yy",
+    "name":"spr_Mask_Collision_Barrier",
+    "path":"sprites/spr_Mask_Collision_Barrier/spr_Mask_Collision_Barrier.yy",
   },
   "spriteMaskId":null,
   "visible":true,
