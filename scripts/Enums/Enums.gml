@@ -21,7 +21,7 @@ enum player_state
 	stun
 }
 
-enum fish_state
+enum consumable_state
 {	
 	still,
 	swim,
@@ -39,9 +39,10 @@ enum twig_state
 // BEHAVIOR ENUMS
 //-------------------------
 
-enum fish_behavior
+enum consumable_behavior
 {
 	roaming,
+	seeking_log,
 	panic
 }
 
@@ -60,12 +61,13 @@ global.state_string.player =
 	"stun"
 ]
 
-global.state_string.fish =
-[	
+global.state_string.consumable = 
+[
 	"still",
 	"swim",
 	"eaten"
 ]
+
 
 global.state_string.twig =
 [
@@ -80,8 +82,10 @@ global.state_string.twig =
 
 global.behavior_string={};
 
-global.behavior_string.fish =
+
+global.behavior_string.consumable =
 [	
 	"roaming",
+	"seeking_log",
 	"panic"
 ]

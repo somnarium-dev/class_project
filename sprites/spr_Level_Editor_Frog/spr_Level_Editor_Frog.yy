@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"- Lightsen",
-    "path":"folders/Sprites/- Lightsen.yy",
+    "name":"Masks",
+    "path":"folders/Sprites/- System/Masks.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

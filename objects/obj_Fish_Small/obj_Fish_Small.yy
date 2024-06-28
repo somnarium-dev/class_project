@@ -8,8 +8,8 @@
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_Parent_Fish","path":"objects/obj_Parent_Fish/obj_Parent_Fish.yy",},"propertyId":{"name":"fish_sprite","path":"objects/obj_Parent_Fish/obj_Parent_Fish.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"spr_Fish_Small",},
   ],
   "parent":{
-    "name":"Fish",
-    "path":"folders/Objects/Fish.yy",
+    "name":"Consumables",
+    "path":"folders/Objects/Interactables/Consumables.yy",
   },
   "parentObjectId":{
     "name":"obj_Parent_Fish",

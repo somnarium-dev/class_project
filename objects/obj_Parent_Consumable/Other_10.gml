@@ -1,33 +1,33 @@
-///@desc custom functions
+///@desc Custom Methods
 
-///@func readFishInput()
-readFishInput = function()
+///@func readVirtualInput()
+readVirtualInput = function()
 {
 	if (current_speed != 0)
 	{
 		var desired_direction = direction - (ai_input_lr * 90);
-		updateFishDirection(desired_direction);
+		updateFacingDirection(desired_direction);
 		horizontal_pixels_accumulated = 0;
 		vertical_pixels_accumulated = 0;
 	}
 }
 
-///@func handleFishMovementAndCollision()
-handleFishMovementAndCollision = function()
+///@func handleMovementAndCollision()
+handleMovementAndCollision = function()
 {
-	determineFishTopSpeed();
+	determineTopSpeed();
 	
-	handleFishAcceleration();
+	handleAcceleration();
 	
-	handleFishHorizontalPixelAccumulation();
-	handleFishVerticalPixelAccumulation();
+	handleHorizontalPixelAccumulation();
+	handleVerticalPixelAccumulation();
 	
-	handleFishHorizontalMovement();
-	handleFishVerticalMovement();
+	handleHorizontalMovement();
+	handleVerticalMovement();
 }
-	
-///@func determineFishTopSpeed()
-determineFishTopSpeed = function()
+
+///@func determineTopSpeed()
+determineTopSpeed = function()
 {
 	if (ai_input_panic_boost == 1)
 	{current_top_speed = max_panic_speed;}
@@ -35,8 +35,8 @@ determineFishTopSpeed = function()
 	{current_top_speed = max_swim_speed;}
 }
 
-///@func handleFishAcceleration()
-handleFishAcceleration = function()
+///@func handleAcceleration()
+handleAcceleration = function()
 {
 	var adjustment = 0;
 	var new_speed = 0;
@@ -68,8 +68,8 @@ handleFishAcceleration = function()
 	}
 }
 
-///@func handleFishHorizontalPixelAccumulation()
-handleFishHorizontalPixelAccumulation = function()
+///@func handleHorizontalPixelAccumulation()
+handleHorizontalPixelAccumulation = function()
 {
 	// Derive horizontal speed.
 	var h_speed = lengthdir_x(current_speed, direction);
@@ -91,8 +91,8 @@ handleFishHorizontalPixelAccumulation = function()
 	}
 }
 
-///@func handleFishVerticalPixelAccumulation()
-handleFishVerticalPixelAccumulation = function()
+///@func handleVerticalPixelAccumulation()
+handleVerticalPixelAccumulation = function()
 {
 	// Derive vertical speed.
 	var v_speed = lengthdir_y(current_speed, direction);
@@ -114,8 +114,8 @@ handleFishVerticalPixelAccumulation = function()
 	}
 }
 
-///@func handleFishHorizontalMovement()
-handleFishHorizontalMovement = function()
+///@func handleHorizontalMovement()
+handleHorizontalMovement = function()
 {
 	var repetitions = abs(horizontal_pixels_queued);
 	var adjustment = sign(horizontal_pixels_queued);
@@ -136,8 +136,8 @@ handleFishHorizontalMovement = function()
 	}
 }
 
-///@func handleFishVerticalMovement()
-handleFishVerticalMovement = function()
+///@func handleVerticalMovement()
+handleVerticalMovement = function()
 {
 	var repetitions = abs(vertical_pixels_queued);
 	var adjustment = sign(vertical_pixels_queued);
@@ -158,8 +158,8 @@ handleFishVerticalMovement = function()
 	}
 }
 
-///@func updateFishDirection(proposed_new_direction)
-updateFishDirection = function(proposed_new_direction)
+///@func updateFacingDirection(proposed_new_direction)
+updateFacingDirection = function(proposed_new_direction)
 {
 	var new_direction = proposed_new_direction;
 	
@@ -169,8 +169,8 @@ updateFishDirection = function(proposed_new_direction)
 	direction = new_direction;
 }
 
-///@func testFishDirectionBlocked(proposed_direction)
-testFishDirectionBlocked = function(proposed_direction)
+///@func testDirectionBlocked(proposed_direction)
+testDirectionBlocked = function(proposed_direction)
 {
 	var new_direction = proposed_direction;
 	
@@ -180,30 +180,43 @@ testFishDirectionBlocked = function(proposed_direction)
 	var proposed_next_x = x + lengthdir_x(1, new_direction);
 	var proposed_next_y = y + lengthdir_y(1, new_direction);
 	
-	return place_meeting(proposed_next_x, proposed_next_y, obj_Parent_Collision);
-}
-
-///@func handleFishFacing()
-handleFishFacing = function()
-{
-	//handle facing direction
-	if (ai_input_lr != 0) facing_direction = ai_input_lr;
-	if (ai_input_ud != 0) facing_direction = ai_input_ud;
+	//Testing conditions.
+	var next_position_is_valid = true;
+	
+	//Moving into a collision parent is never an option.
+	//**NOTE**: THIS WILL CHANGE AS COLLISION DETECTION BECOMES MORE SOPHISTICATED.
+	if (place_meeting(proposed_next_x, proposed_next_y, obj_Parent_Collision))
+	{
+		next_position_is_valid = false;
+		return next_position_is_valid;
+	}
+	
+	//Moving outside of the room is never a valid option.
+	if (proposed_next_x < 0)
+	|| (proposed_next_x > room_width)
+	|| (proposed_next_y < 0)
+	|| (proposed_next_y > room_height)
+	{
+		next_position_is_valid = false;
+		return next_position_is_valid;
+	}
+	
+	return next_position_is_valid;
 }
 
 //=======================================================================================
 // AI FUNCTIONS
 //=======================================================================================
 
-///@func aiFishTurnWhenBlocked()
-aiFishTurnWhenBlocked = function()
+///@func aiTurnWhenBlocked()
+aiTurnWhenBlocked = function()
 {
 	//Create array of possible directions to travel.
 	var possible_directions = [];
 		
 	//Determine which of these directions is unblocked.
-	var can_turn_left = !testFishDirectionBlocked(direction + 90);
-	var can_turn_right = !testFishDirectionBlocked(direction - 90);
+	var can_turn_left = !testDirectionBlocked(direction + 90);
+	var can_turn_right = !testDirectionBlocked(direction - 90);
 			
 	if (can_turn_left) {array_push(possible_directions, -1);}
 	if (can_turn_right) {array_push(possible_directions, 1);}
@@ -221,8 +234,8 @@ aiFishTurnWhenBlocked = function()
 	}
 }
 
-///@func aiFishTurnAtRandom()
-aiFishTurnAtRandom = function()
+///@func aiTurnAtRandom()
+aiTurnAtRandom = function()
 {
 	if (!random_turn_available) { return; }
 	
@@ -234,8 +247,8 @@ aiFishTurnAtRandom = function()
 		var possible_directions = [];
 		
 		//Determine which of these directions is unblocked.
-		var can_turn_left = !testFishDirectionBlocked(direction + 90);
-		var can_turn_right = !testFishDirectionBlocked(direction - 90);
+		var can_turn_left = !testDirectionBlocked(direction + 90);
+		var can_turn_right = !testDirectionBlocked(direction - 90);
 			
 		if (can_turn_left) {array_push(possible_directions, -1);}
 		if (can_turn_right) {array_push(possible_directions, 1);}

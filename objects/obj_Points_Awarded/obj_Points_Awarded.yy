@@ -8,8 +8,8 @@
   "name":"obj_Points_Awarded",
   "overriddenProperties":[],
   "parent":{
-    "name":"- Lightsen",
-    "path":"folders/Objects/- Lightsen.yy",
+    "name":"Effects",
+    "path":"folders/Objects/Effects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

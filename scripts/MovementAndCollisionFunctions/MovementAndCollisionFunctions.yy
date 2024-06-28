@@ -1,9 +1,9 @@
 {
   "$GMScript":"",
-  "%Name":"PauseFunctions",
+  "%Name":"MovementAndCollisionFunctions",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"PauseFunctions",
+  "name":"MovementAndCollisionFunctions",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",
