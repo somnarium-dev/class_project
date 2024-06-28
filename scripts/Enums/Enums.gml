@@ -48,7 +48,6 @@ enum fish_behavior
 //-------------------------
 // STATE STRING ARRAYS
 //-------------------------
-
 global.state_string={};
 
 global.state_string.player = 

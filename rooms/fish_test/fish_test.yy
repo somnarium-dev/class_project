@@ -43,6 +43,7 @@
     {"name":"inst_48230CCC","path":"rooms/fish_test/fish_test.yy",},
     {"name":"inst_43B35DE2","path":"rooms/fish_test/fish_test.yy",},
     {"name":"inst_3DBCA0C3","path":"rooms/fish_test/fish_test.yy",},
+    {"name":"inst_25C9B6D2","path":"rooms/fish_test/fish_test.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -62,6 +63,7 @@
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":512.0,"y":288.0,},
         {"$GMRInstance":"","%Name":"inst_7565CA96","colour":4294967295,"frozen":true,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7565CA96","objectId":{"name":"obj_Player_1","path":"objects/obj_Player_1/obj_Player_1.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":224.0,"y":288.0,},
         {"$GMRInstance":"","%Name":"inst_3DBCA0C3","colour":4294967295,"frozen":true,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3DBCA0C3","objectId":{"name":"obj_Fish_Small","path":"objects/obj_Fish_Small/obj_Fish_Small.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":192.0,"y":192.0,},
+        {"$GMRInstance":"","%Name":"inst_25C9B6D2","colour":4294967295,"frozen":true,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_25C9B6D2","objectId":{"name":"obj_Frog","path":"objects/obj_Frog/obj_Frog.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":480.0,"y":128.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Collision","depth":100,"effectEnabled":true,"effectType":"none","gridX":32,"gridY":32,"hierarchyFrozen":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"","%Name":"inst_36ED6CBF","colour":4294967295,"frozen":true,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_36ED6CBF","objectId":{"name":"obj_Parent_Collision","path":"objects/obj_Parent_Collision/obj_Parent_Collision.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":20.0,"scaleY":1.0,"x":0.0,"y":0.0,},

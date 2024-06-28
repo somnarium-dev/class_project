@@ -9,7 +9,10 @@
     "name":"- Parents",
     "path":"folders/Objects/- Parents.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_Parent_Barrier",
+    "path":"objects/obj_Parent_Barrier/obj_Parent_Barrier.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

@@ -1,13 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"obj_Parent_Barrier",
+  "%Name":"obj_collision_screen_edge",
   "eventList":[],
   "managed":true,
-  "name":"obj_Parent_Barrier",
+  "name":"obj_collision_screen_edge",
   "overriddenProperties":[],
   "parent":{
-    "name":"- Parents",
-    "path":"folders/Objects/- Parents.yy",
+    "name":"- Lightsen",
+    "path":"folders/Objects/- Lightsen.yy",
   },
   "parentObjectId":null,
   "persistent":false,
