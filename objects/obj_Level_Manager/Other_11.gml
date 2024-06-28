@@ -13,7 +13,10 @@ state_machine[level_state.loading] = function()
 
 // Level In Progress
 state_machine[level_state.in_progress] = function()
-{ checkLevelCompletion(); }
+{
+	toggleLevelPause();
+	checkLevelCompletion(); 
+}
 
 // Level Complete
 state_machine[level_state.complete] = function()
@@ -25,4 +28,4 @@ state_machine[level_state.failed] = function()
 
 // Level Paused
 state_machine[level_state.paused] = function()
-{ /*Do Nothing*/ }
+{ toggleLevelPause(); }

@@ -29,7 +29,7 @@ player_sprites =
 	idle: sprite_idle,
 	open: sprite_open,
 	eat: sprite_eat,
-	stun: sprite_eat
+	stun: sprite_stun
 }
 
 sprite_index = player_sprites.idle;

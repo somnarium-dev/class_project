@@ -73,3 +73,33 @@ handleLevelFailure = function()
 	
 	game_end();
 }
+
+///@func toggleLevelPause()
+toggleLevelPause = function()
+{
+	if ( keyboard_check_pressed(vk_escape) )
+	{ 
+		if ( state == level_state.in_progress )
+		{ state = level_state.paused; }
+		
+		else if ( state == level_state.paused )
+		{ state = level_state.in_progress; }
+	}
+}
+
+///@func getScreenSpaceEffectCoordinates()
+getScreenSpaceEffectCoordinates = function()
+{
+	screen_effect_x = room_width / 2;
+	screen_effect_y = room_height / 2;
+	
+	// The game does not currently utilise a camera.
+	// Because of this, we cannot yet implement positioning
+	// of screen space effects relative to the camera's point of view.
+	// This is a job for later.
+	
+	// When the camera is implemented, 
+	// screen_effect_x will need to equal
+	// the camera's x position plus half of the viewpoint width.
+	// Y will be set similarly.
+}
