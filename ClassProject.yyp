@@ -99,6 +99,7 @@
     {"id":{"name":"LightsenInitialize","path":"scripts/LightsenInitialize/LightsenInitialize.yy",},},
     {"id":{"name":"LunaInitialize","path":"scripts/LunaInitialize/LunaInitialize.yy",},},
     {"id":{"name":"MiguelInitialize","path":"scripts/MiguelInitialize/MiguelInitialize.yy",},},
+    {"id":{"name":"PauseFunctions","path":"scripts/PauseFunctions/PauseFunctions.yy",},},
     {"id":{"name":"bg_Water_Tile","path":"sprites/bg_Water_Tile/bg_Water_Tile.yy",},},
     {"id":{"name":"spr_Croc_Eat","path":"sprites/spr_Croc_Eat/spr_Croc_Eat.yy",},},
     {"id":{"name":"spr_Croc_Idle","path":"sprites/spr_Croc_Idle/spr_Croc_Idle.yy",},},

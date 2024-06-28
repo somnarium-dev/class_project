@@ -243,7 +243,7 @@ handleSprite = function()
 			break;
 			
 		case player_state.stun:
-			sprite_index = player_sprites.eat;
+			sprite_index = player_sprites.stun;
 			image_speed = 1;
 			break;
 		

@@ -67,6 +67,7 @@
     {"name":"Enums","order":2,"path":"scripts/Enums/Enums.yy",},
     {"name":"HelpfulFunctions","order":4,"path":"scripts/HelpfulFunctions/HelpfulFunctions.yy",},
     {"name":"InputManager","order":1,"path":"scripts/InputManager/InputManager.yy",},
+    {"name":"PauseFunctions","order":1,"path":"scripts/PauseFunctions/PauseFunctions.yy",},
     {"name":"spr_Croc_Eat","order":2,"path":"sprites/spr_Croc_Eat/spr_Croc_Eat.yy",},
     {"name":"spr_Croc_Open_Mouth","order":1,"path":"sprites/spr_Croc_Open_Mouth/spr_Croc_Open_Mouth.yy",},
     {"name":"spr_Croc_Twig_Eat","order":3,"path":"sprites/spr_Croc_Twig_Eat/spr_Croc_Twig_Eat.yy",},

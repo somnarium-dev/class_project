@@ -1,5 +1,7 @@
 if (sprite_index == player_sprites.eat)
-{ 
-	if (state == player_state.eat) { eat_state_completed = true; }
-	if (state == player_state.stun) { stun_state_completed = true; }
-}
+&& (state == player_state.eat)
+{ eat_state_completed = true; }
+
+if (sprite_index == player_sprites.stun)
+&& (state == player_state.stun)
+{ stun_state_completed = true; }
