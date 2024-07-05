@@ -30,7 +30,6 @@
   "properties":[
     {"$GMObjectProperty":"v1","%Name":"number_of_points_incremented","filters":[],"listItems":[],"multiselect":false,"name":"number_of_points_incremented","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"display_time","filters":[],"listItems":[],"multiselect":false,"name":"display_time","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
-    {"$GMObjectProperty":"v1","%Name":"max_display_time","filters":[],"listItems":[],"multiselect":false,"name":"max_display_time","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
