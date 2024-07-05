@@ -18,7 +18,8 @@ enum player_state
 	open,
 	eat,
 	reverse,
-	stun
+	stun,
+	push
 }
 
 enum consumable_state
@@ -60,7 +61,8 @@ global.state_string.player =
 	"open",
 	"eat",
 	"reverse",
-	"stun"
+	"stun",
+	"push"
 ]
 
 global.state_string.consumable = 

@@ -48,6 +48,14 @@ state_machine[player_state.stun] = function()
 	checkNextStateAfterStun();
 }
 
+state_machine[player_state.push] = function()
+{
+	handleSprite();
+	handlePlayerMovementAndCollision();
+	
+	checkNextStateAfterPush();
+}
+
 //Transition functions
 ///@func checkNextStateAfterStanding()
 checkNextStateAfterStanding = function()
@@ -111,4 +119,12 @@ checkNextStateAfterStun = function()
 		state = player_state.stand;
 		stun_state_completed = false;
 	}
+}
+
+///@func checkNextStateAfterPush()
+checkNextStateAfterPush = function()
+{
+	if (input_open_held) { state = player_state.open; }
+	else if (current_speed > 0) { state = player_state.swim; }
+	else if (current_speed < 0) { state = player_state.reverse; }
 }
