@@ -12,3 +12,5 @@ draw_sprite_ext
 	image_blend,
 	image_alpha
 );
+
+draw_text(x+16,y-16, $"{current_speed}");
