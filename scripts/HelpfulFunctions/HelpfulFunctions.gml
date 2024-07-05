@@ -50,3 +50,46 @@ function centerWithinSpace(_offset, _containerSize, _contentSize)
 	
 	return round(return_value);
 }
+
+/// @function getCenterOfCurrentTile
+/// @description Take the global size of a game tile and half it.
+/// Add the equivalent of half of the game tile size
+/// to the current coordinates you are using to find the center of the tile.
+/// @param {int} _x the x coordinate of this object
+/// @param {int} _y the y coordinate of this object
+function getCenterOfCurrentTile(_x, _y)
+{
+    var return_data =
+    {
+        x: 0,
+        y: 0
+    }
+    
+    var half_tile_size = floor(global.game_tile_size / 2);
+
+    return_data.x = (floor(_x/global.game_tile_size) * global.game_tile_size) + half_tile_size;
+    return_data.y = (floor(_y/global.game_tile_size) * global.game_tile_size) + half_tile_size;
+
+	return return_data;
+}
+
+/// @function PointsNotificationDisplay
+/// @description Create an instance of obj_Points_Awarded on the HUD layer 
+/// to display a score increase to the player.
+/// @param {int} _amount the number to display.
+function PointsNotificationDisplay(_amount)
+{
+	var half_tile_size = floor(global.game_tile_size / 2);
+	var quarter_tile_size = floor(global.game_tile_size / 4);
+	
+	var create_x = obj_Parent_Player.x + half_tile_size;
+	var create_y = obj_Parent_Player.y - quarter_tile_size;
+	
+	instance_create_layer(create_x, create_y, "HUD", obj_Points_Awarded,
+	{
+		number_of_points_incremented: _amount,
+		sprite_index: asset_get_index("spr_Points_" + string(_amount)),
+		image_speed: 0,
+		max_display_time: 100
+	});
+}
