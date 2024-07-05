@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"Enums",
   "isCompatibility":false,
   "isDnD":false,

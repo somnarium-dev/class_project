@@ -26,7 +26,9 @@ enum consumable_state
 {	
 	still,
 	swim,
-	eaten
+	eaten,
+	seeking_log,
+	resting_on_log
 }
 
 enum twig_state
@@ -67,7 +69,9 @@ global.state_string.consumable =
 [
 	"still",
 	"swim",
-	"eaten"
+	"eaten",
+	"seeking_log",
+	"resting_on_log"
 ]
 
 
