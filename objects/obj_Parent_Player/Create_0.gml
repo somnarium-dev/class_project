@@ -23,6 +23,8 @@ vertical_pixels_accumulated = 0;
 horizontal_pixels_queued = 0;
 vertical_pixels_queued = 0;
 
+push_detection_range = 3;
+
 //Define player sprites
 player_sprites = 
 {
@@ -39,6 +41,7 @@ eat_state_requested = false;
 eat_state_completed = false;
 stun_state_requested = false;
 stun_state_completed = false;
+pushing_debris = false;
 
 //Initialize
 state = player_state.stand;

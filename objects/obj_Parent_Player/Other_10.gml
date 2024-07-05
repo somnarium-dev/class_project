@@ -73,6 +73,13 @@ determineTopSpeed = function()
 			current_top_speed = global.player_1.max_speed;
 			break;
 	}
+	
+	pushing_debris = isPushingDebris();
+	
+	if (pushing_debris)
+	{
+		current_top_speed = round(current_top_speed * .1);
+	}
 }
 
 ///@func handleAcceleration()
@@ -109,8 +116,14 @@ handleAcceleration = function()
 		if (accelerate_sign == 0)
 		|| (current_absolute_speed > absolute_top_speed)
 		{
+			
+			if (pushing_debris)
+			&& (current_absolute_speed > absolute_top_speed)
+			{
+				new_speed = sign(current_speed) * absolute_top_speed;
+			}
 			//if player can decelerate without passing 0
-			if (current_absolute_speed > global.player_1.decel_rate)
+			else if (current_absolute_speed > global.player_1.decel_rate)
 			{
 				var deceleration_adjustment = (sign(current_speed) * global.player_1.decel_rate);
 				new_speed = current_speed - deceleration_adjustment; //current speed reduced by adjustment amount
@@ -270,4 +283,23 @@ updatePlayerDirection = function(proposed_new_direction)
 updateLastTurnCell = function()
 {
 	if (alignedWithGrid()) {last_turn_cell = {_x:x, _y:y};}
+}
+
+///@func isPushingDebris()
+isPushingDebris = function()
+{
+	//1: we_are_moving should be we_are_moving_toward_debris.
+	//This is because moving away from debris could otherwise be counted incorrectly
+	var we_are_moving = current_speed != 0;
+	
+	var check_x = x + lengthdir_x(push_detection_range, direction);
+	var check_y = y + lengthdir_y(push_detection_range, direction);
+	
+	var there_is_debris_ahead = instance_position(check_x, check_y, obj_Parent_Debris);
+	
+	if (we_are_moving)
+	&& (there_is_debris_ahead)
+	{ return true; }
+	
+	return false;
 }
