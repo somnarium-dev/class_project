@@ -83,7 +83,7 @@ handleHorizontalPixelAccumulation = function()
 	// If it is not possible to move in the queued direction, 
 	// Then clear the variables to prevent issues.
 	var h_sign = sign(horizontal_pixels_queued)
-	var next_position_blocked = place_meeting(x + h_sign, y, obj_Parent_Collision);
+	var next_position_blocked = checkForImpassable(x + h_sign, y);
 	if (next_position_blocked)
 	{
 		horizontal_pixels_accumulated = 0;
@@ -106,7 +106,7 @@ handleVerticalPixelAccumulation = function()
 	// If it is not possible to move in the queued direction, 
 	// Then clear the variables to prevent issues.
 	var v_sign = sign(vertical_pixels_queued)
-	var next_position_blocked = place_meeting(x, y + v_sign, obj_Parent_Collision);
+	var next_position_blocked = checkForImpassable(x, y + v_sign);
 	if (next_position_blocked)
 	{
 		vertical_pixels_accumulated = 0;
@@ -122,7 +122,7 @@ handleHorizontalMovement = function()
 	
 	repeat (repetitions)
 	{
-		var next_position_blocked = place_meeting(x + adjustment, y, obj_Parent_Collision);
+		var next_position_blocked = checkForImpassable(x + adjustment, y);
 		
 		if (next_position_blocked)
 		{
@@ -144,7 +144,7 @@ handleVerticalMovement = function()
 	
 	repeat (repetitions)
 	{
-		var next_position_blocked = place_meeting(x, y + adjustment, obj_Parent_Collision);
+		var next_position_blocked = checkForImpassable(x, y + adjustment);
 		
 		if (next_position_blocked)
 		{
@@ -185,7 +185,12 @@ testDirectionBlocked = function(proposed_direction)
 	
 	//Moving into a collision parent is never an option.
 	//**NOTE**: THIS WILL CHANGE AS COLLISION DETECTION BECOMES MORE SOPHISTICATED.
-	if (place_meeting(proposed_next_x, proposed_next_y, obj_Parent_Collision))
+	
+	//the previous code below
+	//if (place_meeting(proposed_next_x, proposed_next_y, obj_Parent_Collision))
+	
+	//the replacement code for testing below
+	if checkForImpassable(proposed_next_x, proposed_next_y)
 	{
 		next_position_is_valid = false;
 		return next_position_is_valid;
@@ -202,6 +207,7 @@ testDirectionBlocked = function(proposed_direction)
 	}
 	
 	return next_position_is_valid;
+	
 }
 
 //=======================================================================================

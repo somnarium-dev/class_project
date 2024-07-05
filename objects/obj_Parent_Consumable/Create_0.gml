@@ -19,6 +19,7 @@ current_speed = 0;
 
 // Stats
 current_top_speed = max_swim_speed;
+accel_rate = 0.2;
 
 // Internal properties
 direction = initial_direction;

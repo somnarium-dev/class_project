@@ -19,7 +19,10 @@
     "name":"- Parents",
     "path":"folders/Objects/- Parents.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_Parent_Level_Object",
+    "path":"objects/obj_Parent_Level_Object/obj_Parent_Level_Object.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
