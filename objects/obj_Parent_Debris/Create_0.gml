@@ -1,6 +1,9 @@
 // Inherit the parent event
 event_inherited();
 
+// Properties
+impassable = true;
+
 // Simulated Inputs
 ai_input_lr = 0;
 ai_input_ud = 0;

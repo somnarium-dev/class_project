@@ -75,10 +75,10 @@ determineTopSpeed = function()
 	}
 	
 	pushing_debris = isPushingDebris();
-	
+
 	if (pushing_debris)
 	{
-		current_top_speed = round(current_top_speed * .1);
+		current_top_speed = round(current_top_speed * .5);
 	}
 }
 
@@ -184,7 +184,8 @@ handleHorizontalMovement = function()
 			break;
 		}
 		
-		var next_position_blocked = place_meeting(x+adjustment, y, obj_Parent_Collision);
+		//var next_position_blocked = place_meeting(x+adjustment, y, obj_Parent_Collision);
+		var next_position_blocked = checkForImpassable(x+adjustment, y);
 		
 		if (next_position_blocked)
 		{		
@@ -222,7 +223,8 @@ handleVerticalMovement = function()
 			break;
 		}
 		
-		var next_position_blocked = place_meeting(x, y+adjustment, obj_Parent_Collision);
+		//var next_position_blocked = place_meeting(x, y+adjustment, obj_Parent_Collision);
+		var next_position_blocked = checkForImpassable(x, y+adjustment);
 		
 		if (next_position_blocked)
 		{
@@ -290,12 +292,14 @@ isPushingDebris = function()
 {
 	//1: we_are_moving should be we_are_moving_toward_debris.
 	//This is because moving away from debris could otherwise be counted incorrectly
-	var we_are_moving = current_speed != 0;
+	var we_are_moving = (current_speed != 0);
 	
 	var check_x = x + lengthdir_x(push_detection_range, direction);
 	var check_y = y + lengthdir_y(push_detection_range, direction);
 	
-	var there_is_debris_ahead = instance_position(check_x, check_y, obj_Parent_Debris);
+	var there_is_debris_ahead = instance_place(check_x, check_y, obj_Parent_Debris);
+	
+	show_debug_message($"Debris Ahead?: {there_is_debris_ahead ? "TRUE" : "FALSE"}");
 	
 	if (we_are_moving)
 	&& (there_is_debris_ahead)
