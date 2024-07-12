@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"MiguelInitialize",
   "isCompatibility":false,
   "isDnD":false,

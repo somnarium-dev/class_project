@@ -171,7 +171,7 @@ handleHorizontalMovement = function()
 			break;
 		}
 		
-		var next_position_blocked = place_meeting(x+adjustment, y, obj_Parent_Collision);
+		var next_position_blocked = checkForImpassable(x+adjustment, y);
 		
 		if (next_position_blocked)
 		{		
@@ -209,7 +209,7 @@ handleVerticalMovement = function()
 			break;
 		}
 		
-		var next_position_blocked = place_meeting(x, y+adjustment, obj_Parent_Collision);
+		var next_position_blocked = checkForImpassable(x, y+adjustment);
 		
 		if (next_position_blocked)
 		{

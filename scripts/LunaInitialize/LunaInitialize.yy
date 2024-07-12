@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"LunaInitialize",
   "isCompatibility":false,
   "isDnD":false,

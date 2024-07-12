@@ -2,8 +2,8 @@
   "$GMObject":"",
   "%Name":"obj_Parent_Level_Object",
   "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":12,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":12,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_Parent_Level_Object",
@@ -12,7 +12,10 @@
     "name":"- Parents",
     "path":"folders/Objects/- Parents.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_Parent_Collision",
+    "path":"objects/obj_Parent_Collision/obj_Parent_Collision.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

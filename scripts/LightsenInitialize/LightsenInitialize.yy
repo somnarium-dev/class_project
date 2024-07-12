@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"LightsenInitialize",
   "isCompatibility":false,
   "isDnD":false,

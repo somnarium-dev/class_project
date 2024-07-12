@@ -1,17 +1,18 @@
 {
   "$GMObject":"",
-  "%Name":"obj_Parent_Collision",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"obj_Barrier_Grass",
+  "eventList":[],
   "managed":true,
-  "name":"obj_Parent_Collision",
+  "name":"obj_Barrier_Grass",
   "overriddenProperties":[],
   "parent":{
-    "name":"- Parents",
-    "path":"folders/Objects/- Parents.yy",
+    "name":"- Lightsen",
+    "path":"folders/Objects/- Lightsen.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_Parent_Barrier",
+    "path":"objects/obj_Parent_Barrier/obj_Parent_Barrier.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -30,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_Mask_Collision_Basic",
-    "path":"sprites/spr_Mask_Collision_Basic/spr_Mask_Collision_Basic.yy",
+    "name":"spr_Mask_Collision_Barrier",
+    "path":"sprites/spr_Mask_Collision_Barrier/spr_Mask_Collision_Barrier.yy",
   },
   "spriteMaskId":null,
   "visible":true,

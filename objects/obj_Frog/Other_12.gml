@@ -21,3 +21,23 @@ behavior_machine[consumable_behavior.seeking_log] = function()
 		else { aiTurnAtRandom(); }
 	}
 }
+
+// find the ID of the closest instance of obj_parent_log
+//var nearest_log = instance_nearest(x, y, obj_Parent_Log);
+
+//=======================================================================================================
+// behavior transition code
+//=======================================================================================================
+
+///@func checkIfPanicked()
+checkIfPanicked = function()
+{
+	var nearest_player = instance_nearest(x, y, obj_Parent_Player);
+	
+	if (point_distance(x, y, nearest_player.x, nearest_player.y) < danger_range) 
+	{
+		process_collision_detection = false;
+		behavior = consumable_behavior.panic;
+		alarm[0] = 90;
+	}
+}

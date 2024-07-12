@@ -13,21 +13,35 @@ handleSprite = function()
 			break;
 	 
 		case consumable_state.swim:
-			var grass_layer_id = layer_tilemap_get_id("Grass");
-			var tile_coords = getCenterOfCurrentTile(x, y);
-			if (tilemap_get_at_pixel(grass_layer_id, tile_coords.x, tile_coords.y))
-				{	sprite_index = frog_sprites.land;
-					image_speed = 1;
-				}
+			if (instance_place(x, y, obj_Parent_Barrier))
+			{	
+				sprite_index = frog_sprites.land;
+				image_speed = 1;
+			}
 			else
-				{	sprite_index = frog_sprites.swim;
-					image_speed = 1;
-				}
+			{	
+				sprite_index = frog_sprites.swim;
+				image_speed = 1;
+			}
 			break;
 		
 		default:
 			sprite_index = frog_sprites.land;
 			image_speed = 1;
 			break;
+	}
+}
+
+///@func enableCollisionDetectionIfRequested()
+enableCollisionDetectionIfRequested = function()
+{
+	if (request_enable_collision_detection)
+	{
+		process_collision_detection = true;
+		if (checkForImpassable(x, y))
+		{ process_collision_detection = false; }
+		
+		else
+		{ request_enable_collision_detection = false; }
 	}
 }

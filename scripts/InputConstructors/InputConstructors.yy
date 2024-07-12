@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"InputConstructors",
   "isCompatibility":false,
   "isDnD":false,
