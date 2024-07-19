@@ -64,7 +64,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.6.0.157",
+    "IDEVersion":"2024.6.2.162",
   },
   "name":"ClassProject",
   "resources":[
@@ -77,6 +77,7 @@
     {"id":{"name":"obj_Debris_Twig","path":"objects/obj_Debris_Twig/obj_Debris_Twig.yy",},},
     {"id":{"name":"obj_Debug_Manager","path":"objects/obj_Debug_Manager/obj_Debug_Manager.yy",},},
     {"id":{"name":"obj_Fish_Big","path":"objects/obj_Fish_Big/obj_Fish_Big.yy",},},
+    {"id":{"name":"obj_Fish_Catfish","path":"objects/obj_Fish_Catfish/obj_Fish_Catfish.yy",},},
     {"id":{"name":"obj_Fish_Small","path":"objects/obj_Fish_Small/obj_Fish_Small.yy",},},
     {"id":{"name":"obj_Frog","path":"objects/obj_Frog/obj_Frog.yy",},},
     {"id":{"name":"obj_Game_HUD","path":"objects/obj_Game_HUD/obj_Game_HUD.yy",},},
