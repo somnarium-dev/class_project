@@ -32,7 +32,7 @@ determineTopSpeed = function()
 	if (ai_input_panic_boost == 1)
 	{current_top_speed = max_panic_speed;}
 	else
-	{current_top_speed = max_swim_speed;}
+	{current_top_speed = max_move_speed;}
 }
 
 ///@func handleAcceleration()
