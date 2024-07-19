@@ -38,6 +38,9 @@
     "name":"spr_Debris_Twig",
     "path":"sprites/spr_Debris_Twig/spr_Debris_Twig.yy",
   },
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"spr_Mask_Collision_Basic",
+    "path":"sprites/spr_Mask_Collision_Basic/spr_Mask_Collision_Basic.yy",
+  },
   "visible":true,
 }
