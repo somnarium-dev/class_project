@@ -33,6 +33,7 @@ sprite_index = consumable_sprite;
 direction = initial_direction;
 random_turn_available = true;
 impassable = false;
+is_paused = false;
 
 // Initialize.
 state = consumable_state.swim;
