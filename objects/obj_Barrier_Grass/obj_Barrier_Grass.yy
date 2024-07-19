@@ -6,8 +6,8 @@
   "name":"obj_Barrier_Grass",
   "overriddenProperties":[],
   "parent":{
-    "name":"- Lightsen",
-    "path":"folders/Objects/- Lightsen.yy",
+    "name":"Barriers",
+    "path":"folders/Objects/Barriers.yy",
   },
   "parentObjectId":{
     "name":"obj_Parent_Barrier",
