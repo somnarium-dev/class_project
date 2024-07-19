@@ -16,9 +16,9 @@ takeDebugInput = function()
 		//[F]: Respawn both fish and frog.	
 		if (keyboard_check_pressed(ord("F")))
 		{
-			instance_create_layer(512, 288, "Instances", obj_Fish_Big);
-			instance_create_layer(192, 192, "Instances", obj_Fish_Small);
-			instance_create_layer(480, 96, "Instances", obj_Frog);
+			instance_create_layer(512, 288, "Consumables", obj_Fish_Big);
+			instance_create_layer(192, 192, "Consumables", obj_Fish_Small);
+			instance_create_layer(480, 96, "Consumables", obj_Frog);
 		}
 		
 		//[T]: Empty Timer instantly.

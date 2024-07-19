@@ -6,3 +6,6 @@ process_collision_detection = true;
 
 // Associated Objects
 impassable_list = ds_list_create();
+
+// Internal
+collision_ignore_array = [];
