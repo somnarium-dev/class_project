@@ -18,14 +18,17 @@ enum player_state
 	open,
 	eat,
 	reverse,
-	stun
+	stun,
+	push
 }
 
 enum consumable_state
 {	
 	still,
 	swim,
-	eaten
+	eaten,
+	seeking_log,
+	resting_on_log
 }
 
 enum twig_state
@@ -58,14 +61,17 @@ global.state_string.player =
 	"open",
 	"eat",
 	"reverse",
-	"stun"
+	"stun",
+	"push"
 ]
 
 global.state_string.consumable = 
 [
 	"still",
 	"swim",
-	"eaten"
+	"eaten",
+	"seeking_log",
+	"resting_on_log"
 ]
 
 

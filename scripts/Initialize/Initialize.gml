@@ -52,5 +52,5 @@ function initialize()
 	LunaInitialize();
 	MiguelInitialize();
 	
-	room_goto(fish_test);
+	room_goto(croc_test);
 }

@@ -75,6 +75,8 @@ determineTopSpeed = function()
 	}
 }
 
+//TODO: Luna: Start here.
+
 ///@func handleAcceleration()
 handleAcceleration = function()
 {
@@ -109,8 +111,14 @@ handleAcceleration = function()
 		if (accelerate_sign == 0)
 		|| (current_absolute_speed > absolute_top_speed)
 		{
+			
+			if (pushing_debris)
+			&& (current_absolute_speed > absolute_top_speed)
+			{
+				new_speed = sign(current_speed) * absolute_top_speed;
+			}
 			//if player can decelerate without passing 0
-			if (current_absolute_speed > global.player_1.decel_rate)
+			else if (current_absolute_speed > global.player_1.decel_rate)
 			{
 				var deceleration_adjustment = (sign(current_speed) * global.player_1.decel_rate);
 				new_speed = current_speed - deceleration_adjustment; //current speed reduced by adjustment amount
