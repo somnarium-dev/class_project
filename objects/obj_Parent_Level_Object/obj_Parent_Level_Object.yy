@@ -12,7 +12,10 @@
     "name":"- Parents",
     "path":"folders/Objects/- Parents.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_Parent_Collision",
+    "path":"objects/obj_Parent_Collision/obj_Parent_Collision.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

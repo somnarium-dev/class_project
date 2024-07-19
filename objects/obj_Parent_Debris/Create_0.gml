@@ -41,6 +41,9 @@ sprite_index = sprites.still;
 //State control flags
 eaten_state_requested = false;
 
+//Associated Objects
+//collision_tile = instance_create_layer(x,y,"Instances",obj_Parent_Collision);
+
 //Initialize
 state = twig_state.still;
 image_speed = 0;

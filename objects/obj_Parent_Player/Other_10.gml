@@ -73,13 +73,6 @@ determineTopSpeed = function()
 			current_top_speed = global.player_1.max_speed;
 			break;
 	}
-	
-	pushing_debris = isPushingDebris();
-
-	if (pushing_debris)
-	{
-		current_top_speed = round(current_top_speed * .5);
-	}
 }
 
 //TODO: Luna: Start here.
@@ -285,25 +278,4 @@ updatePlayerDirection = function(proposed_new_direction)
 updateLastTurnCell = function()
 {
 	if (alignedWithGrid()) {last_turn_cell = {_x:x, _y:y};}
-}
-
-///@func isPushingDebris()
-isPushingDebris = function()
-{
-	//1: we_are_moving should be we_are_moving_toward_debris.
-	//This is because moving away from debris could otherwise be counted incorrectly
-	var we_are_moving = (current_speed != 0);
-	
-	var check_x = x + lengthdir_x(push_detection_range, direction);
-	var check_y = y + lengthdir_y(push_detection_range, direction);
-	
-	var there_is_debris_ahead = instance_place(check_x, check_y, obj_Parent_Debris);
-	
-	show_debug_message($"Debris Ahead?: {there_is_debris_ahead ? "TRUE" : "FALSE"}");
-	
-	if (we_are_moving)
-	&& (there_is_debris_ahead)
-	{ return true; }
-	
-	return false;
 }
