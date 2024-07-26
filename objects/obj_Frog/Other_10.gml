@@ -63,8 +63,9 @@ aiSeekLog = function()
 	var new_direction = getDirectionToNearestLog(nearest_log);
 
 	// Virtualise input to move in new_direction.
-	ai_input_lr = lengthdir_x(1, new_direction);
-	ai_input_ud = lengthdir_y(1, new_direction);
+	ai_input_lr = dsin(new_direction - direction);
+	
+	show_debug_message($"new direction : {new_direction}, ai_input_lr : {ai_input_lr}")
 }
 
 ///@func getDirectionToNearestLog()
@@ -78,23 +79,23 @@ getDirectionToNearestLog = function(_nearest_log)
 	var starting_direction = direction;
 	var chosen_direction = direction;
 	
-	var check_x = x + lengthdir_x(global.game_tile_size, check_direction);
-	var check_y = y + lengthdir_y(global.game_tile_size, check_direction);
+	var check_x = x + lengthdir_x(global.game_tile_size, starting_direction);
+	var check_y = y + lengthdir_y(global.game_tile_size, starting_direction);
 	
 	var shortest_distance = point_distance(check_x, check_y, log_x, log_y);
 	
 	if (checkForImpassable(check_x, check_y)) { shortest_distance += longest_distance; }
 	
-	//Create array of possible directions to travel.
-	for (var i = 0; i <= 3; i += 1)
+	//Test other directions to see if they shorten the distance to the log.
+	for (var i = 0; i <= 3; i++)
 	{
-		var check_direction = i * 90;
+		var check_this_direction = i * 90;
 		
-		if (check_direction == starting_direction) { continue; }
+		if (check_this_direction == starting_direction) { continue; }
 		
 		// Calculate coordinates of next tile in current check direction.
-		check_x = x + lengthdir_x(global.game_tile_size, check_direction);
-		check_y = y + lengthdir_y(global.game_tile_size, check_direction);
+		check_x = x + lengthdir_x(global.game_tile_size, check_this_direction);
+		check_y = y + lengthdir_y(global.game_tile_size, check_this_direction);
 		
 		// Calculate distance between check coordinates and log coordinates.
 		var this_distance = point_distance(check_x, check_y, log_x, log_y);

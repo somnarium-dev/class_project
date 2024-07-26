@@ -80,8 +80,8 @@ displayCrocodileCurrentState = function()
 ///@func displayCrocodileDangerRanges()
 displayCrocodileDangerRanges = function()
 {
-	//If there are no fish, we're done.
-	if (!instance_exists(obj_Parent_Fish))
+	//If there are no consumables, we're done.
+	if (!instance_exists(obj_Parent_Consumable))
 	{ exit; }
 	
 	if (global.player_1.current_id != noone)
@@ -91,14 +91,14 @@ displayCrocodileDangerRanges = function()
 		
 		var danger_ranges = [];
 		
-		var number_of_fish = array_length(global.all_current_consumables);
+		var number_of_consumables = array_length(global.all_current_consumables);
 		
 		var draw_offset = 16;
 		
 		var draw_x = target_id.x + draw_offset;
 		var draw_y = target_id.y + draw_offset;
 		
-		for (var i = 0; i < number_of_fish; i++)
+		for (var i = 0; i < number_of_consumables; i++)
 		{
 			var this_danger_range = global.all_current_consumables[i].danger_range;
 			
