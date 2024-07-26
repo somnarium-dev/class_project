@@ -9,5 +9,3 @@ if (point_distance (x, y, nearest_player.x, nearest_player.y) < danger_range)
 }
 
 behavior = consumable_behavior.seeking_log; // EDITED FROM ROAMING
-
-//request_enable_collision_detection = true;

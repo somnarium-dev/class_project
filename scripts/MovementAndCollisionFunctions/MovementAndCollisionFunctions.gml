@@ -27,7 +27,8 @@ function checkForImpassable(_x, _y)
 		
 		for (var ii = 0; ii < array_length(collision_ignore_array); ii++)
 		{
-			if (object_is_ancestor(this_object.object_index, collision_ignore_array[ii]))
+			if (this_object.object_index == collision_ignore_array[ii])
+			|| (object_is_ancestor(this_object.object_index, collision_ignore_array[ii]))
 			{
 				this_object_is_ignored = true;
 				break;

@@ -22,9 +22,14 @@ vertical_pixels_queued = 0;
 
 current_speed = 0;
 
+collision_ignore_array = [];
+
 // Stats
 current_top_speed = max_move_speed;
 accel_rate = 0.2;
+
+// Set danger range.
+if (danger_range < 0) { danger_range = global.consumable_default.danger_range; }
 
 // Display
 sprite_index = consumable_sprite;

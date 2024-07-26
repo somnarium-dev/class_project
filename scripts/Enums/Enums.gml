@@ -93,5 +93,7 @@ global.behavior_string.consumable =
 [	
 	"roaming",
 	"seeking_log",
+	"seeking_grass",
+	"resting",
 	"panic"
 ]

@@ -7,12 +7,9 @@ previous_state = state;
 
 // Internal
 collision_ignore_array = [obj_Parent_Log, obj_Parent_Rock];
-request_enable_collision_detection = false;
 check_direction = 0;
 
-//set danger range
-if (danger_range < 0)
-{ danger_range = global.frog_default.danger_range; }
+nearest_log = noone;
 
 //Define frog sprites
 frog_sprites = 

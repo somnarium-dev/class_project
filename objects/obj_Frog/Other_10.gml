@@ -32,18 +32,14 @@ handleSprite = function()
 	}
 }
 
-///@func enableCollisionDetectionIfRequested()
-enableCollisionDetectionIfRequested = function()
+///@func removeGrassFromCollisionIgnoreArrayWhenReady()
+removeGrassFromCollisionIgnoreArrayWhenReady = function()
 {
-	if (request_enable_collision_detection)
-	{
-		process_collision_detection = true;
-		if (checkForImpassable(x, y))
-		{ process_collision_detection = false; }
-		
-		else
-		{ request_enable_collision_detection = false; }
-	}
+	var _index = array_get_index(collision_ignore_array, obj_Barrier_Grass);
+	
+	if (_index == -1) { return; }
+	
+	array_delete(collision_ignore_array, _index, 1);
 }
 
 //=======================================================================================
@@ -57,23 +53,27 @@ aiSeekLog = function()
 	// And nearest_log_distance is the return number from the function to be used afterward.
 	
 	// Find the ID of the closest instance of obj_parent_log
-	var nearest_log = instance_nearest(x, y, obj_Parent_Log);
+	if (nearest_log == noone) { nearest_log = instance_nearest(x, y, obj_Parent_Log); }
 
 	// Return the distance of the nearest log in pixels.
 	var new_direction = getDirectionToNearestLog(nearest_log);
 
 	// Virtualise input to move in new_direction.
-	ai_input_lr = dsin(new_direction - direction);
+	if (direction != new_direction)
+	{
+		ai_input_lr = dsin(direction - new_direction);
 	
-	show_debug_message($"new direction : {new_direction}, ai_input_lr : {ai_input_lr}")
+		if (ai_input_lr == 0)
+		{ ai_input_lr = -1; }
+	}
 }
 
 ///@func getDirectionToNearestLog()
 getDirectionToNearestLog = function(_nearest_log)
 {
 	// Get log coordinates.
-	var log_x = _nearest_log.x;
-	var log_y = _nearest_log.y;
+	var log_x = nearest_log.x;
+	var log_y = nearest_log.y;
 	
 	var longest_distance = point_distance(0, 0, room_width, room_height);
 	var starting_direction = direction;
