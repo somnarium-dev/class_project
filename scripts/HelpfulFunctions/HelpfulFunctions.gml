@@ -93,3 +93,21 @@ function PointsNotificationDisplay(_amount)
 		max_display_time: 100
 	});
 }
+
+/// @function turnTowardsDirection
+/// @description Determine the difference between the current direction and a target direction,
+/// and return a new angle that is a set number of degrees closer toward the target.
+/// @param {real} _target_direction The direction to turn toward.
+/// @param {real} _turn_degrees The number of degrees to turn toward that direction. Unexpected outcomes may result if a number of degrees is provided that exceeds the difference between the current and target directions.
+/// @return {real}
+function turnTowardsDirection(_target_direction, _turn_degrees)
+{
+	var return_data = direction;
+	
+	var angle_direction = dsin(_target_direction - direction);
+	
+	if (angle_direction > 0) { return_data += _turn_degrees; }
+	if (angle_direction < 0) { return_data -= _turn_degrees; }
+	
+	return return_data;
+}

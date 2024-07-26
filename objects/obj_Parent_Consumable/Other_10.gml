@@ -29,10 +29,8 @@ handleMovementAndCollision = function()
 ///@func determineTopSpeed()
 determineTopSpeed = function()
 {
-	if (ai_input_panic_boost == 1)
-	{current_top_speed = max_panic_speed;}
-	else
-	{current_top_speed = max_move_speed;}
+	if (ai_input_panic_boost == 1) {current_top_speed = max_panic_speed;}
+	else {current_top_speed = max_move_speed;}
 }
 
 ///@func handleAcceleration()
@@ -180,8 +178,8 @@ testDirectionBlocked = function(proposed_direction)
 	var proposed_next_x = x + lengthdir_x(1, new_direction);
 	var proposed_next_y = y + lengthdir_y(1, new_direction);
 	
-	//Moving into a collision parent is never an option.
-	if checkForImpassable(proposed_next_x, proposed_next_y)
+	//Moving into an impassable tile is never an option.
+	if (checkForImpassable(proposed_next_x, proposed_next_y))
 	{ return true; }
 	
 	//Moving outside of the room is never a valid option.
@@ -189,7 +187,7 @@ testDirectionBlocked = function(proposed_direction)
 	|| (proposed_next_x > room_width)
 	|| (proposed_next_y < 0)
 	|| (proposed_next_y > room_height)
-	{ return true; }
+	{ return true;}
 	
 	return false;
 }
@@ -208,19 +206,22 @@ aiTurnWhenBlocked = function()
 	var can_turn_left = !testDirectionBlocked(direction + 90);
 	var can_turn_right = !testDirectionBlocked(direction - 90);
 			
-	if (can_turn_left) {array_push(possible_directions, -1);}
-	if (can_turn_right) {array_push(possible_directions, 1);}
+	if (can_turn_left)	{ array_push(possible_directions, -1); }
+	if (can_turn_right) { array_push(possible_directions, 1);  }
 		
 	var available_options = array_length(possible_directions);
 		
 	//If all directions are blocked, turn left.
 	if (available_options == 0) { ai_input_lr = -1; }
+	
+	//If there is only one unblocked direction, take it.
+	else if (available_options == 1) { ai_input_lr = possible_directions[0]; }
 		
 	//Otherwise, select a random unblocked direction.
 	else
 	{
-		var random_integer = irandom(available_options - 1);
-		ai_input_lr = possible_directions[random_integer]; 
+		var random_selection = choose(0, 1);
+		ai_input_lr = possible_directions[random_selection];
 	}
 }
 
@@ -248,7 +249,7 @@ aiTurnAtRandom = function()
 		//Select a random unblocked direction to turn, if there are any.
 		if (available_options > 0)
 		{
-			var random_integer = irandom(available_options - 1);
+			var random_integer = irandom_range(1, available_options) - 1;
 			ai_input_lr = possible_directions[random_integer]; 
 			alarm[1] = random_turn_cooldown;
 			random_turn_available = false;

@@ -13,16 +13,11 @@ function initialize()
 	global.standard_time_limit = global.game_fps * global.standard_time_limit_in_seconds; //One minute.
 	global.time_remaining = 0;
 	
-	global.fish_default = 
+	global.consumable_default = 
 	{	
 		danger_range: 64,
 	}
-	
-	global.frog_default = 
-	{	
-		danger_range: 96,
-	}
-	
+
 	//Load game data.
 	loadAllLevelData();
 	
