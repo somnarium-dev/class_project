@@ -185,6 +185,12 @@ handleHorizontalMovement = function()
 		{		
 			horizontal_pixels_accumulated = 0;
 			horizontal_pixels_queued = 0;
+			
+			//Submit bump request for twig
+			var detected_debris = instance_place(x+adjustment, y, obj_Parent_Debris);
+			submitEatRequest(detected_debris);
+			submitBumpRequest(detected_debris);			
+			
 			current_speed = 0;
 			break;
 		}
@@ -223,6 +229,13 @@ handleVerticalMovement = function()
 		{
 			vertical_pixels_accumulated = 0;
 			vertical_pixels_queued = 0;
+			
+			//Submit bump request for twig
+			var detected_debris = instance_place(x, y+adjustment, obj_Parent_Debris);
+			submitEatRequest(detected_debris);
+			submitBumpRequest(detected_debris);
+			
+			
 			current_speed = 0;
 			break;
 		}
@@ -278,4 +291,33 @@ updatePlayerDirection = function(proposed_new_direction)
 updateLastTurnCell = function()
 {
 	if (alignedWithGrid()) {last_turn_cell = {_x:x, _y:y};}
+}
+
+///@func submitBumpRequest(_this_twig)
+submitBumpRequest = function(_this_twig)
+{
+	if (_this_twig == noone) {return;}
+	
+	if (current_speed >= 1)
+	&& (!_this_twig.bump_request._enabled)
+	{
+		_this_twig.bump_request = 
+		{
+			_enabled: true,
+			_direction: direction
+		}
+	}
+}
+
+///@func submitEatRequest(_this_twig)
+submitEatRequest = function(_this_twig)
+{
+	if (_this_twig == noone) {return;}
+	
+	if (state == player_state.open)
+	{
+		image_index = 0;
+		stun_state_requested = true;
+		_this_twig.eaten_state_requested = true;
+	}
 }
