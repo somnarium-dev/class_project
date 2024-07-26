@@ -27,8 +27,6 @@ enum consumable_state
 	still,
 	swim,
 	eaten,
-	seeking_log,
-	resting_on_log
 }
 
 enum twig_state
@@ -46,6 +44,8 @@ enum consumable_behavior
 {
 	roaming,
 	seeking_log,
+	seeking_grass,
+	resting,
 	panic
 }
 
