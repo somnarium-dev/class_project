@@ -3,6 +3,8 @@
   "%Name":"obj_Fish_Catfish",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":10,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":12,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_Fish_Catfish",
@@ -12,7 +14,7 @@
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_Parent_Consumable","path":"objects/obj_Parent_Consumable/obj_Parent_Consumable.yy",},"propertyId":{"name":"max_move_speed","path":"objects/obj_Parent_Consumable/obj_Parent_Consumable.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1.25",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_Parent_Consumable","path":"objects/obj_Parent_Consumable/obj_Parent_Consumable.yy",},"propertyId":{"name":"max_panic_speed","path":"objects/obj_Parent_Consumable/obj_Parent_Consumable.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"2.25",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_Parent_Consumable","path":"objects/obj_Parent_Consumable/obj_Parent_Consumable.yy",},"propertyId":{"name":"initial_direction","path":"objects/obj_Parent_Consumable/obj_Parent_Consumable.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"0",},
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_Parent_Consumable","path":"objects/obj_Parent_Consumable/obj_Parent_Consumable.yy",},"propertyId":{"name":"danger_range","path":"objects/obj_Parent_Consumable/obj_Parent_Consumable.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"-1",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_Parent_Consumable","path":"objects/obj_Parent_Consumable/obj_Parent_Consumable.yy",},"propertyId":{"name":"danger_range","path":"objects/obj_Parent_Consumable/obj_Parent_Consumable.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"96",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_Parent_Consumable","path":"objects/obj_Parent_Consumable/obj_Parent_Consumable.yy",},"propertyId":{"name":"random_turn_chance","path":"objects/obj_Parent_Consumable/obj_Parent_Consumable.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_Parent_Consumable","path":"objects/obj_Parent_Consumable/obj_Parent_Consumable.yy",},"propertyId":{"name":"random_turn_range","path":"objects/obj_Parent_Consumable/obj_Parent_Consumable.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"2",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_Parent_Consumable","path":"objects/obj_Parent_Consumable/obj_Parent_Consumable.yy",},"propertyId":{"name":"random_turn_cooldown","path":"objects/obj_Parent_Consumable/obj_Parent_Consumable.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"32",},
