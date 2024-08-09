@@ -68,6 +68,7 @@
     {"name":"croc_test","order":3,"path":"rooms/croc_test/croc_test.yy",},
     {"name":"fish_test","order":2,"path":"rooms/fish_test/fish_test.yy",},
     {"name":"initializer","order":1,"path":"rooms/initializer/initializer.yy",},
+    {"name":"log_test","order":4,"path":"rooms/log_test/log_test.yy",},
     {"name":"Enums","order":2,"path":"scripts/Enums/Enums.yy",},
     {"name":"HelpfulFunctions","order":4,"path":"scripts/HelpfulFunctions/HelpfulFunctions.yy",},
     {"name":"InputManager","order":1,"path":"scripts/InputManager/InputManager.yy",},

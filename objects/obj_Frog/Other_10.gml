@@ -9,6 +9,7 @@ handleSprite = function()
 	{
 		case consumable_state.still:
 			sprite_index = frog_sprites.land;
+			image_index = 0;
 			image_speed = 0;
 			break;
 	 
@@ -113,70 +114,3 @@ getDirectionToNearestLog = function(_nearest_log)
 	
 	return chosen_direction;
 }
-	
-// UNDERNEATH TO BE CLEANED UP OR DELETED
-/*	
-	//Determine which of these directions is towards a log.
-		var want_to_turn_left = 
-		var want_to_turn_right = 
-		var want_to_go_forward =
-}
-
-
-
-{
-	var new_direction = proposed_direction;
-	
-	if (new_direction < 0) { new_direction += 360; }
-	if (new_direction > 360) { new_direction -= 360; }
-	
-	var proposed_next_x = x + lengthdir_x(1, new_direction);
-	var proposed_next_y = y + lengthdir_y(1, new_direction);
-	
-	//Moving into a collision parent is never an option.
-	if checkForImpassable(proposed_next_x, proposed_next_y)
-	{ return true; }
-	
-	//Return the proposed next space distance from the nearest log.
-	aiLookForLog(proposed_next_x, proposed_next_y, nearest_log_distance)
-	{ return nearest_log_distance; }
-	
-	return false;
-}
-///@func aiTurnTowardLog()
-aiTurnTowardLog = function()
-{
-	if (!random_turn_available) { return; }
-	
-	var rolled_random_turn = (irandom_range(1, random_turn_range) <= random_turn_chance);
-		
-	if (rolled_random_turn)
-	{
-		//Create array of possible directions to travel.
-		var possible_directions = [];
-		
-		//Determine which of these directions is towards a log.
-		var want_to_turn_left = 
-		var want_to_turn_right = 
-		var want_to_go_forward =
-		
-		//Determine which of these directions is unblocked.
-		var can_turn_left = !testDirectionBlocked(direction + 90);
-		var can_turn_right = !testDirectionBlocked(direction - 90);
-			
-		if (can_turn_left) {array_push(possible_directions, -1);}
-		if (can_turn_right) {array_push(possible_directions, 1);}
-		
-		var available_options = array_length(possible_directions);
-		
-		//Select a random unblocked direction to turn, if there are any.
-		if (available_options > 0)
-		{
-			var random_integer = irandom(available_options - 1);
-			ai_input_lr = possible_directions[random_integer]; 
-			alarm[1] = random_turn_cooldown;
-			random_turn_available = false;
-		}
-	}
-}
-/*

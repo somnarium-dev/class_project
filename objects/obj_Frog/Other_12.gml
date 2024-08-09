@@ -33,8 +33,7 @@ behavior_machine[consumable_behavior.seeking_log] = function()
 	ai_input_lr = 0;
 	ai_input_panic_boost = 0;
 	
-	checkIfPanicked()
-	
+	checkIfPanicked();
 	// If completely aligned with a tile, change direction as dictated below.
 	if (alignedWithGrid())
 	{
@@ -45,7 +44,7 @@ behavior_machine[consumable_behavior.seeking_log] = function()
 		&& (y == nearest_log.y)
 		{
 			nearest_log = noone;
-			behavior = consumable_behavior.resting;
+			behavior = consumable_behavior.resting; 
 		}
 			
 		// Otherwise, continue to seek the nearest log.
@@ -53,21 +52,6 @@ behavior_machine[consumable_behavior.seeking_log] = function()
 	}
 }
 
-behavior_machine[consumable_behavior.seeking_grass] = function()
-{
-	//Reset inputs.
-	ai_input_accelerate = 1; // For now: Frog is always moving forward.
-	ai_input_lr = 0;
-	ai_input_panic_boost = 0;
-	
-	checkIfPanicked()
-	
-	// If completely aligned with a tile, change direction as dictated below.
-	if (alignedWithGrid())
-	{
-		aiSeekLog(); //to be altered to grass later once aiseeklog is working perfectly.
-	}
-}
 
 behavior_machine[consumable_behavior.resting] = function()
 {
@@ -79,10 +63,10 @@ behavior_machine[consumable_behavior.resting] = function()
 	ai_input_panic_boost = 0;
 	
 	// If completely aligned with a tile, change direction as dictated below.
-	if (alignedWithGrid())
-	{
-		alarm[2] = 90;
-	}
+	//if (alignedWithGrid())
+	//{
+		//alarm[2] = 180;
+	//}
 }
 //=======================================================================================================
 // behavior transition code
