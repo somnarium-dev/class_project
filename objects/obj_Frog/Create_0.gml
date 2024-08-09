@@ -2,7 +2,7 @@
 
 // Inherit the parent event
 event_inherited();
-
+state = consumable_state.swim;
 previous_state = state;
 
 // Internal
