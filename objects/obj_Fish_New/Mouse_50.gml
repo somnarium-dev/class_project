@@ -1,0 +1,1 @@
+requested_coords = { _x: mouse_x, _y: mouse_y };

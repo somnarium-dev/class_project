@@ -3,7 +3,18 @@
 /// @description Squares are 32 as set in initialize.
 function alignedWithGrid()
 {
-	return (x mod global.game_tile_size == 0) && (y mod global.game_tile_size == 0);
+	var _x = x - 16;
+	var _y = y - 16;
+	
+	return (_x mod global.game_tile_size == 0) && (_y mod global.game_tile_size == 0);
+}
+
+/// @function fuzzyAlignedWithGrid
+/// @description Check to see if the x and y axis align with the grid size for a particular square *within a margin of 1 pixel*.
+/// @description Squares are 32 as set in initialize.
+function fuzzyAlignedWithGrid()
+{
+	return (x mod global.game_tile_size < 1) && (y mod global.game_tile_size < 1);
 }
 
 /// @function increaseScore
