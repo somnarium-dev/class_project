@@ -4,6 +4,24 @@
 // PATH AUTOMATION METHODS
 //=======================================================================================
 
+///@func handlePathFinding()
+handlePathFinding = function()
+{
+	mockAiDirectionalMovement();
+	updateTargetCoords();
+	handlePathAcceleration();
+}
+
+///@func mockAiDirectionalMovement()
+mockAiDirectionalMovement = function()
+{
+	if (alignedWithGrid())
+	{
+		requested_coords._x = x + lengthdir_x(global.game_tile_size, target_direction);
+		requested_coords._y = y + lengthdir_y(global.game_tile_size, target_direction);
+	}
+}
+
 ///@func updateTargetCoords()
 updateTargetCoords = function()
 {

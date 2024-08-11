@@ -9,14 +9,6 @@ function alignedWithGrid()
 	return (_x mod global.game_tile_size == 0) && (_y mod global.game_tile_size == 0);
 }
 
-/// @function fuzzyAlignedWithGrid
-/// @description Check to see if the x and y axis align with the grid size for a particular square *within a margin of 1 pixel*.
-/// @description Squares are 32 as set in initialize.
-function fuzzyAlignedWithGrid()
-{
-	return (x mod global.game_tile_size < 1) && (y mod global.game_tile_size < 1);
-}
-
 /// @function increaseScore
 /// @description Increase and display the global.player_1.point_total number.
 /// @param {int} amount the final number to display after incrementing.

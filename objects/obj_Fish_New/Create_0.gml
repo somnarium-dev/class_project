@@ -5,6 +5,8 @@ deceleration = 0.1;
 
 current_top_speed = 2;
 
+target_direction = 0;
+
 requested_coords = { _x: -1, _y: -1 };
 target_coords = { _x: -1, _y: -1 };
 
