@@ -10,8 +10,10 @@ function handlePauseTransition()
 		stored_sprite_index = sprite_index;
 		stored_image_index = image_index;
 		stored_image_speed = image_speed;
+		stored_path_speed = path_speed;
 		
 		image_speed = 0;
+		path_speed = 0;
 		
 		is_paused = true;
 	}
@@ -23,6 +25,7 @@ function handlePauseTransition()
 		sprite_index = stored_sprite_index;
 		image_index = stored_image_index;
 		image_speed = stored_image_speed;
+		path_speed = stored_path_speed;
 		
 		is_paused = false;
 	}
