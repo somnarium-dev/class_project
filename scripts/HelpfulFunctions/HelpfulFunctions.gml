@@ -3,7 +3,10 @@
 /// @description Squares are 32 as set in initialize.
 function alignedWithGrid()
 {
-	return (x mod global.game_tile_size == 0) && (y mod global.game_tile_size == 0);
+	var _x = x - 16;
+	var _y = y - 16;
+	
+	return (_x mod global.game_tile_size == 0) && (_y mod global.game_tile_size == 0);
 }
 
 /// @function increaseScore
@@ -110,4 +113,19 @@ function turnTowardsDirection(_target_direction, _turn_degrees)
 	if (angle_direction < 0) { return_data -= _turn_degrees; }
 	
 	return return_data;
+}
+
+/// @function pathGetPercentageDistanceRemaining()
+/// @description Returns distance not yet traveled as a percentage of a path's total distance.
+/// Returns -1 if no path is defined.
+/// @return {real}
+function pathGetPercentageDistanceRemaining()
+{
+	if (current_path == undefined) { return -1; }
+	
+	var path_distance_remaining = path_get_length(current_path) * (1 - path_position);
+	var path_max_distance = path_get_length(current_path);
+	var path_percentage_remaining = path_distance_remaining / path_max_distance;
+	
+	return path_percentage_remaining * 100;
 }

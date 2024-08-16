@@ -6,6 +6,8 @@ function initialize()
 
 	global.all_current_consumables = [];
 	
+	global.current_grid_controller = noone;
+	
 	//Game definitions.
 	global.current_level = 1;
 	
@@ -47,5 +49,5 @@ function initialize()
 	LunaInitialize();
 	MiguelInitialize();
 	
-	room_goto(log_test);
+	room_goto(path_finding_test);
 }
