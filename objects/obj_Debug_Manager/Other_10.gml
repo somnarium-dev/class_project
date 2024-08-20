@@ -16,9 +16,9 @@ takeDebugInput = function()
 		//[F]: Respawn both fish and frog.	
 		if (keyboard_check_pressed(ord("F")))
 		{
-			instance_create_layer(512, 288, "Consumables", obj_Fish_Big);
-			instance_create_layer(192, 192, "Consumables", obj_Fish_Small);
-			instance_create_layer(480, 96, "Consumables", obj_Frog);
+			instance_create_layer(512, 288, "Consumables", obj_Fish_BigOLD);
+			instance_create_layer(192, 192, "Consumables", obj_Fish_SmallOLD);
+			instance_create_layer(480, 96, "Consumables", obj_FrogOLD);
 		}
 		
 		//[T]: Empty Timer instantly.
@@ -81,7 +81,7 @@ displayCrocodileCurrentState = function()
 displayCrocodileDangerRanges = function()
 {
 	//If there are no consumables, we're done.
-	if (!instance_exists(obj_Parent_Consumable))
+	if (!instance_exists(obj_Parent_ConsumableOLD))
 	{ exit; }
 	
 	if (global.player_1.current_id != noone)
@@ -127,15 +127,15 @@ updateArrayOfAllConsumables = function()
 	global.all_current_consumables = [];
 	
 	//If there are no fish, we're done.
-	if (!instance_exists(obj_Parent_Consumable))
+	if (!instance_exists(obj_Parent_ConsumableOLD))
 	{ exit; }
 	
 	//Get the total number of obj_parent_consumable.
-	var current_number_of_consumables = instance_number(obj_Parent_Consumable);
+	var current_number_of_consumables = instance_number(obj_Parent_ConsumableOLD);
 	for (var i = 0; i < current_number_of_consumables; i++;)
 	{
 		//Then, get the id of each of those consumables, and store it to the array.
-	    global.all_current_consumables[i] = instance_find(obj_Parent_Consumable,i);
+	    global.all_current_consumables[i] = instance_find(obj_Parent_ConsumableOLD,i);
 	}
 }
 

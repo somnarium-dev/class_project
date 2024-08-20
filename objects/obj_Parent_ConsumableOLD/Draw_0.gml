@@ -1,16 +1,12 @@
-/// @description Draw.
-
 draw_sprite_ext
 (
 	sprite_index,
 	image_index,
-	x,
-	y,
+	x + (global.game_tile_size / 2),
+	y + (global.game_tile_size / 2),
 	image_xscale,
 	image_yscale,
 	direction,
 	image_blend,
 	image_alpha
 );
-
-draw_text(x+16,y-16, $"{current_speed}");
