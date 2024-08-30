@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_Level_Editor_Croc",
-    "path":"sprites/spr_Level_Editor_Croc/spr_Level_Editor_Croc.yy",
+    "name":"spr_Croc_Idle",
+    "path":"sprites/spr_Croc_Idle/spr_Croc_Idle.yy",
   },
   "spriteMaskId":{
     "name":"spr_Level_Editor_Croc",

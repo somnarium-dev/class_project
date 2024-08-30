@@ -1,7 +1,6 @@
 handlePauseTransition();
 
-if ( global.level_manager.state == level_state.paused )
-{ exit; }
+if (is_paused) { return; }
 
 behavior_machine[behavior]();
 state_machine[state]();

@@ -16,8 +16,8 @@ takeDebugInput = function()
 		//[F]: Respawn both fish and frog.	
 		if (keyboard_check_pressed(ord("F")))
 		{
-			instance_create_layer(512, 288, "Consumables", obj_Fish_Big);
-			instance_create_layer(192, 192, "Consumables", obj_Fish_Small);
+			instance_create_layer(522, 302, "Consumables", obj_Fish_Big);
+			instance_create_layer(208, 208, "Consumables", obj_Fish_Small);
 			instance_create_layer(480, 96, "Consumables", obj_Frog);
 		}
 		
@@ -95,8 +95,8 @@ displayCrocodileDangerRanges = function()
 		
 		var draw_offset = 16;
 		
-		var draw_x = target_id.x + draw_offset;
-		var draw_y = target_id.y + draw_offset;
+		var draw_x = target_id.x;
+		var draw_y = target_id.y;
 		
 		for (var i = 0; i < number_of_consumables; i++)
 		{

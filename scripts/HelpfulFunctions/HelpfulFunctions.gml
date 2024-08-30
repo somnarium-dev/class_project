@@ -129,3 +129,23 @@ function pathGetPercentageDistanceRemaining()
 	
 	return path_percentage_remaining * 100;
 }
+
+/// @function snapToGrid()
+/// @description Moves object to grid if it doesn't align
+function snapToGrid()
+{
+	if (alignedWithGrid()) {return;}
+	
+	var half_cell = floor(global.game_tile_size/2);
+	
+	var _x_cell = x div global.game_tile_size;
+	var _y_cell = y div global.game_tile_size;
+	
+	var _x_corrected = (_x_cell * global.game_tile_size) + half_cell;
+	var _y_corrected = (_y_cell * global.game_tile_size) + half_cell;
+	
+	x = _x_corrected;
+	y = _y_corrected;
+	
+	
+}
