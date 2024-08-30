@@ -1,118 +1,171 @@
 ///@desc Custom Methods
 
-//=======================================================================================
-// PATH AUTOMATION METHODS - STATE
-//=======================================================================================
+///@func readVirtualInput()
+readVirtualInput = function()
+{
+	if (current_speed != 0)
+	{
+		var desired_direction = direction - (ai_input_lr * 90);
+		updateFacingDirection(desired_direction);
+		horizontal_pixels_accumulated = 0;
+		vertical_pixels_accumulated = 0;
+	}
+}
+
+///@func handleMovementAndCollision()
+handleMovementAndCollision = function()
+{
+	determineTopSpeed();
+	
+	handleAcceleration();
+	
+	handleHorizontalPixelAccumulation();
+	handleVerticalPixelAccumulation();
+	
+	handleHorizontalMovement();
+	handleVerticalMovement();
+}
 
 ///@func determineTopSpeed()
 determineTopSpeed = function()
 {
-	if (behavior == consumable_behavior.panic) {current_top_speed = max_panic_speed;}
+	if (ai_input_panic_boost == 1) {current_top_speed = max_panic_speed;}
 	else {current_top_speed = max_move_speed;}
 }
 
-///@func consumableHandlePathAcceleration()
-consumableHandlePathAcceleration = function()
-{	
-	determineTopSpeed();
-	
-	// If below top speed, accelerate.
-	if (path_speed < current_top_speed) { path_speed = lerp(path_speed, current_top_speed, accel_rate); }
-	
-	// If above top speed, decelerate.
-	if (path_speed > current_top_speed) { path_speed = lerp(path_speed, current_top_speed, decel_rate); }
-}
-
-//=======================================================================================
-// PATH AUTOMATION METHODS - MECHANICAL
-//=======================================================================================
-
-///@func consumableRequestNextCellInIntendedDirection()
-consumableRequestNextCellInIntendedDirection = function()
+///@func handleAcceleration()
+handleAcceleration = function()
 {
-	requested_coords._x = x + lengthdir_x(global.game_tile_size, intended_direction);
-	requested_coords._y = y + lengthdir_y(global.game_tile_size, intended_direction);
-}
-
-///@func consumableUpdateTargetCoords()
-consumableUpdateTargetCoords = function()
-{
-	// In unset, return.
-	if (requested_coords._x == -1) || (requested_coords._y == -1) { return; }
+	var adjustment = 0;
+	var new_speed = 0;
 	
-	// If there's a discrepancy, update when aligned with grid.
-	if (alignedWithGrid())
+	//Accelerate
+	if (current_speed < current_top_speed)
 	{
-		if (target_coords._x != requested_coords._x)
-		|| (target_coords._y != requested_coords._y)
+		adjustment = ai_input_accelerate * accel_rate;
+		new_speed = current_speed + adjustment;
+		
+		//Cap to top speed.
+		if (new_speed > current_top_speed) { new_speed = current_top_speed; }
+		
+		current_speed = new_speed;
+	}
+	
+	//Decelerate.
+	if (current_speed != 0)
+	{
+		if (!ai_input_accelerate)
+		|| (current_speed > current_top_speed)
 		{
-			target_coords._x = requested_coords._x;
-			target_coords._y = requested_coords._y;
+			//If fish can decelerate without passing 0, decelerate.
+			if (current_speed > decel_rate) { new_speed = current_speed - decel_rate; }
+			else { new_speed = 0; }
 			
-			//Convert coordinates to the center of a cell on the grid.
-			var cell_destination = consumableFindCellDestination(target_coords._x, target_coords._y);
-			
-			//See if a path exists to the cell destination.
-			var potential_path = consumableTestPath(cell_destination._x, cell_destination._y);
-			
-			//If a path did exist, set the current path to that path and start.
-			if (potential_path != undefined)
-			{
-				current_path = potential_path;
-				consumableStartPath();
-			}
+			current_speed = new_speed;
 		}
 	}
 }
 
-///@func consumableFindCellDestination(_x, _y)
-consumableFindCellDestination = function(_x, _y)
+///@func handleHorizontalPixelAccumulation()
+handleHorizontalPixelAccumulation = function()
 {
-	// Find the cell that contains the requested coordinates.
-	var target_x_cell = floor(_x / global.game_tile_size) * global.game_tile_size;
-	var target_y_cell = floor(_y / global.game_tile_size) * global.game_tile_size;
+	// Derive horizontal speed.
+	var h_speed = lengthdir_x(current_speed, direction);
 	
-	// Then, find the coordinates of the center of that cell.
-	var proposed_target_x = target_x_cell + floor(global.game_tile_size / 2);
-	var proposed_target_y = target_y_cell + floor(global.game_tile_size / 2);
+	// Accumulate and queue pixels.
+	horizontal_pixels_accumulated += h_speed;
+	var integer_pixels = horizontal_pixels_accumulated div 1;
+	horizontal_pixels_accumulated -= integer_pixels;
+	horizontal_pixels_queued = integer_pixels;
 	
-	//Return a struct
-	return {_x : proposed_target_x, _y : proposed_target_y};
-}
-
-///@func consumableTestPath(_x, _y)
-consumableTestPath = function(_x, _y)
-{
-	// Prepare a new path.
-	var potential_path = path_add();
-	
-	// Calculate the shortest path between the object's current coordinates and the proposed target coordinates.
-	var found_path = mp_grid_path(
-		global.current_grid_controller.solid_grid,	// This is the grid that is checked for a path.
-		potential_path,								// This is the path variable within this object.
-		x,											// The starting x position.
-		y,											// The starting y position.
-		_x,											// The proposed target x position.
-		_y,											// The proposed target y position.
-		false);										// Whether or not diagonal movement should be allowed (it shouldn't, in your game).
-		
-	// If there is no way to move to requested position, clear the path variable and return undefined.
-	// Otherwise return the path.
-	if (!found_path)
+	// If it is not possible to move in the queued direction, 
+	// Then clear the variables to prevent issues.
+	var h_sign = sign(horizontal_pixels_queued)
+	var next_position_blocked = checkForImpassable(x + h_sign, y);
+	if (next_position_blocked)
 	{
-		path_delete(potential_path);
-		potential_path = undefined;
+		horizontal_pixels_accumulated = 0;
+		horizontal_pixels_queued = 0;
 	}
-	
-	return potential_path;
 }
 
-///@func consumableStartPath()
-consumableStartPath = function()
+///@func handleVerticalPixelAccumulation()
+handleVerticalPixelAccumulation = function()
 {
-	path_start(current_path, path_speed, path_action_stop, true);
+	// Derive vertical speed.
+	var v_speed = lengthdir_y(current_speed, direction);
+	
+	// Accumulate and queue pixels.
+	vertical_pixels_accumulated += v_speed;
+	var integer_pixels = vertical_pixels_accumulated div 1;
+	vertical_pixels_accumulated -= integer_pixels;
+	vertical_pixels_queued = integer_pixels;
+	
+	// If it is not possible to move in the queued direction, 
+	// Then clear the variables to prevent issues.
+	var v_sign = sign(vertical_pixels_queued)
+	var next_position_blocked = checkForImpassable(x, y + v_sign);
+	if (next_position_blocked)
+	{
+		vertical_pixels_accumulated = 0;
+		vertical_pixels_queued = 0;
+	}
 }
 
+///@func handleHorizontalMovement()
+handleHorizontalMovement = function()
+{
+	var repetitions = abs(horizontal_pixels_queued);
+	var adjustment = sign(horizontal_pixels_queued);
+	
+	repeat (repetitions)
+	{
+		var next_position_blocked = checkForImpassable(x + adjustment, y);
+		
+		if (next_position_blocked)
+		{
+			horizontal_pixels_accumulated = 0;
+			horizontal_pixels_queued = 0;
+			break;
+		}
+		
+		x += adjustment;
+		horizontal_pixels_queued -= adjustment;
+	}
+}
+
+///@func handleVerticalMovement()
+handleVerticalMovement = function()
+{
+	var repetitions = abs(vertical_pixels_queued);
+	var adjustment = sign(vertical_pixels_queued);
+	
+	repeat (repetitions)
+	{
+		var next_position_blocked = checkForImpassable(x, y + adjustment);
+		
+		if (next_position_blocked)
+		{
+			vertical_pixels_accumulated = 0;
+			vertical_pixels_queued = 0;
+			break;
+		}
+		
+		y += adjustment;
+		vertical_pixels_queued -= adjustment;
+	}
+}
+
+///@func updateFacingDirection(proposed_new_direction)
+updateFacingDirection = function(proposed_new_direction)
+{
+	var new_direction = proposed_new_direction;
+	
+	if (new_direction < 0) { new_direction += 360; }
+	if (new_direction > 360) { new_direction -= 360; }
+	
+	direction = new_direction;
+}
 
 ///@func testDirectionBlocked(proposed_direction)
 testDirectionBlocked = function(proposed_direction)
@@ -122,10 +175,21 @@ testDirectionBlocked = function(proposed_direction)
 	if (new_direction < 0) { new_direction += 360; }
 	if (new_direction > 360) { new_direction -= 360; }
 	
-	var proposed_next_x = x + lengthdir_x(global.game_tile_size, new_direction);
-	var proposed_next_y = y + lengthdir_y(global.game_tile_size, new_direction);
+	var proposed_next_x = x + lengthdir_x(1, new_direction);
+	var proposed_next_y = y + lengthdir_y(1, new_direction);
 	
-	return consumableTestPath(proposed_next_x, proposed_next_y);
+	//Moving into an impassable tile is never an option.
+	if (checkForImpassable(proposed_next_x, proposed_next_y))
+	{ return true; }
+	
+	//Moving outside of the room is never a valid option.
+	if (proposed_next_x < 0)
+	|| (proposed_next_x > room_width)
+	|| (proposed_next_y < 0)
+	|| (proposed_next_y > room_height)
+	{ return true;}
+	
+	return false;
 }
 
 //=======================================================================================
@@ -135,40 +199,30 @@ testDirectionBlocked = function(proposed_direction)
 ///@func aiTurnWhenBlocked()
 aiTurnWhenBlocked = function()
 {
-	//Are we actually blocked?
-	var is_blocked = testDirectionBlocked(intended_direction) == undefined;
-	if (!is_blocked) { return; }
-	
-	var initial_direction = intended_direction;
-	
 	//Create array of possible directions to travel.
 	var possible_directions = [];
 		
 	//Determine which of these directions is unblocked.
-	var path_to_left = testDirectionBlocked(intended_direction + 90);
-	var path_to_right = testDirectionBlocked(intended_direction - 90);
-	
-	if (path_to_left != undefined)	{ array_push(possible_directions, intended_direction + 90); }
-	if (path_to_right != undefined) { array_push(possible_directions, intended_direction - 90); }
+	var can_turn_left = !testDirectionBlocked(direction + 90);
+	var can_turn_right = !testDirectionBlocked(direction - 90);
+			
+	if (can_turn_left)	{ array_push(possible_directions, -1); }
+	if (can_turn_right) { array_push(possible_directions, 1);  }
 		
 	var available_options = array_length(possible_directions);
 		
-	//If all directions are blocked, turn around.
-	if (available_options == 0) { intended_direction += 180; }
+	//If all directions are blocked, turn left.
+	if (available_options == 0) { ai_input_lr = -1; }
 	
 	//If there is only one unblocked direction, take it.
-	else if (available_options == 1) { intended_direction = possible_directions[0]; }
+	else if (available_options == 1) { ai_input_lr = possible_directions[0]; }
 		
 	//Otherwise, select a random unblocked direction.
 	else
 	{
 		var random_selection = choose(0, 1);
-		intended_direction = possible_directions[random_selection];
+		ai_input_lr = possible_directions[random_selection];
 	}
-	
-	intended_direction = (intended_direction mod 360);
-
-	return intended_direction != initial_direction;
 }
 
 ///@func aiTurnAtRandom()
@@ -184,11 +238,11 @@ aiTurnAtRandom = function()
 		var possible_directions = [];
 		
 		//Determine which of these directions is unblocked.
-		var path_to_left = testDirectionBlocked(intended_direction + 90);
-		var path_to_right = testDirectionBlocked(intended_direction - 90);
-	
-		if (path_to_left != undefined)	{ array_push(possible_directions, intended_direction + 90); }
-		if (path_to_right != undefined) { array_push(possible_directions, intended_direction - 90); }
+		var can_turn_left = !testDirectionBlocked(direction + 90);
+		var can_turn_right = !testDirectionBlocked(direction - 90);
+			
+		if (can_turn_left) {array_push(possible_directions, -1);}
+		if (can_turn_right) {array_push(possible_directions, 1);}
 		
 		var available_options = array_length(possible_directions);
 		
@@ -196,8 +250,8 @@ aiTurnAtRandom = function()
 		if (available_options > 0)
 		{
 			var random_integer = irandom_range(1, available_options) - 1;
-			intended_direction = possible_directions[random_integer]; 
-			alarm[0] = random_turn_cooldown;
+			ai_input_lr = possible_directions[random_integer]; 
+			alarm[1] = random_turn_cooldown;
 			random_turn_available = false;
 		}
 	}

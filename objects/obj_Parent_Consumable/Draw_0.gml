@@ -1,18 +1,9 @@
-// Pathfinding needs to be able to use subpixel positions in order to work properly (I believe).
-// As such, to prevent rendering errors, we use a rounded x and y for drawing.
-
-// Notice: We are not offsetting here anymore.
-// This is because for pathfinding and image rotation to work correctly,
-// we have to have to align with the center of each grid cell anyway. 
-var draw_x = round(x);
-var draw_y = round(y);
-
 draw_sprite_ext
 (
 	sprite_index,
 	image_index,
-	draw_x,
-	draw_y,
+	x + (global.game_tile_size / 2),
+	y + (global.game_tile_size / 2),
 	image_xscale,
 	image_yscale,
 	direction,
