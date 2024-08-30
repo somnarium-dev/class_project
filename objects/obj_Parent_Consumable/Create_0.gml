@@ -3,6 +3,7 @@ event_user(0);
 event_user(1);
 event_user(2);
 
+
 // Internal.
 is_paused = false;
 random_turn_available = true;
@@ -27,3 +28,4 @@ sprite_index = consumable_sprite;
 // Initialize.
 state = consumable_state.swim;
 behavior = consumable_behavior.roaming;
+snapToGrid();
