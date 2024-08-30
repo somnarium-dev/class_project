@@ -58,6 +58,7 @@
     {"name":"obj_Fish_Catfish","order":1,"path":"objects/obj_Fish_Catfish/obj_Fish_Catfish.yy",},
     {"name":"obj_Fish_CatfishOLD","order":3,"path":"objects/obj_Fish_CatfishOLD/obj_Fish_CatfishOLD.yy",},
     {"name":"obj_Fish_Small","order":2,"path":"objects/obj_Fish_Small/obj_Fish_Small.yy",},
+    {"name":"obj_Frog","order":3,"path":"objects/obj_Frog/obj_Frog.yy",},
     {"name":"obj_FrogOLD","order":2,"path":"objects/obj_FrogOLD/obj_FrogOLD.yy",},
     {"name":"obj_Grid_Controller","order":3,"path":"objects/obj_Grid_Controller/obj_Grid_Controller.yy",},
     {"name":"obj_Level_Manager","order":2,"path":"objects/obj_Level_Manager/obj_Level_Manager.yy",},

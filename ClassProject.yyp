@@ -84,6 +84,7 @@
     {"id":{"name":"obj_Fish_CatfishOLD","path":"objects/obj_Fish_CatfishOLD/obj_Fish_CatfishOLD.yy",},},
     {"id":{"name":"obj_Fish_Small","path":"objects/obj_Fish_Small/obj_Fish_Small.yy",},},
     {"id":{"name":"obj_Fish_SmallOLD","path":"objects/obj_Fish_SmallOLD/obj_Fish_SmallOLD.yy",},},
+    {"id":{"name":"obj_Frog","path":"objects/obj_Frog/obj_Frog.yy",},},
     {"id":{"name":"obj_FrogOLD","path":"objects/obj_FrogOLD/obj_FrogOLD.yy",},},
     {"id":{"name":"obj_Game_HUD","path":"objects/obj_Game_HUD/obj_Game_HUD.yy",},},
     {"id":{"name":"obj_Grid_Controller","path":"objects/obj_Grid_Controller/obj_Grid_Controller.yy",},},
