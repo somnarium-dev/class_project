@@ -1,8 +1,7 @@
-///@desc Custom methods.
-
-// Inherit the parent event
+///@desc Custom Methods
 event_inherited();
 
+//Handle Sprites
 ///@func handleSprite()
 handleSprite = function()
 {
@@ -34,68 +33,14 @@ handleSprite = function()
 	}
 }
 
-//=======================================================================================
-// PATH AUTOMATION METHODS - MECHANICAL
-//=======================================================================================
-///@func consumableUpdateTargetCoords()
-consumableUpdateTargetCoords = function()
+///@func removeGrassFromCollisionIgnoreArrayWhenReady()
+removeGrassFromCollisionIgnoreArrayWhenReady = function()
 {
-	// If on extended path, return.
-	if (moving_towards_log) { return; }
+	var _index = array_get_index(collision_ignore_array, obj_Barrier_Grass);
 	
-	// In unset, return.
-	if (requested_coords._x == -1) || (requested_coords._y == -1) { return; }
+	if (_index == -1) { return; }
 	
-	// If there's a discrepancy, update when aligned with grid.
-	if (alignedWithGrid())
-	{
-		if (target_coords._x != requested_coords._x)
-		|| (target_coords._y != requested_coords._y)
-		{
-			target_coords._x = requested_coords._x;
-			target_coords._y = requested_coords._y;
-			
-			//Convert coordinates to the center of a cell on the grid.
-			var cell_destination = consumableFindCellDestination(target_coords._x, target_coords._y);
-			
-			//See if a path exists to the cell destination.
-			var potential_path = consumableTestPath(cell_destination._x, cell_destination._y);
-			
-			//If a path did exist, set the current path to that path and start.
-			if (potential_path != undefined)
-			{
-				current_path = potential_path;
-				consumableStartPath();
-			}
-		}
-	}
-}
-
-///@func consumableTestPath(_x, _y)
-consumableTestPath = function(_x, _y)
-{
-	// Prepare a new path.
-	var potential_path = path_add();
-	
-	// Calculate the shortest path between the object's current coordinates and the proposed target coordinates.
-	var found_path = mp_grid_path(
-		current_pathfinding_grid,	// This is the grid that is checked for a path.
-		potential_path,								// This is the path variable within this object.
-		x,											// The starting x position.
-		y,											// The starting y position.
-		_x,											// The proposed target x position.
-		_y,											// The proposed target y position.
-		false);										// Whether or not diagonal movement should be allowed (it shouldn't, in your game).
-		
-	// If there is no way to move to requested position, clear the path variable and return undefined.
-	// Otherwise return the path.
-	if (!found_path)
-	{
-		path_delete(potential_path);
-		potential_path = undefined;
-	}
-	
-	return potential_path;
+	array_delete(collision_ignore_array, _index, 1);
 }
 
 //=======================================================================================
@@ -111,17 +56,17 @@ aiSeekLog = function()
 	// Find the ID of the closest instance of obj_parent_log
 	if (nearest_log == noone) { nearest_log = instance_nearest(x, y, obj_Parent_Log); }
 
-	// Return the coordinates of the nearest log.
-	var nearest_log_x = nearest_log.x;
-	var nearest_log_y = nearest_log.y;
+	// Return the distance of the nearest log in pixels.
+	var new_direction = getDirectionToNearestLog(nearest_log);
+
+	// Virtualise input to move in new_direction.
+	if (direction != new_direction)
+	{
+		ai_input_lr = dsin(direction - new_direction);
 	
-	// Set requested coordinates to log coordinates.
-	requested_coords._x = nearest_log_y;
-	requested_coords._y = nearest_log_y;
-	
-	consumableUpdateTargetCoords();
-	
-	moving_towards_log = true;
+		if (ai_input_lr == 0)
+		{ ai_input_lr = -1; }
+	}
 }
 
 ///@func getDirectionToNearestLog()

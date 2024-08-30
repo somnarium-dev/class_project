@@ -1,38 +1,50 @@
-/// @description Behavior Machine
-
-// Inherit the parent event
+///@desc Behavior Machine
 event_inherited();
 
 behavior_machine[consumable_behavior.roaming] = function()
-{	
-	checkIfPanicked();
+{
+	removeGrassFromCollisionIgnoreArrayWhenReady();
 	
+	//Reset inputs.
+	ai_input_accelerate = 1; // For now: Always moving forward.
+	ai_input_lr = 0;
+	ai_input_panic_boost = 0;
+	
+	checkIfPanicked()
+	
+	// If completely aligned with a tile, change direction as dictated below.
 	if (alignedWithGrid())
-	{ 
-		var was_blocked = aiTurnWhenBlocked();
-		if (!was_blocked) { aiTurnAtRandom(); }
-		consumableRequestNextCellInIntendedDirection();
-		consumableUpdateTargetCoords();
+	{
+		// If the way forward is blocked, turn left or right- or turn around if that is impossible.
+		// Otherwise, turn at random per variable definitions.
+		var forward_is_blocked = testDirectionBlocked(direction);
+
+		if (forward_is_blocked) { aiTurnWhenBlocked(); }
+		else { aiTurnAtRandom(); }
 	}
 }
 
 behavior_machine[consumable_behavior.seeking_log] = function()
 {
-	//removeGrassFromCollisionIgnoreArrayWhenReady();
+	removeGrassFromCollisionIgnoreArrayWhenReady();
+	
+	//Reset inputs.
+	ai_input_accelerate = 1; // For now: Frog is always moving forward.
+	ai_input_lr = 0;
+	ai_input_panic_boost = 0;
 	
 	checkIfPanicked();
 	// If completely aligned with a tile, change direction as dictated below.
 	if (alignedWithGrid())
 	{
-		// If the nearest log has been reached, clear the variable containing its id,
-		// advance to the resting state, and stop moving towards the log.
+		// If the nearest log has been reached, clear the variable containing its id
+		// and advance to the resting state.
 		if (nearest_log != noone)
-		&& (x == nearest_log_x)
-		&& (y == nearest_log_y)
+		&& (x == nearest_log.x)
+		&& (y == nearest_log.y)
 		{
 			nearest_log = noone;
 			behavior = consumable_behavior.resting; 
-			moving_towards_log = false;
 		}
 			
 		// Otherwise, continue to seek the nearest log.
@@ -43,7 +55,12 @@ behavior_machine[consumable_behavior.seeking_log] = function()
 
 behavior_machine[consumable_behavior.resting] = function()
 {
-	//removeGrassFromCollisionIgnoreArrayWhenReady();
+	removeGrassFromCollisionIgnoreArrayWhenReady();
+	
+	//Reset inputs.
+	ai_input_accelerate = 0; // For now: Frog is always moving forward.
+	ai_input_lr = 0;
+	ai_input_panic_boost = 0;
 	
 	// If completely aligned with a tile, change direction as dictated below.
 	//if (alignedWithGrid())

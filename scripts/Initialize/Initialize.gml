@@ -49,5 +49,5 @@ function initialize()
 	LunaInitialize();
 	MiguelInitialize();
 	
-	room_goto(fish_test);
+	room_goto(path_finding_test);
 }

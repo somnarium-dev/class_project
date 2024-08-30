@@ -1,9 +1,2 @@
-///@desc Check exit panic state.
-var nearest_player = instance_nearest(x, y, obj_Parent_Player);
-	
-if (point_distance (x, y, nearest_player.x, nearest_player.y) < danger_range)
-{
-	alarm_set(1, panic_state_cooldown);
-}
-
-behavior = consumable_behavior.roaming;
+///@desc Random turn cooldown timer.
+random_turn_available = true;

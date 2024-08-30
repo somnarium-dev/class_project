@@ -2,16 +2,14 @@
 
 // Inherit the parent event
 event_inherited();
-
 state = consumable_state.swim;
 previous_state = state;
 
 // Internal
+collision_ignore_array = [obj_Parent_Log, obj_Parent_Rock];
+check_direction = 0;
+
 nearest_log = noone;
-
-current_pathfinding_grid = global.current_grid_controller.solid_grid;
-
-moving_towards_log = false;
 
 //Define frog sprites
 frog_sprites = 
@@ -26,5 +24,3 @@ sprite_index = frog_sprites.land;
 event_user(0);
 event_user(1);
 event_user(2);
-
-snapToGrid();
