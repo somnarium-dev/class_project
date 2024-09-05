@@ -41,7 +41,7 @@ handleSprite = function()
 consumableUpdateTargetCoords = function()
 {
 	// If on extended path, return.
-	if (moving_towards_log) { return; }
+	//if (moving_towards_log) { return; }
 	
 	// In unset, return.
 	if (requested_coords._x == -1) || (requested_coords._y == -1) { return; }
@@ -111,13 +111,12 @@ aiSeekLog = function()
 	// Find the ID of the closest instance of obj_parent_log
 	if (nearest_log == noone) { nearest_log = instance_nearest(x, y, obj_Parent_Log); }
 
-	// Return the coordinates of the nearest log.
-	var nearest_log_x = nearest_log.x;
-	var nearest_log_y = nearest_log.y;
+	// Return the center of tile coordinates of the nearest log.
+	nearest_log_centered_coordinates = getCenterOfCurrentTile(nearest_log.x, nearest_log.y);
 	
 	// Set requested coordinates to log coordinates.
-	requested_coords._x = nearest_log_y;
-	requested_coords._y = nearest_log_y;
+	requested_coords._x = nearest_log_centered_coordinates.x;
+	requested_coords._y = nearest_log_centered_coordinates.y;
 	
 	consumableUpdateTargetCoords();
 	
@@ -168,4 +167,12 @@ getDirectionToNearestLog = function(_nearest_log)
 	}
 	
 	return chosen_direction;
+}
+
+///@func resetGridWhenInWater()
+resetGridWhenInWater = function()
+{
+	if (!instance_place(x, y, obj_Parent_Barrier))
+	&& ( current_pathfinding_grid != global.current_grid_controller.solid_grid)
+	{ current_pathfinding_grid = global.current_grid_controller.solid_grid; }
 }

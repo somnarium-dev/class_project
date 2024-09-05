@@ -5,6 +5,7 @@ event_inherited();
 
 state_machine[consumable_state.swim] = function()
 {	
+	consumableHandlePathAcceleration();
 	handleSprite();
 	checkIfStill();
 }

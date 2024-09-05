@@ -6,8 +6,12 @@ event_inherited();
 state = consumable_state.swim;
 previous_state = state;
 
+behavior = consumable_behavior.roaming;
+
 // Internal
 nearest_log = noone;
+nearest_log_centered_coordinates = { x:-1, y:-1 };
+ready_to_exit_panicked_state = false;
 
 current_pathfinding_grid = global.current_grid_controller.solid_grid;
 
