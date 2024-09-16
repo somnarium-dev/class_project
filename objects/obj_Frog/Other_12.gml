@@ -34,8 +34,7 @@ behavior_machine[consumable_behavior.seeking_log] = function()
 		{
 			nearest_log = noone;
 			behavior = consumable_behavior.resting;
-			show_debug_message("i am at rest");
-			alarm[2] = 180;
+			//alarm[2] = 180; we are double setting this in user event 1. temporarilly offline until frog is perfect.
 			moving_towards_log = false;
 		}
 			
@@ -87,7 +86,7 @@ checkIfPanicked = function()
 	{	
 		behavior = consumable_behavior.panic;
 		
-		current_pathfinding_grid = global.current_grid_controller.full_grid;
+		current_pathfinding_grid = global.current_grid_controller.frog_panic_grid;
 		
 		alarm[1] = panic_state_cooldown;
 	}

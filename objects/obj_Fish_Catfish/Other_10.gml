@@ -16,17 +16,14 @@ aiFindPlayer = function()
 	// Find the ID of the closest instance of obj_parent_player
 	if (nearest_player == noone) { nearest_player = instance_nearest(x, y, obj_Parent_Player); }
 
-	// Return the distance of the nearest player in pixels.
-	var new_direction = getDirectionToEscapePlayer(nearest_player);
+	// Return the center of tile coordinates of the nearest player.
+	nearest_player_centered_coordinates = getCenterOfCurrentTile(nearest_player.x, nearest_player.y);
 
-	// Virtualise input to move in new_direction.
-	if (direction != new_direction)
-	{
-		ai_input_lr = dsin(direction - new_direction);
+	// Set requested coordinates to log coordinates.
+	requested_coords._x = nearest_player_centered_coordinates.x;
+	requested_coords._y = nearest_player_centered_coordinates.y;
 	
-		if (ai_input_lr == 0)
-		{ ai_input_lr = -1; }
-	}
+	consumableUpdateTargetCoords();
 }
 
 ///@func getDirectionToEscapePlayer()

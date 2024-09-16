@@ -19,6 +19,7 @@ takeDebugInput = function()
 			instance_create_layer(522, 302, "Consumables", obj_Fish_Big);
 			instance_create_layer(208, 208, "Consumables", obj_Fish_Small);
 			instance_create_layer(480, 96, "Consumables", obj_Frog);
+			instance_create_layer(528, 112, "Consumables", obj_Fish_Catfish);
 		}
 		
 		//[T]: Empty Timer instantly.
